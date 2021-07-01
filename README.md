@@ -6,6 +6,9 @@ bash <(curl -sL https://raw.githubusercontent.com/guliter/game/main/v2ray.sh)
 
 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/centOSbtlnmp.sh) 运行网络脚本
 
+git clone https://github.com/guliter/gameon 克隆整个目录
+
+cd /root/gameon && chmod +x oi.guliter.tk.tar.gz && tar -zxvf  oi.guliter.tk.tar.gz  进入目录并赋予权限进行解压
 
 
 stty erase '^H' && read -p "请输入宝塔面板添加的MySQL数据库名：" mysqldatabase             定义变量
