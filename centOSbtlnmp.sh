@@ -65,8 +65,8 @@ init_env(){
     bash /www/server/panel/install/install_soft.sh 1 install apache 2.4.46 &>/dev/null
     c=$(date "+%s")
     echo "Apache安装完成，耗时：$(($c-$b))s"
-    echo "开始安装php7.1"
-    bash /www/server/panel/install/install_soft.sh 1 install php 7.1 &>/dev/null || echo 'Ignore Error' &>/dev/null
+    echo "开始安装php7.3"
+    bash /www/server/panel/install/install_soft.sh 1 install php 7.3 &>/dev/null || echo 'Ignore Error' &>/dev/null
     d=$(date "+%s")
     echo "php安装完成，耗时：$(($d-$c))s"
     echo "开始安装mysql 5.6"
@@ -79,7 +79,7 @@ init_env(){
     echo "phpadmin安装完成，耗时：$(($f-$e))s"
     echo "所有软件已安装完毕"
     #添加软件到首页    
-    echo '["linuxsys", "webssh", "apache", "php-7.1", "mysql", "phpmyadmin"]' > /www/server/panel/config/index.json
+    echo '["linuxsys", "webssh", "apache", "php-7.3", "mysql", "phpmyadmin"]' > /www/server/panel/config/index.json
     echo "正在重启所有服务器组件"
     for file in `ls /etc/init.d`
     do if [ -x /etc/init.d/${file} ];  then 
@@ -146,7 +146,7 @@ init_env(){
     c=$(date "+%s")
     echo "Apache安装完成，耗时：$(($c-$b))s"
     echo "开始安装php7.1"
-    bash /www/server/panel/install/install_soft.sh 1 install php 7.1 &>/dev/null || echo 'Ignore Error' &>/dev/null
+    bash /www/server/panel/install/install_soft.sh 1 install php 7.3 &>/dev/null || echo 'Ignore Error' &>/dev/null
     d=$(date "+%s")
     echo "php安装完成，耗时：$(($d-$c))s"
     echo "开始安装mysql 5.6"
@@ -159,7 +159,7 @@ init_env(){
     echo "phpadmin安装完成，耗时：$(($f-$e))s"
     echo "所有软件已安装完毕"
     #添加软件到首页    
-    echo '["linuxsys", "webssh", "apache", "php-7.1", "mysql", "phpmyadmin"]' > /www/server/panel/config/index.json
+    echo '["linuxsys", "webssh", "nginx", "php-7.3", "mysql", "phpmyadmin"]' > /www/server/panel/config/index.json
     echo "正在重启所有服务器组件"
     for file in `ls /etc/init.d`
     do if [ -x /etc/init.d/${file} ];  then 
