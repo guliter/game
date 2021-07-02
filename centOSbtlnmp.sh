@@ -262,14 +262,12 @@ bt 14
 
 }
 
-#开始菜单
 start_menu(){
     clear
     echo
     white "—————————————基础环境安装——————————————"
-    red "1.安装LNMP-Nginx-php-mysql【PHP7.3】 "
-    blue "2.安装LAMP-Apache-php-mysql【PHP7.3】 "
-    blue "3.安装LAMP-Nginx-php-mysql【PHP7.1】 "
+    red "1.安装LNMP-Nginx-php-mysql "
+    blue "2.安装LAMP-Apache-php-mysql "
     white ""
     echo
     echo
@@ -280,14 +278,14 @@ start_menu(){
 	;;
     2)
     install_lamp
-        ;;
+    ;;                                    
 	0)
 	exit 1
 	;;
 	*)
 	clear
 	echo "请输入正确数字"
-	sleep 1s
+	sleep 3s
 	start_menu
 	;;
     esac
