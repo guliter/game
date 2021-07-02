@@ -292,7 +292,7 @@ start_menu(){
     white "—————————————基础环境安装——————————————"
     red "1.安装LNMP-Nginx-php-mysql【7.3】 "
     blue "2.安装LAMP-Apache-php-mysql "
-    red "1.安装LNMP-Nginx-php-mysql【7.1】 "
+    red "3.安装LNMP-Nginx-php-mysql【7.1】 "
     white ""
     echo
     echo
