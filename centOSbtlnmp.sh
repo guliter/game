@@ -220,7 +220,10 @@ start_menu(){
 	;;
     2)
     install_lamp
-    ;;                                    
+    ;;
+    3)
+    install_lnmp71
+    ;;
 	0)
 	exit 1
 	;;
