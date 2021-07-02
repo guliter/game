@@ -94,8 +94,8 @@ noticeTG(){
     BtPanelURL=`echo 14 | bt |grep Internet`
     username=`echo 14 | bt |grep username:`
     password=`echo 14 | bt |grep password:`
-    time=`echo $(date +%F%n%T)`
-    message_text="Boss，您的服务器搭建完毕了....$time
+    time=`echo $(date (+%F%n%T))`
+    message_text="Boss，您的服务器搭建完毕了【$time】
     $BtPanelURL
     $username
     $password"
@@ -175,8 +175,8 @@ noticeTG(){
     BtPanelURL=`echo 14 | bt |grep Internet`
     username=`echo 14 | bt |grep username:`
     password=`echo 14 | bt |grep password:`
-    time=`echo $(date +%F%n%T)`
-    message_text="Boss，您的服务器搭建完毕了....$time
+    time=`echo $(date (+%F%n%T))`
+    message_text="Boss，您的服务器搭建完毕了【$time】
     $BtPanelURL
     $username
     $password"
@@ -258,8 +258,8 @@ noticeTG(){
     BtPanelURL=`echo 14 | bt |grep Internet`
     username=`echo 14 | bt |grep username:`
     password=`echo 14 | bt |grep password:`
-    time=`echo $(date +%F%n%T)`
-    message_text="Boss，您的服务器搭建完毕了....$time
+    time=`echo $(date (+%F%n%T))`
+    message_text="Boss，您的服务器搭建完毕了【$time】
     $BtPanelURL
     $username
     $password"
