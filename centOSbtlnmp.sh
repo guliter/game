@@ -69,7 +69,7 @@ init_env(){
     bash /www/server/panel/install/install_soft.sh 1 install php 7.3 &>/dev/null || echo 'Ignore Error' &>/dev/null
     d=$(date "+%s")
     echo "php安装完成，耗时：$(($d-$c))s"
-    echo "开始安装mysql 5.6"
+    echo "开始安装mysql mariadb_10.3"
     bash /www/server/panel/install/install_soft.sh 1 install mysql 5.6 &>/dev/null
     e=$(date "+%s")
     echo "mysql安装完成，耗时：$(($e-$d))s"    
@@ -145,11 +145,11 @@ init_env(){
     bash /www/server/panel/install/install_soft.sh 1 install nginx 1.17 &>/dev/null
     c=$(date "+%s")
     echo "Apache安装完成，耗时：$(($c-$b))s"
-    echo "开始安装php7.1"
+    echo "开始安装php7.3"
     bash /www/server/panel/install/install_soft.sh 1 install php 7.3 &>/dev/null || echo 'Ignore Error' &>/dev/null
     d=$(date "+%s")
     echo "php安装完成，耗时：$(($d-$c))s"
-    echo "开始安装mysql 5.6"
+    echo "开始安装mysql mariadb_10.3"
     bash /www/server/panel/install/install_soft.sh 1 install mysql 5.6 &>/dev/null
     e=$(date "+%s")
     echo "mysql安装完成，耗时：$(($e-$d))s"    
@@ -159,66 +159,7 @@ init_env(){
     echo "phpadmin安装完成，耗时：$(($f-$e))s"
     echo "所有软件已安装完毕"
     #添加软件到首页    
-    echo '["linuxsys", "webssh", "nginx", "php-7.3", "mysql", "phpmyadmin"]' > /www/server/panel/config/index.json
-    echo "正在重启所有服务器组件"
-    for file in `ls /etc/init.d`
-    do if [ -x /etc/init.d/${file} ];  then 
-        /etc/init.d/$file restart
-    fi done
-    g=$(date "+%s")        
-    echo "重启各种服务组件完毕，耗时：$(($g-$f))s"
-}
-noticeTG(){
-    TOKEN=1507893381:AAEFx0U1gXdduT2mmqZ_VDImDuDsnczhB2o     #TG机器人API—Token口令
-    chat_ID=427481352      #推送消息的ID（可以是个人、也可以是Group或Chanel）
-    BtPanelURL=`echo 14 | bt |grep Internet`
-    username=`echo 14 | bt |grep username:`
-    password=`echo 14 | bt |grep password:`
-    message_text="Boss，您的服务器搭建完毕了....
-    $BtPanelURL
-    $username
-    $password"
-    #echo "$message_text"
-    curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d chat_id=${chat_ID} -d text="${message_text}" > /dev/null    
-}
-
-install_lnmp71(){
-    #check root
-[ $(id -u) != "0" ] && { echo "错误: 您必须以root用户运行此脚本"; exit 1; }
-rm -rf all
-rm -rf $0
-init(){
-    echo "懒人部署宝塔环境：一般耗时大约十几分钟"
-    echo "开始安装宝塔命令"
-    a=$(date "+%s")
-    yum install -y wget &>/dev/null
-    #脚本来源于宝塔官网
-    wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &>/dev/null
-    echo y | bash install.sh &>/dev/null
-    b=$(date "+%s")    
-    echo "宝塔面板已完成安装 耗时：$(($b-$a))s"
-}
-
-init_env(){
-    echo "开始安装NGINX1.17"
-    bash /www/server/panel/install/install_soft.sh 1 install nginx 1.17 &>/dev/null
-    c=$(date "+%s")
-    echo "Apache安装完成，耗时：$(($c-$b))s"
-    echo "开始安装php7.1"
-    bash /www/server/panel/install/install_soft.sh 1 install php 7.1 &>/dev/null || echo 'Ignore Error' &>/dev/null
-    d=$(date "+%s")
-    echo "php安装完成，耗时：$(($d-$c))s"
-    echo "开始安装mysql 5.6"
-    bash /www/server/panel/install/install_soft.sh 1 install mysql 5.6 &>/dev/null
-    e=$(date "+%s")
-    echo "mysql安装完成，耗时：$(($e-$d))s"    
-    echo "开始安装phpadmin4.9"
-    bash /www/server/panel/install/install_soft.sh 1 install phpmyadmin 4.9 &>/dev/null || echo 'Ignore Error' &>/dev/null
-    f=$(date "+%s")
-    echo "phpadmin安装完成，耗时：$(($f-$e))s"
-    echo "所有软件已安装完毕"
-    #添加软件到首页    
-    echo '["linuxsys", "webssh", "nginx", "php-7.1", "mysql", "phpmyadmin"]' > /www/server/panel/config/index.json
+    echo '["linuxsys", "webssh", "apache", "php-7.3", "mysql", "phpmyadmin"]' > /www/server/panel/config/index.json
     echo "正在重启所有服务器组件"
     for file in `ls /etc/init.d`
     do if [ -x /etc/init.d/${file} ];  then 
@@ -262,6 +203,7 @@ bt 14
 
 }
 
+#开始菜单
 start_menu(){
     clear
     echo
