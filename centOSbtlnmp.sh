@@ -94,7 +94,7 @@ noticeTG(){
     BtPanelURL=`echo 14 | bt |grep Internet`
     username=`echo 14 | bt |grep username:`
     password=`echo 14 | bt |grep password:`
-    message_text="Boss，您的服务器搭建完毕了....
+    message_text="Boss，您的服务器搭建完毕了....$(date +%F%n%T)
     $BtPanelURL
     $username
     $password"
