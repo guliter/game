@@ -123,7 +123,7 @@ bt 14
   
 }
 
-install_lnmp73(){
+install_lnmp(){
     #check root
 [ $(id -u) != "0" ] && { echo "错误: 您必须以root用户运行此脚本"; exit 1; }
 rm -rf all
@@ -276,7 +276,7 @@ start_menu(){
     read -p "请输入数字:" num
     case "$num" in
     1)
-    install_lnmp73
+    install_lnmp
 	;;
     2)
     install_lamp
