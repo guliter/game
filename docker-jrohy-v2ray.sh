@@ -44,7 +44,7 @@ check_docker() {
 echo "恭喜，您已完成基础环境安装，可执行安装程序。"
 
 
-# 开始安装人人影视客户端
+# 开始安装
 install_v2ray(){
     docker run -d --name v2ray --restart always --network host jrohy/v2ray   
 }
