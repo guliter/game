@@ -70,7 +70,7 @@ init_env(){
     d=$(date "+%s")
     echo "php安装完成，耗时：$(($d-$c))s"
     echo "开始安装mysql mariadb_10.3"
-    bash /www/server/panel/install/install_soft.sh 1 install mysql 5.6 &>/dev/null
+    bash /www/server/panel/install/install_soft.sh 1 install mysql 5.5 &>/dev/null
     e=$(date "+%s")
     echo "mysql安装完成，耗时：$(($e-$d))s"    
     echo "开始安装phpadmin4.9"
@@ -151,7 +151,7 @@ init_env(){
     d=$(date "+%s")
     echo "php安装完成，耗时：$(($d-$c))s"
     echo "开始安装mysql 5.6"
-    bash /www/server/panel/install/install_soft.sh 1 install mysql 5.6 &>/dev/null
+    bash /www/server/panel/install/install_soft.sh 1 install mysql 5.5 &>/dev/null
     e=$(date "+%s")
     echo "mysql安装完成，耗时：$(($e-$d))s"    
     echo "开始安装phpadmin4.9"
@@ -234,7 +234,7 @@ init_env(){
     d=$(date "+%s")
     echo "php安装完成，耗时：$(($d-$c))s"
     echo "开始安装mysql 5.6"
-    bash /www/server/panel/install/install_soft.sh 1 install mysql 5.6 &>/dev/null
+    bash /www/server/panel/install/install_soft.sh 1 install mysql 5.5 &>/dev/null
     e=$(date "+%s")
     echo "mysql安装完成，耗时：$(($e-$d))s"    
     echo "开始安装phpadmin4.9"
@@ -293,9 +293,9 @@ start_menu(){
     clear
     echo
     white "—————————————基础环境安装——————————————"
-    red "1.安装LNMP-Nginx-php-mysql【7.3】 "
+    red "1.安装LNMP-Nginx-php-mysql【7.3-5.5】 "
     blue "2.安装LAMP-Apache-php-mysql "
-    red "3.安装LNMP-Nginx-php-mysql【7.1】 "
+    red "3.安装LNMP-Nginx-php-mysql【7.1-5.5】 "
     white ""
     echo
     echo
