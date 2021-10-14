@@ -57,12 +57,13 @@ v2print() {
 }
 
 uuids() {
-sed '/^ .*/s/ //g' /docker/v2/config.json
 dk=`sed -n '13p' /docker/v2/config.json`
 uuid55=`sed -n '8p' /docker/v2/config.json`
 clear
 	echo "科学上网的端口号为： $uuid55"
 	echo "科学上网的uuid为： $dk"
+	echo "Vmess修改端口和UUID额外ID:64"
+}
 }
 
 
@@ -79,12 +80,12 @@ ofv2print() {
 clear
 cat <<-EOF
             #################################
-            #    以下安装均基于v2ray        #
-            # 1、仅安装科学上网             #
-            # 2、仅安装内网穿透             #
-            # 3、同时安装科学上网和内网穿透 #
-	    # 5、显示ID                       #
-            # 4、退出                       #
+            #    Docker ---- V2ray         #
+            # 1、仅安装科学上网              #
+            # 2、仅安装内网穿透              #
+            # 3、同时安装科学上网和内网穿透   #
+	    # 4、显示UUID以及端口            #
+            # 5、退出                       #
             #################################
 EOF
 
@@ -110,11 +111,11 @@ case "$choice" in
 	v2print
 	ofv2print
 	;;
-5)
+4)
 	uuids
 	;;
 
-4)
+5)
 	exit
 	;;
 *)
