@@ -56,6 +56,15 @@ v2print() {
 	echo "科学上网的uuid为： $uuid1"
 }
 
+uuids() {
+uuid55=sed -n '13p' /docker/v2/config.json
+dk=sed -n '8p' /docker/v2/config.json
+	echo ""
+	echo "科学上网的端口号为： $uuid55"
+	echo "科学上网的uuid为： $dk"
+}
+
+
 ofv2print() {
 	echo ""
 	echo "写入内网服务器的端口号为： $pt3"
@@ -99,8 +108,8 @@ case "$choice" in
 	v2print
 	ofv2print
 	;;
-44)
-echo 外网终端上使用的端口号为：sed -n '13p' /docker/v2/config.json
+5)
+	uuids
 ;;
 
 4)
