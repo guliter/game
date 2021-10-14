@@ -99,6 +99,8 @@ case "$choice" in
 	v2print
 	ofv2print
 	;;
+44)
+echo "外网终端上使用的端口号为：sed -n '13p' /docker/v2/config.json
 4)
 	exit
 	;;
