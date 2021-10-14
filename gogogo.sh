@@ -54,6 +54,8 @@ v2print() {
 	echo ""
 	echo "科学上网的端口号为： $pt1"
 	echo "科学上网的uuid为： $uuid1"
+	echo "Vmess修改端口和UUID额外ID:64"
+	
 }
 
 uuids() {
