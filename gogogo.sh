@@ -64,7 +64,7 @@ clear
 	echo "科学上网的uuid为： $dk"
 	echo "Vmess修改端口和UUID额外ID:64"
 }
-}
+
 
 
 ofv2print() {
