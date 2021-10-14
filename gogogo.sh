@@ -57,8 +57,12 @@ v2print() {
 }
 
 uuids() {
-uuid55=`sed -n '13p' /docker/v2/config.json`
-dk=`sed -n '8p' /docker/v2/config.json`
+sed '/^ .*/s/ //g' /docker/v2/config.json
+dk=`sed -n '13p' /docker/v2/config.json`
+uuid55=`sed -n '8p' /docker/v2/config.json`
+
+awk '{printf("%s ",$0);}END{print}' a.txt |sed 's/ //g'
+
 	echo ""
 	echo "科学上网的端口号为： $uuid55"
 	echo "科学上网的uuid为： $dk"
