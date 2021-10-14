@@ -110,7 +110,7 @@ case "$choice" in
 	;;
 5)
 	uuids
-;;
+	;;
 
 4)
 	exit
