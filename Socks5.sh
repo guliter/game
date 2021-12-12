@@ -217,7 +217,7 @@ service ss5 start
 echo ""
 echo "Socks5安装完毕！"
 echo ""
-red"输入"s5"启动Socks5控制面板"
+red "输入"s5"启动Socks5控制面板"
 echo ""
 echo "默认用户名: "${uname}
 echo "默认密码  : "${upasswd}
@@ -248,10 +248,7 @@ rm -rf /var/log/ss5
 }
 
 Clear
-Download
-InstallSock5
-InstallPanel
-check
+
 
 
 
