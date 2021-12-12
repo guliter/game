@@ -218,13 +218,12 @@ InstallPanel
 check
 	fi
 	start_menu(){
-	red "--->Socks5服务已经安装！<---"echo
- 	white "—————————————Socks5基础服务——————————————"
+	red "--->Socks5服务已经安装！<---"
+	echo
    	 red "1.Socks5--显示信息"
    	 blue "2.Socks5--控制面板"
  	 green "3.卸载Socks5"
-   	 yellow "当前服务状态：已经安装服务" 
-    blue "—————————————【如需退出按【0】退出选项】——————————————"
+   	 blue "【如需退出按【0】退出选项】"
     echo
     read -p "请输入数字:" num
     case "$num" in
