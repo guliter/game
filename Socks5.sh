@@ -210,7 +210,7 @@ rm -rf /var/log/ss5
 
 
 
-	if [[ ! -d "/etc/xray" ]]; then
+	if [[ ! -d "/etc/sysconfig/ss5" ]]; then
 Clear
 Download
 InstallSock5
