@@ -83,7 +83,7 @@ done
 systemctl start xray
 systemctl status xray
 echo
-#echo -e "部署完成:$ips"
+red  "部署完成检查首发IP是否正确:$ips"
 red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
