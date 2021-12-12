@@ -230,9 +230,9 @@ check
 	fi
 	start_menu(){
 	red "--->Socks5服务已经安装！<---"
-   	 red "1.Socks5--显示信息"
-   	 blue "2.Socks5--控制面板"
- 	 green "3.卸载Socks5"
+   	 red "--->1.Socks5--显示信息<---"
+   	 blue "--->2.Socks5--控制面板<---"
+ 	 green "--->3.卸载Socks5<---"
    	 blue "【如需退出按【0】退出选项】"
     echo
     read -p "请输入数字:" num
