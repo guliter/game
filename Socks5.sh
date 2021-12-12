@@ -208,10 +208,19 @@ rm -f /etc/pam.d/ss5
 rm -rf /var/log/ss5
 }
 
+
+
+	if [[ ! -d "/etc/xray" ]]; then
 Clear
 Download
 InstallSock5
 InstallPanel
 check
+	fi
+	 red "--->Socks5服务已经安装！"
+	 s5
+
+
+
 
 
