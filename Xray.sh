@@ -1,6 +1,29 @@
 #/bin/sh https://github.com/none-blue/xray-amd64/raw/main/xray
 
-ws_port="80"
+# 设置字体颜色函数
+function blue(){
+    echo -e "\033[34m\033[01m $1 \033[0m"
+}
+function green(){
+    echo -e "\033[32m\033[01m $1 \033[0m"
+}
+function greenbg(){
+    echo -e "\033[43;42m\033[01m $1 \033[0m"
+}
+function red(){
+    echo -e "\033[31m\033[01m $1 \033[0m"
+}
+function redbg(){
+    echo -e "\033[37;41m\033[01m $1 \033[0m"
+}
+function yellow(){
+    echo -e "\033[33m\033[01m $1 \033[0m"
+}
+function white(){
+    echo -e "\033[37m\033[01m $1 \033[0m"
+}
+
+ws_port="51555"
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
 ips=(
@@ -64,3 +87,11 @@ done
 
 systemctl start xray
 systemctl status xray
+
+echo 
+echo -e "部署完成$ips"
+red "UUID：e98b29e6-83bb-4128-a439-3d0fcb5738c2"
+red "默认端口：51555"
+red "传输协议：WS"
+echo 
+
