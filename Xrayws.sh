@@ -48,11 +48,15 @@ Vmess(){
 }
 
 
-Vmess_stop(){
+Vmess_start(){
     #check root
     systemctl stop xray
 }
 
+Vmess_stop(){
+    #check root
+   systemctl start xray
+}
 
 
 Vmess_status(){
@@ -84,6 +88,7 @@ start_menu(){
     green "3.Socks5---【服务停止 Vmess】"
     yellow "4.Socks5---【查看状态 Vmess】"
     blue "5.Socks5---【查看日志 Vmess】"
+    green "6.Socks5---【启动服务 Vmess】"
     red "—————————————【如需退出按【0】退出选项】——————————————"
     
     echo
@@ -103,6 +108,9 @@ start_menu(){
     ;;
     5)
     Vmess_pager
+    ;;
+    6)
+    Vmess_start
     ;;
     0)
     exit 1
