@@ -210,7 +210,7 @@ rm -rf /var/log/ss5
 
 
 
-	if [[ ! -d "/etc/sysconfig/ss5" ]]; then
+	if [[ ! -d "/etc/opt/ss5" ]]; then
 Clear
 Download
 InstallSock5
@@ -218,7 +218,6 @@ InstallPanel
 check
 	fi
 	 red "--->Socks5服务已经安装！"
-	 s5
 
 
 
