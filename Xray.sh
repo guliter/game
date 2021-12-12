@@ -84,6 +84,7 @@ systemctl start xray
 systemctl status xray
 echo
 red  "部署完成检查首发IP是否正确:$ips"
+yellow  "否则必须重新安装记得修改正确IP"
 red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
