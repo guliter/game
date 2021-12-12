@@ -214,8 +214,9 @@ userstp()
 us=`sed -n '2p'  /etc/opt/ss5/ss5.passwd`
 
 
-uuid55=`sed -n '8p' /docker/v2/config.json`
-echo "账号密码： $us"
+pr=`sed -n '2p'  /etc/sysconfig/ss5`
+
+red "账号密码： $us 端口：$pr"
 
 }
 
