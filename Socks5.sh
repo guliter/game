@@ -246,7 +246,7 @@ rm -f /etc/rc.d/init.d/ss5
 rm -f /etc/pam.d/ss5
 rm -rf /var/log/ss5
 }
-
+Clear
 Download
 InstallSock5
 InstallPanel
