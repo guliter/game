@@ -96,8 +96,7 @@ start_menu(){
     green "3.Xray---【服务停止 Vmess】"
     yellow "4.Xray---【查看状态 Vmess】"
     blue "5.Xray---【查看日志 Vmess】"
-    green "6.Xray---【启动服务 Vmess】"
-    yellow "当前服务状态：" 
+    green "6.Xray---【启动服务 Vmess】" 
     xrayVersionManageMenu
     blue "—————————————【如需退出按【0】退出选项】——————————————"
     echo
