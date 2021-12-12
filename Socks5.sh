@@ -217,6 +217,7 @@ InstallSock5
 InstallPanel
 check
 	fi
+	check
 	start_menu(){
 	red "--->Socks5服务已经安装！<---"
 	echo
