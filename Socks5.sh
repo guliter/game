@@ -178,7 +178,6 @@ cd /root
 rm -rf /root/Socks5
 rm -rf /root/install.sh
 service ss5 start
-clear
 echo ""
 echo "Socks5安装完毕！"
 echo ""
