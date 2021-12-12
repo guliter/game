@@ -229,7 +229,6 @@ check
 	check
 	start_menu(){
 	red "--->Socks5服务已经安装！<---"
-	echo
    	 red "1.Socks5--显示信息"
    	 blue "2.Socks5--控制面板"
  	 green "3.卸载Socks5"
