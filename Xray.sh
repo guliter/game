@@ -1,4 +1,4 @@
-#/bin/sh
+#/bin/sh https://github.com/none-blue/xray-amd64/raw/main/xray
 
 ws_port="80"
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
@@ -13,7 +13,7 @@ ips=(
 )
 
 # Xray Installation
-wget -O /usr/local/bin/xray https://github.com/none-blue/xray-amd64/raw/main/xray
+wget -O /usr/local/bin/xray https://raw.githubusercontent.com/guliter/game/main/xray
 chmod +x /usr/local/bin/xray
 
 cat <<EOF > /etc/systemd/system/xray.service
