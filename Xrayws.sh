@@ -41,9 +41,9 @@ install_pack() {
 
 xrayVersionManageMenu() {
 	if [[ ! -d "/etc/xray" ]]; then
-		red " ---> 没有检测到安装目录，请执行脚本安装内容"
+		red " --->>> 服务未曾安装，请执行【1】进行安装 <<<---"
 	fi
-	 red "--->Xray-Vmess-WebSocket多IP服务已经安装！"
+	 red "--->>> Xray-Vmess-WebSocket多IP服务已经安装！<<<---"
 	
 
 }
