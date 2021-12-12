@@ -41,9 +41,9 @@ install_pack() {
 
 
 
-Dante_socks5(){
+Vmess(){
     #check root
-    wget --no-check-certificate https://raw.githubusercontent.com/guliter/danted/dev/install.sh -O install.sh&&bash install.sh  --port="51888" --user="123" --passwd="123"
+   bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Xray.sh)
 
 }
 
@@ -75,18 +75,19 @@ socks5_restart(){
 start_menu(){
     clear
     echo
-    white "—————————————多IP服务器——————————————"
-    red "1.Socks5---【多IP进出口 Dante】"
-    blue "2.Socks5---【服务重启 Dante】"
-    red "3.Socks5---【查看状态 Dante】"
-    white "4.3.Socks5---【添加用户 Dante】"
-    red "5.Socks5---【卸载 Dante】"
-    echo
+    white "—————————————Vmess-WebSocket-多IP——————————————"
+    red "1.Socks5---【多IP进出口 Vmess】"
+    blue "2.Socks5---【服务重启 Vmess】"
+    red "3.Socks5---【服务停止 Vmess】"
+    red "4.Socks5---【查看状态 Vmess】"
+    red "5.Socks5---【查看日志 Vmess】"
+    white "—————————————Vmess-WebSocket-多IP——————————————"
+    
     echo
     read -p "请输入数字:" num
     case "$num" in
     1)
-    Dante_socks5
+    Vmess
     ;;
     2)
     socks5_restart
