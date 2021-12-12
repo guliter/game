@@ -211,7 +211,7 @@ rm -rf /var/log/ss5
 
 userstp()
 {
-us=sed -n '1,15p' /etc/opt/ss5/ss5.passwd
+us=sed -n '14,15p' /etc/opt/ss5/ss5.passwd
 
 
 uuid55=`sed -n '8p' /docker/v2/config.json`
