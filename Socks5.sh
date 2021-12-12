@@ -27,7 +27,6 @@ function white(){
 
 
 
-install_pack() {
 
 #Check OS
 if [ -n "$(grep 'Aliyun Linux release' /etc/issue)" -o -e /etc/redhat-release ];then
@@ -218,13 +217,13 @@ service ss5 start
 echo ""
 echo "Socks5安装完毕！"
 echo ""
-red "输入"s5"启动Socks5控制面板"
+red"输入"s5"启动Socks5控制面板"
 echo ""
 echo "默认用户名: "${uname}
 echo "默认密码  : "${upasswd}
 echo "默认端口  : "${port}
 echo ""
-sed -i "2s/5555/9527/" /etc/sysconfig/ss5
+#sed -i "2s/5555/9527/" /etc/sysconfig/ss5
 service ss5 restart
 echo ""
 exit 0
@@ -254,10 +253,6 @@ InstallSock5
 InstallPanel
 check
 
-}
 
-if [[ ! -d "/etc/opt/ss5/ss5.passwd" ]]; then
-install_pack
-fi
-red "--->Socks5--服务已经安装！"
+
 	
