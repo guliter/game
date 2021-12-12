@@ -98,7 +98,8 @@ start_menu(){
     blue "5.Socks5---【查看日志 Vmess】"
     green "6.Socks5---【启动服务 Vmess】"
     echo
-    yellow "当前服务状态" xrayVersionManageMenu
+    yellow "当前服务状态" 
+    xrayVersionManageMenu
     echo
     red "—————————————【如需退出按【0】退出选项】——————————————"
     echo
