@@ -209,6 +209,15 @@ rm -rf /var/log/ss5
 }
 
 
+userstp()
+{
+us=`sed /etc/opt/ss5/ss5.passwd`
+uuid55=`sed -n '8p' /docker/v2/config.json`
+echo "账号密码： $us"
+
+}
+
+
 
 	if [[ ! -d "/etc/opt/ss5" ]]; then
 Clear
@@ -229,7 +238,7 @@ check
     read -p "请输入数字:" num
     case "$num" in
     1)
-    check
+    userstp
     ;;
     2)
     s5
