@@ -91,12 +91,12 @@ start_menu(){
     clear
     echo
     white "—————————————Vmess---WebSocket---多IP——————————————"
-    red "1.Socks5---【多IP进出口 Vmess】"
-    blue "2.Socks5---【服务重启 Vmess】"
-    green "3.Socks5---【服务停止 Vmess】"
-    yellow "4.Socks5---【查看状态 Vmess】"
-    blue "5.Socks5---【查看日志 Vmess】"
-    green "6.Socks5---【启动服务 Vmess】"
+    red "1.Xray---【多IP进出口 Vmess】"
+    blue "2.Xray---【服务重启 Vmess】"
+    green "3.Xray---【服务停止 Vmess】"
+    yellow "4.Xray---【查看状态 Vmess】"
+    blue "5.Xray---【查看日志 Vmess】"
+    green "6.Xray---【启动服务 Vmess】"
     yellow "当前服务状态：" 
     xrayVersionManageMenu
     blue "—————————————【如需退出按【0】退出选项】——————————————"
