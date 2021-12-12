@@ -217,7 +217,38 @@ InstallSock5
 InstallPanel
 check
 	fi
-	 red "--->Socks5服务已经安装！"
+	start_menu(){
+	red "--->Socks5服务已经安装！<---"echo
+ 	white "—————————————Socks5基础服务——————————————"
+   	 red "1.Socks5--显示信息"
+   	 blue "2.Socks5--控制面板"
+ 	 green "3.卸载Socks5"
+   	 yellow "当前服务状态：已经安装服务" 
+    blue "—————————————【如需退出按【0】退出选项】——————————————"
+    echo
+    read -p "请输入数字:" num
+    case "$num" in
+    1)
+    check
+    ;;
+    2)
+    s5
+    ;;
+    3)
+    unInstall
+    ;;
+    0)
+    exit 1
+    ;;
+    *)
+    clear
+    echo "请输入正确数字"
+    sleep 2s
+    start_menu
+    ;;
+    esac
+}
+start_menu
 
 
 
