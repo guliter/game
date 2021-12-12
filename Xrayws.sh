@@ -97,10 +97,10 @@ start_menu(){
     yellow "4.Socks5---【查看状态 Vmess】"
     blue "5.Socks5---【查看日志 Vmess】"
     green "6.Socks5---【启动服务 Vmess】"
-    red "当前服务状态" xrayVersionManageMenu
-    
+    echo
+    yellow "当前服务状态" xrayVersionManageMenu
+    echo
     red "—————————————【如需退出按【0】退出选项】——————————————"
-    
     echo
     read -p "请输入数字:" num
     case "$num" in
