@@ -47,27 +47,30 @@ Vmess(){
 
 }
 
-uninstall_socks5(){
-    bash install.sh --uninstall
-}
 
-socks5_add(){
-    /etc/init.d/sockd add 123 123
-}
-
-
-
-socks5_status(){
+Vmess_stop(){
     #check root
-    /etc/init.d/sockd  status
-
+    systemctl stop xray
 }
 
-socks5_restart(){
+
+
+Vmess_status(){
     #check root
-    /etc/init.d/sockd  restart
+    systemctl status xray
 
 }
+
+Vmess_restart(){
+    #check root
+    systemctl restart xray
+}
+
+Vmess_pager(){
+    #check root
+    journalctl -xe --no-pager -u xray
+}
+
 
 
 
@@ -90,16 +93,16 @@ start_menu(){
     Vmess
     ;;
     2)
-    socks5_restart
+    Vmess_restart
     ;;
     3)
-    socks5_status
+    Vmess_stop
     ;;
     4)
-    socks5_add
+    Vmess_status
     ;;
     5)
-    uninstall_socks5
+    Vmess_pager
     ;;
     0)
     exit 1
@@ -114,4 +117,4 @@ start_menu(){
 }
 
 start_menu
-socks5_status
+Vmess_status
