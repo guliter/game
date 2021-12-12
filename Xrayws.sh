@@ -78,13 +78,13 @@ Vmess_pager(){
 start_menu(){
     clear
     echo
-    white "—————————————Vmess-WebSocket-多IP——————————————"
+    white "—————————————Vmess---WebSocket---多IP——————————————"
     red "1.Socks5---【多IP进出口 Vmess】"
     blue "2.Socks5---【服务重启 Vmess】"
-    red "3.Socks5---【服务停止 Vmess】"
-    red "4.Socks5---【查看状态 Vmess】"
-    red "5.Socks5---【查看日志 Vmess】"
-    white "—————————————Vmess-WebSocket-多IP——————————————"
+    green "3.Socks5---【服务停止 Vmess】"
+    yellow "4.Socks5---【查看状态 Vmess】"
+    blue "5.Socks5---【查看日志 Vmess】"
+    red "—————————————【如需退出按【0】退出选项】——————————————"
     
     echo
     read -p "请输入数字:" num
