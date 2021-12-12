@@ -228,7 +228,6 @@ InstallSock5
 InstallPanel
 check
 	fi
-	check
 	start_menu(){
 	red "--->Socks5服务已经安装！<---"
    	 red "1.Socks5--显示信息"
