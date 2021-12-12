@@ -177,42 +177,6 @@ check(){
 cd /root
 rm -rf /root/Socks5
 rm -rf /root/install.sh
-errorMsg=""
-isError=false
-if [ ! -f "/usr/local/bin/s5" ] ; then
-		errorMsg=${errorMsg}"001|"
-		isError=true
-		
-fi
-if  [ ! -f "/etc/opt/ss5/service.sh" ]; then
-	errorMsg=${errorMsg}"002|" 
-	isError=true
-	
-fi
-if  [ ! -f "/etc/opt/ss5/user.sh" ]; then
-	errorMsg=${errorMsg}"003|"
-	isError=true	
-fi
-
-if  [ ! -f "/etc/opt/ss5/ss5.conf" ]; then
-	errorMsg=${errorMsg}"004|"
-	isError=true	
-fi
-
-if [ "$isError" = "true" ] ; then
-unInstall
-clear
-  echo ""
-  echo "缺失文件，安装失败！！！"
-  echo "错误提示："${errorMsg}
-  exit 0
-else
-clear
-echo ""
-#service ss5 start
-if [[ ${newVersion} = "7" ]] ; then
-systemctl daemon-reload
-fi
 service ss5 start
 echo ""
 echo "Socks5安装完毕！"
@@ -225,9 +189,6 @@ echo "默认端口  : "${port}
 echo ""
 sed -i "2s/5555/$port/" /etc/sysconfig/ss5
 service ss5 restart
-echo ""
-exit 0
-fi
 }
 	
 #6.卸载
@@ -251,5 +212,6 @@ Clear
 Download
 InstallSock5
 InstallPanel
+check
 
 
