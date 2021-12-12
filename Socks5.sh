@@ -1,6 +1,13 @@
 #!/bin/sh
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
+
+
+
+
+
+install_pack() {
+
 #Check OS
 if [ -n "$(grep 'Aliyun Linux release' /etc/issue)" -o -e /etc/redhat-release ];then
     OS=CentOS
@@ -202,7 +209,7 @@ echo ""
 exit 0
 fi
 }
-
+	
 #6.卸载
 unInstall(){
 service ss5 stop
@@ -225,3 +232,11 @@ Download
 InstallSock5
 InstallPanel
 check
+
+}
+
+if [[ ! -d "/etc/opt/ss5/ss5.passwd" ]]; then
+install_pack
+fi
+red "--->Socks5--服务已经安装！"
+	
