@@ -223,7 +223,7 @@ echo "默认用户名: "${uname}
 echo "默认密码  : "${upasswd}
 echo "默认端口  : "${port}
 echo ""
-#sed -i "2s/5555/9527/" /etc/sysconfig/ss5
+sed -i "2s/5555/$port/" /etc/sysconfig/ss5
 service ss5 restart
 echo ""
 exit 0
