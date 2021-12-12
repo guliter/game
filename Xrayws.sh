@@ -43,7 +43,7 @@ xrayVersionManageMenu() {
 	if [[ ! -d "/etc/xray" ]]; then
 		red " ---> 没有检测到安装目录，请执行脚本安装内容"
 	fi
-	 red "--->已经安装！"
+	 red "--->Xray-Vmess-WebSocket多IP服务已经安装！"
 	
 
 }
@@ -100,7 +100,6 @@ start_menu(){
     echo
     yellow "当前服务状态" 
     xrayVersionManageMenu
-    echo
     red "—————————————【如需退出按【0】退出选项】——————————————"
     echo
     read -p "请输入数字:" num
