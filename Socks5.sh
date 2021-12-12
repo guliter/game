@@ -147,7 +147,7 @@ chmod +x /usr/local/bin/s5
 #设置默认用户名、默认开启帐号验证
 uname="123"
 upasswd="123"
-port="51888"
+port="9257"
 confFile=/etc/opt/ss5/ss5.conf
 echo -e $uname $upasswd >> /etc/opt/ss5/ss5.passwd
 sed -i '87c auth    0.0.0.0/0               -               u' $confFile
@@ -178,6 +178,7 @@ cd /root
 rm -rf /root/Socks5
 rm -rf /root/install.sh
 service ss5 start
+clear
 echo ""
 echo "Socks5安装完毕！"
 echo ""
