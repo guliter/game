@@ -40,44 +40,11 @@ install_pack() {
 
 
 xrayVersionManageMenu() {
-	echoContent skyBlue "\n进度  $1/${totalProgress} : Xray版本管理"
-	if [[ ! -d "/etc/v2ray-agent/xray/" ]]; then
-		echoContent red " ---> 没有检测到安装目录，请执行脚本安装内容"
-		menu
-		exit 0
+	if [[ ! -d "/etc/xray" ]]; then
+		red " ---> 没有检测到安装目录，请执行脚本安装内容"
 	fi
-	echoContent red "\n=============================================================="
-	echoContent yellow "1.升级"
-	echoContent yellow "2.回退"
-	echoContent yellow "3.关闭Xray-core"
-	echoContent yellow "4.打开Xray-core"
-	echoContent yellow "5.重启Xray-core"
-	echoContent red "=============================================================="
-	read -r -p "请选择:" selectXrayType
-	if [[ "${selectXrayType}" == "1" ]]; then
-		updateXray
-	elif [[ "${selectXrayType}" == "2" ]]; then
-		echoContent yellow "\n1.由于Xray-core频繁更新，只可以回退最近的两个版本"
-		echoContent yellow "2.不保证回退后一定可以正常使用"
-		echoContent yellow "3.如果回退的版本不支持当前的config，则会无法连接，谨慎操作"
-		echoContent skyBlue "------------------------Version-------------------------------"
-		curl -s https://api.github.com/repos/XTLS/Xray-core/releases | jq -r .[].tag_name | head -2 | awk '{print ""NR""":"$0}'
-		echoContent skyBlue "--------------------------------------------------------------"
-		read -r -p "请输入要回退的版本：" selectXrayVersionType
-		version=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | jq -r .[].tag_name | head -2 | awk '{print ""NR""":"$0}' | grep "${selectXrayVersionType}:" | awk -F "[:]" '{print $2}')
-		if [[ -n "${version}" ]]; then
-			updateXray "${version}"
-		else
-			echoContent red "\n ---> 输入有误，请重新输入"
-			xrayVersionManageMenu 1
-		fi
-	elif [[ "${selectXrayType}" == "3" ]]; then
-		handleXray stop
-	elif [[ "${selectXrayType}" == "4" ]]; then
-		handleXray start
-	elif [[ "${selectXrayType}" == "5" ]]; then
-		reloadCore
-	fi
+	 red "--->已经安装！"
+	
 
 }
 
@@ -130,7 +97,8 @@ start_menu(){
     yellow "4.Socks5---【查看状态 Vmess】"
     blue "5.Socks5---【查看日志 Vmess】"
     green "6.Socks5---【启动服务 Vmess】"
-    yellow "7.xray版本管理"
+    yellow "状态"
+    xrayVersionManageMenu
     red "—————————————【如需退出按【0】退出选项】——————————————"
     
     echo
