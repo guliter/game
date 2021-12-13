@@ -58,12 +58,13 @@ Vmess(){
 
 Vmess_start(){
     #check root
-    systemctl stop xray
+    systemctl start xray
+    
 }
 
 Vmess_stop(){
     #check root
-   systemctl start xray
+   systemctl stop xray
 }
 
 
