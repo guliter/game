@@ -3,9 +3,7 @@ import os,signal
 import subprocess
 url_3proxy = 'https://raw.githubusercontent.com/pylist/s5/master/3proxy.sh'
 def re_ip():
-
-            ip_addr =
-            (                            
+ip_addr = ( 
 43.132.130.43
 43.132.130.44
 )
