@@ -3,15 +3,14 @@ import os,signal
 import subprocess
 url_3proxy = 'https://raw.githubusercontent.com/pylist/s5/master/3proxy.sh'
 def re_ip():
-    try:
-            ip_addr = (                            
 
+            ip_addr =
+            (                            
 43.132.130.43
 43.132.130.44
 )
-
     except FileNotFoundError:
-        print('无法打开指定的文件!请创建IP地址文本文件!!!/root下创建 ipaddr.txt')
+        print('无法打开指定的文件!请创建IP地址文本文件!!!')
     re_ipaddr = re.findall(r'10\.\d\.\d\.\d{1,3}', ip_addr)
     return re_ipaddr
 ip_addr = re_ip()
