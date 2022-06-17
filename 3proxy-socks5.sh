@@ -116,10 +116,10 @@ Install
     bandlidele
     ;;
     4)
-    service 3proxy start
+    systemctl start 3proxy.service
     ;;
     5)
-    pkill 3proxy
+    systemctl stop 3proxy.service
     ;;
     6)
     outip
