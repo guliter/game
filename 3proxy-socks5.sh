@@ -94,7 +94,7 @@ Install
 	echo ""
    	 red "--->1.3proxy-socks5添加用户<---"
    	 blue "--->2.3proxy-socks5删除用户---"
- 	 green "--->3.3proxy-socks5限制流量<---"
+ 	 green "--->3.3proxy-socks5解除默认带宽<---"
 	 red "--->4.3proxy-socks5启动服务<---"
 	 blue "--->5.3proxy-socks5停止服务<---"
 	 green "--->6.3proxy-socks5指定端口-IP输出<---"
@@ -137,10 +137,3 @@ Install
     esac
 }
 start_menu
-
-
-
-
-
-
-
