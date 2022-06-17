@@ -40,8 +40,8 @@ stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
 stty erase '^H' && read -p "输入【该用户的流量/MB】:" ll
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
 echo ""
-
-/usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} 1048576*${ll}
+lmb = 1048576*${ll}
+/usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${lmb}
 
 }
 
