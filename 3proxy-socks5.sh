@@ -66,8 +66,11 @@ outip(){
 stty erase '^H' && read -p "输入【指定端口】:" pr
 stty erase '^H' && read -p "输入【指定IP】:" ips
 
-echo “socks -p${pr} -e${ips}” >> /usr/local/3proxy/conf/3proxy.cfg
 
+
+cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
+> socks -p${pr} -e${ips}
+>EOF
 
 }
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
