@@ -88,6 +88,8 @@ echo ""
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
 Install
 	fi
+	green "--->已存在用户<---"
+	cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 	start_menu(){
 	echo ""
 	red "--->3proxy-socks5服务已经安装！<---"
