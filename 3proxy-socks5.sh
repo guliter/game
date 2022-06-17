@@ -52,7 +52,7 @@ sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/passwd
 sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/bandlimiters
 sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/counters
 echo ""
-red "--->3proxy-删除用户：【${deame}】操作已执行<---"
+red "--->3proxy-删除用户:【${deame}】操作已执行<---"
 echo ""
 }
 
@@ -65,6 +65,7 @@ echo "输入【指定用户名流量】: "${llxz}
 bandlimin 2000000000 1314521
 bandlimout 2000000000 1314521
 }
+
 outip(){
 echo ""
 stty erase '^H' && read -p "输入【指定端口】:" pr
@@ -75,6 +76,9 @@ socks -p${pr} -e${ips}
 EOF
 red "--->3proxy-已添加SOCKS5指定出口IP和端口：${ips}:${pr}<---"
 }
+
+
+
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
 Install
 	fi
