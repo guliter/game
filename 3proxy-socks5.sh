@@ -103,7 +103,7 @@ Install
     pkill 3proxy
     ;;
     6)
-    unInstall
+    outip
     ;;
    # 7)
     #unInstall
