@@ -35,7 +35,6 @@ sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 
 add3proxy(){
 
-echo ""
 stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
 stty erase '^H' && read -p "输入【该用户的流量/MB】:" ll
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
@@ -64,7 +63,12 @@ bandlimin 2000000000 1314521
 bandlimout 2000000000 1314521
 }
 outip(){
-socks -p55556 -e107.191.58.129
+stty erase '^H' && read -p "输入【指定端口】:" pr
+stty erase '^H' && read -p "输入【指定IP】:" ips
+
+echo “socks -p${pr} -e${ips}” >> /usr/local/3proxy/conf/3proxy.cfg
+
+
 }
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
 Install
