@@ -70,7 +70,7 @@ stty erase '^H' && read -p "输入【指定IP】:" ips
 
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 > socks -p${pr} -e${ips}
->EOF
+EOF
 
 }
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
