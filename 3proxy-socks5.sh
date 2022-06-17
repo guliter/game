@@ -47,8 +47,8 @@ echo ""
 
 dele(){
 
-echo "输入删除【用户名】: "${deame}
-sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/add3proxyuser.sh
+stty erase '^H' && read -p "输入需要删除【用户名】: " deame
+sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/passwd
 
 }
 
