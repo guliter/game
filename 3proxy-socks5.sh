@@ -42,7 +42,8 @@ stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
 echo ""
 lmb = 1048576*${ll}
 /usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${lmb}
-
+echo ""
+red "--->3proxy-添加用户：【${uname}】 流量：【${ll}MB】 有效期【${td}天】操作已执行<---"
 }
 
 dele(){
