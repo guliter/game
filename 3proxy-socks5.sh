@@ -34,7 +34,7 @@ sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 }
 
 add3proxy(){
-
+echo ""
 stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
 stty erase '^H' && read -p "输入【该用户的流量/MB】:" ll
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
