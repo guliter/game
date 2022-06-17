@@ -81,15 +81,16 @@ Install
 	start_menu(){
 	echo ""
 	red "--->3proxy-socks5服务已经安装！<---"
+	echo ""
    	 red "--->1.3proxy-socks5添加用户<---"
    	 blue "--->2.3proxy-socks5删除用户---"
  	 green "--->3.3proxy-socks5限制流量<---"
 	 red "--->4.3proxy-socks5启动服务<---"
 	 blue "--->5.3proxy-socks5停止服务<---"
 	 green "--->6.3proxy-socks5指定端口-IP输出<---"
+	 echo ""
 	 #red "--->7.3proxy-socks5指定端口-IP输出<---"
-	 
-   	 blue "【如需退出按【0】退出选项】"
+	  blue "【如需退出按【0】退出选项】"
     echo
     read -p "请输入数字:" num
     case "$num" in
