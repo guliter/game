@@ -64,7 +64,7 @@ stty erase '^H' && read -p "输入需解除带宽的【用户名】: " users
 sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/bandlimiters
 echo ""
 red "--->正在解除${users}的默认带宽限制<---"
-cat >> /usr/local/3proxy/conf/bandlimitersg<<EOF
+cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
 nobandlimin ${users}
 nobandlimout ${users}
 EOF
