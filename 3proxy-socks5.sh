@@ -75,6 +75,7 @@ cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${pr} -e${ips}
 EOF
 red "--->3proxy-已添加SOCKS5指定出口IP和端口：${ips}:${pr}<---"
+echo ""
 }
 
 
