@@ -48,6 +48,8 @@ dele(){
 
 stty erase '^H' && read -p "输入需要删除【用户名】: " deame
 sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/passwd
+sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/bandlimiters
+sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/counters
 echo ""
 red "--->3proxy-删除用户：【${deame}】操作已执行<---"
 
