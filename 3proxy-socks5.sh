@@ -36,12 +36,14 @@ sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 add3proxy(){
 echo ""
 stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
-stty erase '^H' && read -p "输入【该用户的流量/MB】:" ll
+#stty erase '^H' && read -p "输入【该用户的默认带宽1MB】:" ll
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
 echo ""
-lmb=1048576*${ll}
-/usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${lmb}
-red "--->3proxy-添加用户：【${uname}】 流量：【${ll}MB】 有效期【${td}天】操作已执行<---"
+/usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} 1048576
+cat >> /usr/local/3proxy/conf/bandlimitersg<<EOF
+bandlimout 1048576 ${uname}
+EOF
+red "--->3proxy-添加用户:【${uname}】 默认带宽:【${ll}MB】 有效期:【${td}天】操作已执行<---"
 echo ""
 }
 
@@ -57,13 +59,16 @@ echo ""
 }
 
 bandlidele(){
-
-echo "输入【指定用户名】: "${llxzz}
-echo "输入【指定用户名流量】: "${llxz}
-
-
-bandlimin 2000000000 1314521
-bandlimout 2000000000 1314521
+echo ""
+stty erase '^H' && read -p "输入需解除带宽的【用户名】: " users
+sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/bandlimiters
+echo ""
+red "--->正在解除${users}的默认带宽限制<---"
+cat >> /usr/local/3proxy/conf/bandlimitersg<<EOF
+nobandlimin ${users}
+nobandlimout ${users}
+EOF
+echo ""
 }
 
 outip(){
