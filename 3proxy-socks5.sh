@@ -42,6 +42,7 @@ echo ""
 lmb=1048576*${ll}
 /usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${lmb}
 red "--->3proxy-添加用户：【${uname}】 流量：【${ll}MB】 有效期【${td}天】操作已执行<---"
+echo ""
 }
 
 dele(){
@@ -78,6 +79,7 @@ if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
 Install
 	fi
 	start_menu(){
+	echo ""
 	red "--->3proxy-socks5服务已经安装！<---"
    	 red "--->1.3proxy-socks5添加用户<---"
    	 blue "--->2.3proxy-socks5删除用户---"
