@@ -28,3 +28,4 @@ green " bash changesource.sh aliyun 切换阿里源 "
 green " bash changesource.sh 163 切换网易源 "
 green " bash changesource.sh aws 切换AWS亚马逊云源 "
 green " bash changesource.sh restore 还原默认源  " 
+echo
