@@ -36,9 +36,9 @@ sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 add3proxy(){
 
 echo ""
-echo "输入【用户名-密码相同】: "${uname}
-echo "输入【该用户的流量】: "${ll}
-echo "输入【该用户的有效期】: "${td}
+stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
+stty erase '^H' && read -p "输入【该用户的流量】:" ll
+stty erase '^H' && read -p "输入【该用户的有效期】:" td
 echo ""
 
 /usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${ll}
