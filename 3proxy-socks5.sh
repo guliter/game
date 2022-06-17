@@ -63,12 +63,13 @@ bandlimin 2000000000 1314521
 bandlimout 2000000000 1314521
 }
 outip(){
+echo ""
 stty erase '^H' && read -p "输入【指定端口】:" pr
 stty erase '^H' && read -p "输入【指定IP】:" ips
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${pr} -e${ips}
 EOF
-red "--->3proxy-已添加SOCKS5指定出口IP和端口：${ips}：${pr}<---"
+red "--->3proxy-已添加SOCKS5指定出口IP和端口：${ips}:${pr}<---"
 }
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
 Install
