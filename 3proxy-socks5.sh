@@ -77,7 +77,6 @@ green "---> 已存在以下端口 <---"
 echo ""
 cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
 echo ""
-
 stty erase '^H' && read -p "输入【出口指定端口】:" pr
 stty erase '^H' && read -p "输入【出口指定IP】:" ips
 echo ""
@@ -153,10 +152,12 @@ Install
     ;;
     4)
     systemctl start 3proxy.service
+    clear
     start_menu
     ;;
     5)
     systemctl stop 3proxy.service
+    clear
     start_menu
     ;;
     6)
@@ -165,6 +166,10 @@ Install
     ;;
     7)
     adport
+    clear
+    green "---> 已存在以下端口 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
     start_menu
     ;;	
     8)
