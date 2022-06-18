@@ -73,17 +73,19 @@ echo ""
 
 outip(){
 echo ""
-green "--->已存在以下端口"
+green "---> 已存在以下端口 <---"
+echo ""
 cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+echo ""
 
-stty erase '^H' && read -p "输入【指定端口】:" pr
-stty erase '^H' && read -p "输入【指定IP】:" ips
+stty erase '^H' && read -p "输入【出口指定端口】:" pr
+stty erase '^H' && read -p "输入【出口指定IP】:" ips
 echo ""
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${pr} -e${ips}
 EOF
 sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
-red "--->3proxy-已添加SOCKS5指定出口IP和端口：${ips}:${pr}<---"
+red "---> 3proxy-已添加SOCKS5指定出口IP和端口：${ips}:${pr} <---"
 echo ""
 }
 
