@@ -66,6 +66,7 @@ socks -p${dk}
 EOF
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
+netstat -tunlp | grep ${td}
 red "--->3proxy-添加用户:【${uname}】端口:【${dk}】 有效期:【${td}天】操作已执行<---"
 clear
 green "---> 已存在以下端口 <---"
@@ -138,6 +139,7 @@ sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
 echo ""
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
+netstat -tunlp | grep ${pr}
 }
 
 adport(){
@@ -154,6 +156,7 @@ EOF
 echo ""
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
+netstat -tunlp | grep ${add}
 }
 
 deport(){
