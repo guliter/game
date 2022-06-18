@@ -179,15 +179,6 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     case "$num" in
     1) 
     add3proxy
-    clear
-    echo ""
-    green "---> 已存在以下端口 <---"
-    echo ""
-    cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
-    echo ""
-    green "---> 已经存在用户 <---"
-    echo ""
-    cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
     start_menu
     ;;
     2)
