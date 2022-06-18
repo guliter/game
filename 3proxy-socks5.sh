@@ -219,6 +219,7 @@ Install
     ;;	
     8)
     deport
+    clear
     green "---> 删除端口后剩余 <---"
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
