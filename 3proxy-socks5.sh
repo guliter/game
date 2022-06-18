@@ -263,6 +263,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     green "---> 已存在用户 <---"
     echo ""
     cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+    echo ""
 
     ;;	
     0)
