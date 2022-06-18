@@ -33,6 +33,8 @@ sudo make install
 sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 }
 
+
+
 add3proxy(){
 echo ""
 green "---> 已存在以下端口 <---"
@@ -143,11 +145,12 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 }
 
 
-
-
-if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
-Install
+	if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
+	
+	Install
+	
 	fi
+	
 	clear
 	start_menu(){
 	echo ""
