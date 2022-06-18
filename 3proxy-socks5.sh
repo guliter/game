@@ -161,6 +161,7 @@ Install
 	 green "--->  6.3proxy-socks5指定端口IP出口  <---（多IP）"
 	 red "--->  7.3proxy-socks5添加端口  <---"
 	 blue "--->  8.3proxy-socks5删除端口  <---"
+	 green "--->  9.服务器状态-IP-端口 <---"
 	 echo ""
 	  blue "【如需退出按【0】退出选项】"
     echo
