@@ -160,21 +160,21 @@ Install
     echo ""
     case "$num" in
     1) 
-     clear
-  	add3proxy
-   	clear
-   	echo ""
-	green "---> 已存在以下端口 <---"
-	echo ""
-	cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
-	echo ""
-	green "---> 已经存在用户 <---"
-	echo ""
-	cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+    add3proxy
+    clear
+    echo ""
+    green "---> 已存在以下端口 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+    echo ""
+    green "---> 已经存在用户 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
     start_menu
     ;;
     2)
     dele
+    clear
     green "---> 删除用户后 <---"
     echo ""
     cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
@@ -182,10 +182,12 @@ Install
     ;;
     3)
     bandlidele
+    clear
     start_menu
     ;;
     4)
     systemctl start 3proxy.service
+    clear
     green "---> 启动服务后端口 <---"
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
@@ -197,6 +199,7 @@ Install
     ;;
     5)
     systemctl stop 3proxy.service
+    clear
     green "---> 停止服务后端口 <---"
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
@@ -208,10 +211,12 @@ Install
     ;;
     6)
     outip
+    clear
     start_menu
     ;;
     7)
     adport
+    clear
     green "---> 添加端口后剩余 <---"
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
