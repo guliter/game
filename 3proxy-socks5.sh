@@ -64,6 +64,10 @@ echo ""
 
 dele(){
 echo ""
+green "---> 已存在用户 <---"
+echo ""
+cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+echo ""
 stty erase '^H' && read -p "输入需要删除【用户名】: " deame
 sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/passwd
 sed -i -e '/'${deame}'/d' /usr/local/3proxy/conf/bandlimiters
