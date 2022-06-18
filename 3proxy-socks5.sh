@@ -160,7 +160,9 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 }
 
 
-	if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
+	if [[ ! -d "/usr/local/3proxy" ]]; then
+	
+	red "---> 3proxy-socks5服务开始安装！<---"
 	
 	Install
 	
