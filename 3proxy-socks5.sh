@@ -79,19 +79,24 @@ echo ""
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${pr} -e${ips}
 EOF
+sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
 red "--->3proxy-已添加SOCKS5指定出口IP和端口：${ips}:${pr}<---"
 echo ""
 }
 
 adport(){
-
+stty erase '^H' && read -p "输入开放的端口: " add
+cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
+socks -p${add}
+EOF
+echo ""
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
-
 }
 
 deport(){
-
+stty erase '^H' && read -p "输入需要删除的端口: " de
+sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 }
 
 
