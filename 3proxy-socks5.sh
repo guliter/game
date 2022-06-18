@@ -117,12 +117,12 @@ Install
 	 red "--->4.3proxy-socks5启动服务<---"
 	 blue "--->5.3proxy-socks5停止服务<---"
 	 green "--->6.3proxy-socks5指定端口IP出口<---"
-	 echo ""
 	 red "--->7.3proxy-socks5添加端口<---"
 	 blue "--->5.3proxy-socks5删除端口<---"
 	  blue "【如需退出按【0】退出选项】"
     echo
     read -p "请输入数字:" num
+    echo ""
     case "$num" in
     1)
     add3proxy
