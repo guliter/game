@@ -101,6 +101,7 @@ echo ""
 }
 
 outip(){
+clear
 echo ""
 green "---> 已存在以下端口 <---"
 echo ""
