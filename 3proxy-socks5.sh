@@ -61,6 +61,8 @@ EOF
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${dk}
 EOF
+systemctl stop 3proxy.service
+systemctl start 3proxy.service
 red "--->3proxy-添加用户:【${uname}】端口:【${dk}】 有效期:【${td}天】操作已执行<---"
 echo ""
 }
