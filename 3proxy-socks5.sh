@@ -140,21 +140,27 @@ Install
     case "$num" in
     1)
     add3proxy
+    start_menu
     ;;
     2)
     dele
+    start_menu
     ;;
     3)
     bandlidele
+    start_menu
     ;;
     4)
     systemctl start 3proxy.service
+    start_menu
     ;;
     5)
     systemctl stop 3proxy.service
+    start_menu
     ;;
     6)
     outip
+    start_menu
     ;;
     7)
     adport
