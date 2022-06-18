@@ -73,6 +73,9 @@ echo ""
 
 outip(){
 echo ""
+green "--->已存在以下端口"
+cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+
 stty erase '^H' && read -p "输入【指定端口】:" pr
 stty erase '^H' && read -p "输入【指定IP】:" ips
 echo ""
@@ -85,6 +88,8 @@ echo ""
 }
 
 adport(){
+green "--->已存在以下端口"
+cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
 stty erase '^H' && read -p "输入开放的端口: " add
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${add}
@@ -95,6 +100,8 @@ systemctl start 3proxy.service
 }
 
 deport(){
+green "--->已存在以下端口"
+cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
 stty erase '^H' && read -p "输入需要删除的端口: " de
 sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 }
@@ -111,14 +118,14 @@ Install
 	echo ""
 	red "--->3proxy-socks5服务已经安装！<---"
 	echo ""
-   	 red "--->1.3proxy-socks5添加用户<---"
+   	 red "--->1.3proxy-socks5添加用户<---（默认1M带宽）"
    	 blue "--->2.3proxy-socks5删除用户---"
- 	 green "--->3.3proxy-socks5解除默认带宽<---"
+ 	 green "--->3.3proxy-socks5解除默认带宽<---（解除1M带宽限制）"
 	 red "--->4.3proxy-socks5启动服务<---"
 	 blue "--->5.3proxy-socks5停止服务<---"
-	 green "--->6.3proxy-socks5指定端口IP出口<---"
+	 green "--->6.3proxy-socks5指定端口IP出口<---（多IP）"
 	 red "--->7.3proxy-socks5添加端口<---"
-	 blue "--->5.3proxy-socks5删除端口<---"
+	 blue "--->8.3proxy-socks5删除端口<---"
 	  blue "【如需退出按【0】退出选项】"
     echo
     read -p "请输入数字:" num
