@@ -75,6 +75,10 @@ echo ""
 
 bandlidele(){
 echo ""
+green "---> 已存在用户 <---"
+echo ""
+cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+echo ""
 stty erase '^H' && read -p "输入需解除带宽的【用户名】: " users
 sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/bandlimiters
 echo ""
@@ -182,7 +186,6 @@ Install
     ;;
     3)
     bandlidele
-    clear
     start_menu
     ;;
     4)
