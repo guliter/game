@@ -212,6 +212,13 @@ Install
     6)
     outip
     clear
+    green "---> 指定IP与端口 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+    echo ""
+    green "---> 多ip用户 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
     start_menu
     ;;
     7)
