@@ -23,10 +23,13 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-ws_port="55665"
+ws_port="55675"
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
-ips=$(ifconfig -a |grep -w "inet"| grep -v "127.0.0.1" |awk '{print $2;}')
+ips=(
+107.191.58.129
+45.77.85.62
+)
 
 # Xray Installation
 wget -O /usr/local/bin/xray https://raw.githubusercontent.com/guliter/game/main/xray
