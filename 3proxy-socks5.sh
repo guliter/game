@@ -54,6 +54,7 @@ sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/bandlimiters
 sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/counters
 sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/passwd
 sed -i -e '/'${dk}'/d' /usr/local/3proxy/conf/3proxy.cfg
+sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
 /usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} 1048576
 cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
 bandlimout 1048576 ${uname}
