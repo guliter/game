@@ -48,14 +48,16 @@ cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 echo ""
 stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
 stty erase '^H' && read -p "输入【该用户的端口】:" dk
+stty erase '^H' && read -p "输入【该用户的流量/MB】:" ll
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
 echo ""
+lld=expr 1048576\*${ll}
 sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/bandlimiters
 sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/counters
 sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/passwd
 sed -i -e '/'${dk}'/d' /usr/local/3proxy/conf/3proxy.cfg
 sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
-/usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} 1048576
+/usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${lld}
 cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
 bandlimout 1048576 ${uname}
 EOF
