@@ -81,6 +81,7 @@ echo ""
 }
 
 bandlidele(){
+clear
 echo ""
 green "---> 已存在用户 <---"
 echo ""
