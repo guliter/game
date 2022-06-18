@@ -36,6 +36,7 @@ sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 
 
 add3proxy(){
+clear
 echo ""
 green "---> 已存在以下端口 <---"
 echo ""
