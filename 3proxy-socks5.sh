@@ -35,6 +35,10 @@ sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 
 add3proxy(){
 echo ""
+green "---> 已存在以下端口 <---"
+echo ""
+cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+echo ""
 stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
 stty erase '^H' && read -p "输入【该用户的端口】:" dk
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
@@ -47,7 +51,7 @@ sed -i -e '/'${dk}'/d' /usr/local/3proxy/conf/3proxy.cfg
 cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
 bandlimout 1048576 ${uname}
 EOF
-red "--->3proxy-添加用户:【${uname}】 默认带宽:【1MB】 有效期:【${td}天】操作已执行<---"
+red "--->3proxy-添加用户:【${uname}】端口:【${dk}】 有效期:【${td}天】操作已执行<---"
 echo ""
 }
 
