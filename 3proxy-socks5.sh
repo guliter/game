@@ -94,6 +94,9 @@ green "---> 已存在以下端口 <---"
 echo ""
 cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
 echo ""
+green "---> 已存在用户 <---"
+echo ""
+cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 stty erase '^H' && read -p "输入【出口指定端口】:" pr
 stty erase '^H' && read -p "输入【出口指定IP】:" ips
 echo ""
@@ -184,21 +187,30 @@ Install
     4)
     systemctl start 3proxy.service
     clear
-    green "---> 启动服务后 <---"
+    green "---> 启动服务后端口 <---"
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+    echo ""
+    green "---> 启动服务存在用户 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
     start_menu
     ;;
     5)
     systemctl stop 3proxy.service
     clear
-    green "---> 停止服务后 <---"
+    green "---> 停止服务后端口 <---"
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+    echo ""
+    green "---> 停止服务存在用户 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
     start_menu
     ;;
     6)
     outip
+    clear
     start_menu
     ;;
     7)
