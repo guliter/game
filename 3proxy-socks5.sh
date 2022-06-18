@@ -233,7 +233,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
     echo ""
-    green "---> 多ip用户 <---"
+    green "---> 指定ip用户名 <---"
     echo ""
     cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
     start_menu
