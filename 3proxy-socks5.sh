@@ -36,9 +36,13 @@ sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
 add3proxy(){
 echo ""
 stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
-#stty erase '^H' && read -p "输入【该用户的默认带宽1MB】:" ll
+stty erase '^H' && read -p "输入【该用户的端口】:" dk
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
 echo ""
+sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/bandlimiters
+sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/counters
+sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/passwd
+sed -i -e '/'${dk}'/d' /usr/local/3proxy/conf/3proxy.cfg
 /usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} 1048576
 cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
 bandlimout 1048576 ${uname}
