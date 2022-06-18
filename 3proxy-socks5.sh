@@ -81,6 +81,7 @@ echo ""
 stty erase '^H' && read -p "输入【出口指定端口】:" pr
 stty erase '^H' && read -p "输入【出口指定IP】:" ips
 echo ""
+sed -i -e '/'${pr}'/d' /usr/local/3proxy/conf/3proxy.cfg
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${pr} -e${ips}
 EOF
