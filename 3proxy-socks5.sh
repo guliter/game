@@ -244,6 +244,16 @@ Install
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
     start_menu
     ;;	
+     9)
+    green "---> 已存在端口 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+    echo ""
+    green "---> 已存在用户 <---"
+    echo ""
+    cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+
+    ;;	
     0)
     exit 1
     ;;
