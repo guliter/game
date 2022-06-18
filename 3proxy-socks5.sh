@@ -254,6 +254,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     start_menu
     ;;	
      9)
+    clear
     green "---> 已存在端口 <---"
     echo ""
     cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
