@@ -112,6 +112,7 @@ start_menu(){
     ;;
     3)
     Vmess_stop
+    start_menu
     ;;
     4)
     Vmess_status
