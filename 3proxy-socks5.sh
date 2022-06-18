@@ -71,6 +71,8 @@ cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e
 echo ""
 green "---> 已经存在用户 <---"
 echo ""
+cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+echo ""
 }
 
 dele(){
