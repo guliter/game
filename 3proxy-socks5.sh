@@ -138,6 +138,11 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
 Install
 	fi
+	clear
+   	echo ""
+	green "---> 已存在以下端口 <---"
+	cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+	echo ""
 	green "---> 【已存在用户】 <---"
 	cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 	start_menu(){
