@@ -27,7 +27,7 @@ ws_port="51555"
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
 ips=(
-45.77.85.62
+107.191.58.129
 )
 
 # Xray Installation
