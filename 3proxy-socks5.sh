@@ -90,8 +90,10 @@ echo ""
 }
 
 adport(){
-green "--->已存在以下端口"
+green "---> 已存在以下端口 <---"
+echo ""
 cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+echo ""
 stty erase '^H' && read -p "输入开放的端口: " add
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${add}
@@ -102,8 +104,10 @@ systemctl start 3proxy.service
 }
 
 deport(){
-green "--->已存在以下端口"
+green "---> 已存在以下端口 <---"
+echo ""
 cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+echo ""
 stty erase '^H' && read -p "输入需要删除的端口: " de
 sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 }
