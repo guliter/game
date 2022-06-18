@@ -59,7 +59,7 @@ sed -i -e '/'${dk}'/d' /usr/local/3proxy/conf/3proxy.cfg
 sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
 /usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${lld}
 cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
-bandlimout 1048576 ${uname}
+bandlimout ${lld} ${uname}
 EOF
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${dk}
@@ -102,14 +102,16 @@ echo ""
 cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 echo ""
 stty erase '^H' && read -p "输入需解除带宽的【用户名】: " users
+stty erase '^H' && read -p "输入【该用户的流量/GB】: " jhh
 sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/bandlimiters
 echo ""
-red "--->正在解除${users}的默认带宽限制<---"
-echo ""
-green "--->已解除${users}带宽限制<---"
+lldd=$[1048576*${jhh}*1024]
+#red "--->正在解除${users}的默认带宽限制<---"
+#echo ""
+#green "--->已解除${users}带宽限制<---"
 cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
-nobandlimin ${users}
-nobandlimout ${users}
+bandlimin ${lldd} ${users}
+bandlimout ${lldd} ${users}
 EOF
 echo ""
 }
