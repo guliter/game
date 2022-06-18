@@ -83,6 +83,18 @@ red "--->3proxy-已添加SOCKS5指定出口IP和端口：${ips}:${pr}<---"
 echo ""
 }
 
+adport(){
+
+systemctl stop 3proxy.service
+systemctl start 3proxy.service
+
+}
+
+deport(){
+
+}
+
+
 
 
 if [[ ! -d "/usr/local/3proxy/conf/add3proxyuser.sh" ]]; then
@@ -99,9 +111,10 @@ Install
  	 green "--->3.3proxy-socks5解除默认带宽<---"
 	 red "--->4.3proxy-socks5启动服务<---"
 	 blue "--->5.3proxy-socks5停止服务<---"
-	 green "--->6.3proxy-socks5指定端口-IP输出<---"
+	 green "--->6.3proxy-socks5指定端口IP出口<---"
 	 echo ""
-	 #red "--->7.3proxy-socks5指定端口-IP输出<---"
+	 red "--->7.3proxy-socks5添加端口<---"
+	 blue "--->5.3proxy-socks5删除端口<---"
 	  blue "【如需退出按【0】退出选项】"
     echo
     read -p "请输入数字:" num
@@ -124,9 +137,12 @@ Install
     6)
     outip
     ;;
-   # 7)
-    #unInstall
-    #;;	
+    7)
+    adport
+    ;;	
+    8)
+    deport
+    ;;	
     0)
     exit 1
     ;;
