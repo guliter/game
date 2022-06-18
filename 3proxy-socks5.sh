@@ -67,8 +67,8 @@ EOF
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
 clear
-netstat -tunlp | grep ${td}
-red "--->3proxy-添加用户:【${uname}】端口:【${dk}】 有效期:【${td}天】操作已执行<---"
+
+echo ""
 green "---> 已存在以下端口 <---"
 echo ""
 cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
@@ -77,6 +77,9 @@ green "---> 已经存在用户 <---"
 echo ""
 cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 echo ""
+netstat -tunlp | grep ${dk}
+echo ""
+red "--->3proxy-添加用户:【${uname}】端口:【${dk}】 有效期:【${td}天】操作已执行<---"
 }
 
 dele(){
