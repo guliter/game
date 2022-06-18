@@ -160,14 +160,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 }
 
 
-	if [[ ! -d "/usr/local/3proxy" ]]; then
-	
-	red "---> 3proxy-socks5服务开始安装！<---"
-	
-	Install
-	
-	fi
-	
+
 	clear
 	start_menu(){
 	echo ""
@@ -182,6 +175,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	 red "--->  7.3proxy-socks5添加端口  <---"
 	 blue "--->  8.3proxy-socks5删除端口  <---"
 	 green "--->  9.服务器状态-IP-端口 <---"
+	 green "--->  10.安装3proxy <---"
 	 echo ""
 	  blue "【如需退出按【0】退出选项】"
     echo
@@ -266,7 +260,9 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     echo ""
     cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
     echo ""
-
+    ;;	
+    10)
+	Install
     ;;	
     0)
     exit 1
