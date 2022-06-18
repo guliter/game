@@ -151,9 +151,11 @@ Install
     ;;
     7)
     adport
+    start_menu
     ;;	
     8)
     deport
+    start_menu
     ;;	
     0)
     exit 1
