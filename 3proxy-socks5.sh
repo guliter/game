@@ -115,6 +115,7 @@ echo ""
 cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
 echo ""
 stty erase '^H' && read -p "输入开放的端口: " add
+sed -i -e '/'${add}'/d' /usr/local/3proxy/conf/3proxy.cfg
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${add}
 EOF
