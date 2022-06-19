@@ -25,12 +25,15 @@ function white(){
 }
 
 Install(){
+systemctl stop 3proxy.service
+rm -rf /usr/local/3proxy /root/3proxy /etc/3proxy
 git clone https://github.com/z3apa3a/3proxy
 cd 3proxy
 ln -s Makefile.Linux Makefile
 make
 sudo make install
 sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
+cat /dev/null >/usr/local/3proxy/conf/3proxy.cfg
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 nscache 65536
 nserver 8.8.8.8
@@ -212,7 +215,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	 red "--->  7.3proxy-socks5添加端口  <---"
 	 blue "--->  8.3proxy-socks5删除端口  <---"
 	 green "--->  9.服务器状态-IP-端口 <---"
-	 green "--->  10.安装3proxy <---"
+	 green "--->  10.重新安装3proxy <---"
 	 echo ""
 	  blue "【如需退出按【0】退出选项】"
     echo
