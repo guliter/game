@@ -154,7 +154,7 @@ echo ""
 a=$[1024*${jhh}]
 b=$(cat /usr/local/3proxy/conf/counters | wc -l)
 clear
-green "--->已设置用户【${users}】的流量为【${a}】GB<---"
+green "--->已设置用户【${users}】的流量为【${jhh}】GB<---"
 cat >> /usr/local/3proxy/conf/counters<<EOF
 countin "${b}/${users}" N ${a} ${users}
 EOF
@@ -221,11 +221,11 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	red "---> 3proxy-socks5【服务已开启】<---"
 	echo ""
    	 red "--->  1.3proxy-socks5【添加用户】  <---【bash add3proxyuser.sh 用户 密码】"
-   	 blue "--->  2.3proxy-socks5【删除用户】 <---"
+   	 blue "--->  2.3proxy-socks5【删除用户】  <---"
  	 green "--->  3.3proxy-socks5【流量限制】  <---【有缺陷：一个用户被限制全部不能用】"
 	 red "--->  4.3proxy-socks5【重启服务】  <---"
-	 blue "--->  5.3proxy-socks5【查看进程】  <---"
-	 green "--->  6.3proxy-socks5【指定端口IP出口】  <---"
+	 blue "--->  5.3proxy-socks5【查看进程】 <---"
+	 green "--->  6.3proxy-socks5【指定端口IP出口】 <---"
 	 red "--->  7.3proxy-socks5【添加端口】  <---"
 	 blue "--->  8.3proxy-socks5【删除端口】  <---【3proxy SO_REUSEPORT】"
 	 green "--->  9.3proxy-socks5【服务器状态】 <---"
