@@ -222,7 +222,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	echo ""
    	 red "--->  1.3proxy-socks5【添加用户】  <---【bash add3proxyuser.sh 用户 密码】"
    	 blue "--->  2.3proxy-socks5【删除用户】 <---"
- 	 green "--->  3.3proxy-socks5【流量限制】  <---"
+ 	 green "--->  3.3proxy-socks5【流量限制】  <---【有缺陷：一个用户被限制全部不能用】"
 	 red "--->  4.3proxy-socks5【重启服务】  <---【systemctl stop 3proxy.service】"
 	 blue "--->  5.3proxy-socks5【查看进程】  <---"
 	 green "--->  6.3proxy-socks5【指定端口IP出口】  <---【多IP】"
