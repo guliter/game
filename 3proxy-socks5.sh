@@ -31,6 +31,29 @@ ln -s Makefile.Linux Makefile
 make
 sudo make install
 sudo chmod -R 777 /usr/local/3proxy/conf/add3proxyuser.sh
+cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
+nscache 65536
+nserver 8.8.8.8
+nserver 8.8.4.4
+
+config /conf/3proxy.cfg
+monitor /conf/3proxy.cfg
+
+log /logs/3proxy-%y%m%d.log D
+rotate 60
+counter /count/3proxy.3cf
+
+users $/conf/passwd 
+
+include /conf/counters
+include /conf/bandlimiters
+
+auth strong
+deny * * 127.0.0.1
+allow *
+flush
+socks -p4545
+EOF
 }
 
 
