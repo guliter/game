@@ -97,9 +97,6 @@ start_menu(){
     blue "2.Xray---【服务重启 Vmess】"
     green "3.Xray---【服务停止 Vmess】"
     yellow "4.Xray---【查看状态 Vmess】"
-    blue "5.Xray---【查看日志 Vmess】"
-    green "6.Xray---【启动服务 Vmess】" 
-    xrayVersionManageMenu
     blue "—————————————【如需退出按【0】退出选项】——————————————"
     echo
     read -p "请输入数字:" num
@@ -117,15 +114,6 @@ start_menu(){
     ;;
     4)
     Vmess_status
-    ;;
-    5)
-    Vmess_pager
-    ;;
-    6)
-    Vmess_start
-    ;;
-    7)
-    xrayVersionManageMenu
     ;;
     0)
     exit 1
