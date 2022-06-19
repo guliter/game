@@ -25,8 +25,8 @@ function white(){
 }
 
 Install(){
-systemctl stop 3proxy.service
-rm -rf /usr/local/3proxy /root/3proxy /etc/3proxy
+#systemctl stop 3proxy.service
+#rm -rf /usr/local/3proxy /root/3proxy /etc/3proxy
 git clone https://github.com/z3apa3a/3proxy
 cd 3proxy
 ln -s Makefile.Linux Makefile
