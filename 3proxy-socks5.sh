@@ -57,6 +57,8 @@ allow *
 flush
 socks -p4545
 EOF
+systemctl stop 3proxy.service
+systemctl start 3proxy.service
 clear
 start_menu
 }
