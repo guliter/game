@@ -86,8 +86,10 @@ systemctl start xray
 systemctl status xray
 echo
 
-red  "部署完成检查首发IP是否正确:$ips"
+red  "已启用所有IP配置完成【发现IP数量不对请添加对应网卡配置】:$serverip"
+echo
 yellow  "否则必须重新安装记得修改正确IP"
+echo
 red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
