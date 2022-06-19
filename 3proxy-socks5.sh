@@ -25,7 +25,7 @@ function white(){
 }
 
 Install(){
-yum install -y git&&sudo yum install net-tools -y
+yum update -y && yum install -y socat&&yum install -y dos2unix&& yum install -y git&&sudo yum install net-tools -y
 systemctl stop 3proxy.service
 rm -rf /usr/local/3proxy /root/3proxy /etc/3proxy
 git clone https://github.com/z3apa3a/3proxy
