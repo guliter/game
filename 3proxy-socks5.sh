@@ -152,7 +152,7 @@ stty erase '^H' && read -p "输入【用户限制流量/GB】: " jhh
 sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/counters
 echo ""
 a=$[1024*${jhh}]
-b=cat /usr/local/3proxy/conf/counters | wc -l
+b= cat /usr/local/3proxy/conf/counters | wc -l
 clear
 green "--->已设置用户【${users}】的流量为【${a}】GB<---"
 cat >> /usr/local/3proxy/conf/counters<<EOF
