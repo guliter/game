@@ -227,7 +227,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	 blue "--->  5.3proxy-socks5【查看进程】  <---"
 	 green "--->  6.3proxy-socks5【指定端口IP出口】  <---【多IP】"
 	 red "--->  7.3proxy-socks5【添加端口】  <---"
-	 blue "--->  8.3proxy-socks5【删除端口】  <---"
+	 blue "--->  8.3proxy-socks5【删除端口】  <---【3proxy SO_REUSEPORT】"
 	 green "--->  9.3proxy-socks5【服务器状态】 <---"
 	 red "--->  10.3proxy-socks5【初始化服务】 <---【慎重！会丢失当前所有用户信息】"
 	 echo ""
@@ -267,7 +267,6 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     ;;
     5)
     clear
-	ps aux | grep 3proxy
 	netstat -tuplan | grep 3proxy
     echo ""
 
