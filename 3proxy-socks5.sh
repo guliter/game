@@ -205,7 +205,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
    	 red "--->  1.3proxy-socks5添加用户  <---"
    	 blue "--->  2.3proxy-socks5删除用户 <---"
  	 green "--->  3.3proxy-socks5带宽修改  <---"
-	 red "--->  4.3proxy-socks5重启服务  <---"
+	 red "--->  4.3proxy-socks5重启服务  <---【systemctl stop 3proxy.service】"
 	 blue "--->  5.3proxy-socks5查看进程  <---"
 	 green "--->  6.3proxy-socks5指定端口IP出口  <---（多IP）"
 	 red "--->  7.3proxy-socks5添加端口  <---"
