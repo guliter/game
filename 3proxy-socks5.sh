@@ -147,14 +147,15 @@ green "---> 已存在用户 <---"
 echo ""
 cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 echo ""
-stty erase '^H' && read -p "输入需解除带宽的【用户名】: " users
-stty erase '^H' && read -p "输入【该用户的流量/MB】: " jhh
+stty erase '^H' && read -p "输入【限制流量用户】: " users
+stty erase '^H' && read -p "输入【用户限制流量-GB】: " jhh
 sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/counters
 echo ""
-#a=$[1048576*${jh}]
-green "--->已设置用户${users}的流量为${jhh}GB<---"
+a=$[1048576*${jhh}]
+clear
+green "--->已设置用户【${users}】的流量为【${a}】GB<---"
 cat >> /usr/local/3proxy/conf/counters<<EOF
-countin "0/${users}" N ${jhh} ${users}
+countin "0/${users}" N ${a} ${users}
 EOF
 echo ""
 }
@@ -219,7 +220,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	red "---> 3proxy-socks5【服务已开启】<---"
 	echo ""
    	 red "--->  1.3proxy-socks5【添加用户】  <---【bash add3proxyuser.sh 用户 密码】"
-   	 blue "--->  2.3proxy-socks5【删除用户】<---"
+   	 blue "--->  2.3proxy-socks5【删除用户】 <---"
  	 green "--->  3.3proxy-socks5【流量限制】  <---"
 	 red "--->  4.3proxy-socks5【重启服务】  <---【systemctl stop 3proxy.service】"
 	 blue "--->  5.3proxy-socks5【查看进程】  <---"
