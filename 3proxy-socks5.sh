@@ -55,8 +55,10 @@ auth strong
 deny * * 127.0.0.1
 allow *
 flush
-socks -p4545
+socks -p40741
 EOF
+cd /usr/local/3proxy/conf/
+bash add3proxyuser.sh 40741 40741
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
 clear
