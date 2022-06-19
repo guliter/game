@@ -69,6 +69,8 @@ cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e
 echo ""
 green "---> 已经存在用户 <---"
 echo ""
+cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+echo ""
 start_menu
 }
 
@@ -227,7 +229,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	 red "--->  7.3proxy-socks5添加端口  <---"
 	 blue "--->  8.3proxy-socks5删除端口  <---"
 	 green "--->  9.服务器状态-IP-端口 <---"
-	 green "--->  10.重新安装3proxy <---"
+	 red "--->  10.初始化服务3proxy <---【慎重！会丢失当前所有用户信息】"
 	 echo ""
 	  blue "【如需退出按【0】退出选项】"
     echo
