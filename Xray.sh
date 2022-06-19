@@ -86,9 +86,9 @@ systemctl start xray
 systemctl status xray
 echo
 
-red  "已启用所有IP配置完成【发现IP数量不对请添加对应网卡配置】:\n\n$serverip"
+red  "已启用所有IP配置完成:\n\n$serverip"
 echo
-yellow  "否则必须重新安装记得修改正确IP"
+yellow  "【发现IP数量不对请添加对应网卡配置！再次安装】"
 echo
 red "UUID：$ws_id"
 red "默认端口：$ws_port"
