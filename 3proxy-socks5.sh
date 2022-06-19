@@ -48,7 +48,7 @@ cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 echo ""
 stty erase '^H' && read -p "输入【用户名-密码相同】:" uname
 stty erase '^H' && read -p "输入【该用户的端口】:" dk
-stty erase '^H' && read -p "输入【该用户的流量/MB】:" jh
+stty erase '^H' && read -p "输入【该用户的带宽/MB】:" jh
 stty erase '^H' && read -p "输入【该用户的有效期/天】:" td
 echo ""
 lld=$[1048576*${jh}]
@@ -56,7 +56,7 @@ sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/bandlimiters
 sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/counters
 sed -i -e '/'${uname}'/d' /usr/local/3proxy/conf/passwd
 sed -i -e '/'${dk}'/d' /usr/local/3proxy/conf/3proxy.cfg
-sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
+#sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
 /usr/local/3proxy/conf/add3proxyuser.sh ${uname} ${uname} ${td} ${lld}
 cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
 bandlimout ${lld} ${uname}
@@ -181,8 +181,8 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	echo ""
    	 red "--->  1.3proxy-socks5添加用户  <---"
    	 blue "--->  2.3proxy-socks5删除用户 <---"
- 	 green "--->  3.3proxy-socks5流量修改  <---"
-	 red "--->  4.3proxy-socks5启动服务  <---"
+ 	 green "--->  3.3proxy-socks5带宽修改  <---"
+	 red "--->  4.3proxy-socks5重启服务  <---"
 	 blue "--->  5.3proxy-socks5停止服务  <---"
 	 green "--->  6.3proxy-socks5指定端口IP出口  <---（多IP）"
 	 red "--->  7.3proxy-socks5添加端口  <---"
@@ -212,6 +212,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     start_menu
     ;;
     4)
+    systemctl stop 3proxy.service
     systemctl start 3proxy.service
     clear
     green "---> 启动服务后端口 <---"
@@ -224,15 +225,10 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     start_menu
     ;;
     5)
-    systemctl stop 3proxy.service
     clear
-    green "---> 停止服务后端口 <---"
+
     echo ""
-    cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
-    echo ""
-    green "---> 停止服务存在用户 <---"
-    echo ""
-    cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
+
     start_menu
     ;;
     6)
