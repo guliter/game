@@ -87,8 +87,8 @@ EOF
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${dk}
 EOF
-systemctl stop 3proxy.service
-systemctl start 3proxy.service
+#systemctl stop 3proxy.service
+#systemctl start 3proxy.service
 clear
 
 echo ""
@@ -129,10 +129,10 @@ echo ""
 cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 echo ""
 stty erase '^H' && read -p "输入需解除带宽的【用户名】: " users
-stty erase '^H' && read -p "输入【该用户的流量/GB】: " jhh
+stty erase '^H' && read -p "输入【该用户的流量/MB】: " jhh
 sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/bandlimiters
 echo ""
-lldd=$[1048576*${jhh}*1024]
+lldd=$[1048576*${jhh}]
 #red "--->正在解除${users}的默认带宽限制<---"
 #echo ""
 #green "--->已解除${users}带宽限制<---"
@@ -161,10 +161,10 @@ sed -i -e '/'${pr}'/d' /usr/local/3proxy/conf/3proxy.cfg
 cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${pr} -e${ips}
 EOF
-sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
+#sed -i '23c allow *' /usr/local/3proxy/conf/3proxy.cfg
 echo ""
-systemctl stop 3proxy.service
-systemctl start 3proxy.service
+#systemctl stop 3proxy.service
+#systemctl start 3proxy.service
 netstat -tunlp | grep ${pr}
 }
 
@@ -180,8 +180,8 @@ cat >> /usr/local/3proxy/conf/3proxy.cfg<<EOF
 socks -p${add}
 EOF
 echo ""
-systemctl stop 3proxy.service
-systemctl start 3proxy.service
+#systemctl stop 3proxy.service
+#systemctl start 3proxy.service
 netstat -tunlp | grep ${add}
 }
 
@@ -206,7 +206,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
    	 blue "--->  2.3proxy-socks5删除用户 <---"
  	 green "--->  3.3proxy-socks5带宽修改  <---"
 	 red "--->  4.3proxy-socks5重启服务  <---"
-	 blue "--->  5.3proxy-socks5停止服务  <---"
+	 blue "--->  5.3proxy-socks5查看进程  <---"
 	 green "--->  6.3proxy-socks5指定端口IP出口  <---（多IP）"
 	 red "--->  7.3proxy-socks5添加端口  <---"
 	 blue "--->  8.3proxy-socks5删除端口  <---"
@@ -249,7 +249,8 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
     ;;
     5)
     clear
-
+	ps aux | grep 3proxy
+	netstat -tuplan | grep 3proxy
     echo ""
 
     start_menu
