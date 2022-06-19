@@ -62,6 +62,13 @@ bash add3proxyuser.sh 40741 40741
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
 clear
+echo ""
+green "---> 已存在以下端口 <---"
+echo ""
+cat /usr/local/3proxy/conf/3proxy.cfg | sed -n '/socks -p/,/socks -p/p'| sed  -e 's/socks -p//g'
+echo ""
+green "---> 已经存在用户 <---"
+echo ""
 start_menu
 }
 
