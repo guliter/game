@@ -149,15 +149,12 @@ cat /usr/local/3proxy/conf/passwd | sed 's/:.*$//'
 echo ""
 stty erase '^H' && read -p "输入需解除带宽的【用户名】: " users
 stty erase '^H' && read -p "输入【该用户的流量/MB】: " jhh
-sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/bandlimiters
+sed -i -e '/'${users}'/d' /usr/local/3proxy/conf/counters
 echo ""
-lldd=$[1048576*${jhh}]
-#red "--->正在解除${users}的默认带宽限制<---"
-#echo ""
-#green "--->已解除${users}带宽限制<---"
-cat >> /usr/local/3proxy/conf/bandlimiters<<EOF
-bandlimin ${lldd} ${users}
-bandlimout ${lldd} ${users}
+#a=$[1048576*${jh}]
+green "--->已设置用户${users}的流量为${jhh}GB<---"
+cat >> /usr/local/3proxy/conf/counters<<EOF
+countin "0/${users}" N ${jhh} ${users}
 EOF
 echo ""
 }
@@ -223,7 +220,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	echo ""
    	 red "--->  1.3proxy-socks5【添加用户】  <---【bash add3proxyuser.sh 用户 密码】"
    	 blue "--->  2.3proxy-socks5【删除用户】<---"
- 	 green "--->  3.3proxy-socks5【带宽修改】  <---"
+ 	 green "--->  3.3proxy-socks5【流量限制】  <---"
 	 red "--->  4.3proxy-socks5【重启服务】  <---【systemctl stop 3proxy.service】"
 	 blue "--->  5.3proxy-socks5【查看进程】  <---"
 	 green "--->  6.3proxy-socks5【指定端口IP出口】  <---【多IP】"
