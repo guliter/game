@@ -211,7 +211,7 @@ sed -i -e '/'-p${de}'/d' /usr/local/3proxy/conf/3proxy.cfg
 	echo ""
 	red "---> 3proxy-socks5服务已经安装！<---"
 	echo ""
-   	 red "--->  1.3proxy-socks5添加用户  <---"
+   	 red "--->  1.3proxy-socks5添加用户  <---【bash add3proxyuser.sh 用户 密码】"
    	 blue "--->  2.3proxy-socks5删除用户 <---"
  	 green "--->  3.3proxy-socks5带宽修改  <---"
 	 red "--->  4.3proxy-socks5重启服务  <---【systemctl stop 3proxy.service】"
