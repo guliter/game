@@ -57,6 +57,7 @@ allow *
 flush
 socks -p4545
 EOF
+clear
 start_menu
 }
 
