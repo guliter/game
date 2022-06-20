@@ -94,10 +94,12 @@ red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
 echo 
+
+for ((i = 0; i < ${#ips[@]}; i++)); do
    raw="{
   \"v\":\"2\",
   \"ps\":\"\",
-  \"add\":\"45.77.85.62\",
+  \"add\":\""${ips[i]}"\",
   \"port\":\"54675\",
   \"id\":\"e98b29e6-83bb-4128-a439-3d0fcb5738c2\",
   \"aid\":\"0\",
@@ -109,7 +111,11 @@ echo
 }"
     link=`echo -n ${raw} | base64 -w 0`
     link="vmess://${link}"
-
-red "   vmess链接: $link"
-echo 
-
+echo
+greenbg "总共${#ips[@]}个IP"
+echo
+yellow "第【$((i+1))】个IP:${ips[i]}"
+echo
+red  "vmess链接: $link"
+echo
+done
