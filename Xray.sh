@@ -111,4 +111,5 @@ raw="{
     link="vmess://${link}"
 
 red "   vmess链接: $link" 
+echo 
 
