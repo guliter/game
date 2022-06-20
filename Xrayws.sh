@@ -70,9 +70,8 @@ Vmess_stop(){
 
 
 Vmess_status(){
-    #check root
-    systemctl status xray
-
+a= cat root/vmess.txt
+redbg $a
 }
 
 Vmess_restart(){
@@ -93,10 +92,12 @@ start_menu(){
     clear
     echo
     white "—————————————Vmess---WebSocket---多IP——————————————"
+    echo
     red "1.Xray---【多IP进出口 Vmess】"
     blue "2.Xray---【服务重启 Vmess】"
     green "3.Xray---【服务停止 Vmess】"
-    yellow "4.Xray---【查看状态 Vmess】"
+    yellow "4.Xray---【Vmess账户信息】"
+    echo
     blue "—————————————【如需退出按【0】退出选项】——————————————"
     echo
     read -p "请输入数字:" num
