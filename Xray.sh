@@ -110,6 +110,6 @@ raw="{
     link=`echo -n ${raw} | base64 -w 0`
     link="vmess://${link}"
 
-red "   vmess链接: $link" 
+red "vmess链接: $link" 
 echo 
 
