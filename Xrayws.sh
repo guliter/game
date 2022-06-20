@@ -70,8 +70,9 @@ Vmess_stop(){
 
 
 Vmess_status(){
-a= cat /root/vmess.txt
-redbg $a
+
+cat /root/vmess.txt
+
 }
 
 Vmess_restart(){
