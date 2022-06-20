@@ -94,22 +94,22 @@ red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
 echo 
-raw="{
+   raw="{
   \"v\":\"2\",
   \"ps\":\"\",
   \"add\":\"45.77.85.62\",
-  \"port\":\"54678\",
+  \"port\":\"54675\",
   \"id\":\"e98b29e6-83bb-4128-a439-3d0fcb5738c2\",
-  \"aid\":\"\",
+  \"aid\":\"0\",
   \"net\":\"ws\",
   \"type\":\"none\",
   \"host\":\"\",
   \"path\":\"\",
-  \"tls\":\"tls\"
+  \"tls\":\"none\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
     link="vmess://${link}"
 
-red "vmess链接:$link" 
+red "   vmess链接: $link"
 echo 
 
