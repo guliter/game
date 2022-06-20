@@ -94,4 +94,21 @@ red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
 echo 
+raw="{
+  \"v\":\"2\",
+  \"ps\":\"\",
+  \"add\":\"$serverip\",
+  \"port\":\"54678\",
+  \"id\":\"e98b29e6-83bb-4128-a439-3d0fcb5738c2\",
+  \"aid\":\"\",
+  \"net\":\"ws\",
+  \"type\":\"none\",
+  \"host\":\"\",
+  \"path\":\"\",
+  \"tls\":\"tls\"
+}"
+    link=`echo -n ${raw} | base64 -w 0`
+    link="vmess://${link}"
+
+echo -e "   vmess链接: $link" 
 
