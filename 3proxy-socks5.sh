@@ -60,6 +60,9 @@ socks -p40741
 EOF
 cd /usr/local/3proxy/conf/
 bash add3proxyuser.sh 40741 40741
+systemctl stop firewalld
+systemctl disable firewalld
+systemctl status firewalld
 systemctl stop 3proxy.service
 systemctl start 3proxy.service
 clear
