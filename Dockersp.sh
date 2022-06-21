@@ -92,7 +92,7 @@ mkdir -p /tmp/zdir
 docker run -d -p 2570:80 --name kodexplorer -v /tmp/zdir:/code baiyuetribe/kodexplorer
 clear
 echo
-redbg "【目录分享】Zdir-默认面板:http://${ip}:2569 【admin baiyueadmin】"
+redbg "【目录分享】Zdir-默认面板:http://${ip}:2569 【zdir xiaoz.me】"
 echo
 redbg "【文件管理】KODExplorer-默认面板:http://${ip}:2570"
 echo
