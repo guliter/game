@@ -152,9 +152,40 @@ install_10(){
 bash <(curl -Ls https://ghproxy.com/https://raw.githubusercontent.com/yuanter/shell/main/docker-x-ui.sh)
 clear
 echo
+redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】"
+echo
+}
+
+install_100(){
+clear
+echo
+redbg "Portainer-默认面板:http://${ip}:9000"
+echo
+redbg "【目录分享】h5ai-默认面板:http://${ip}:2571"
+echo
+redbg "【目录分享】Zdir-默认面板:http://${ip}:2569 【zdir xiaoz.me】"
+echo
+redbg "【文件管理】KODExplorer-默认面板:http://${ip}:2570"
+echo
+redbg "【私人网盘】OneDrive-默认面板:http://${ip}:5147"
+echo
+redbg "【GRAV】博客-默认面板:http://${ip}:9292"
+echo
+redbg "【Wordpress】博客-默认面板:http://${ip}:9393"
+echo
+redbg "【Onlyoffice】-默认面板:http://${ip}:5422"
+echo
+redbg "【临时邮箱】-默认面板:http://${ip}:3000"
+echo
+redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】"
+echo
 redbg "【临时邮箱】-默认面板:http://${ip}:54321 【admin admin】"
 echo
 }
+
+
+
+
 #开始菜单
 start_menu(){
     echo
@@ -174,6 +205,7 @@ start_menu(){
     green "—————————————其他类型——————————————"
     green "9.【临时邮箱】"
     green "10.【X-ui】"
+    green "100.【输出所有容器默认配置】"
     green "0.【输出0退出菜单】"
     echo
     echo
@@ -208,7 +240,10 @@ start_menu(){
 	;;
 	10)
     install_10
-	;;                                 
+	;;   
+	100)
+    install_100
+	;; 
 	0)
 	exit 1
 	;;
