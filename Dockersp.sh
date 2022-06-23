@@ -259,6 +259,9 @@ start_menu(){
     9)
     install_9
 	;;
+    11)
+    install_11
+	;;
 	10)
     install_10
 	;;   
