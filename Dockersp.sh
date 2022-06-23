@@ -158,12 +158,12 @@ echo
 
 
 install_11(){
-stty erase '^H' && read -p "输入【管理员账户】:" uname
-stty erase '^H' && read -p "输入【管理员密码】:" pasw
+#stty erase '^H' && read -p "输入【管理员账户】:" uname
+#stty erase '^H' && read -p "输入【管理员密码】:" pasw
  sudo docker pull docker.seafile.top/seafileltd/seafile-pro:latest 
  sudo docker  run -d -it --name seafile \
--e SEAFILE_SERVER_HOSTNAME=${ip} \
--e SEAFILE_ADMIN_EMAIL=${uname} \
+-e SEAFILE_SERVER_HOSTNAME=admin \
+-e SEAFILE_ADMIN_EMAIL=admin \
 -e SEAFILE_ADMIN_PASSWORD=${pasw} \
 -v /shared:/shared \
 -p 5777:80 \
@@ -172,7 +172,7 @@ stty erase '^H' && read -p "输入【管理员密码】:" pasw
 docker.seafile.top/seafileltd/seafile-pro:latest	
 clear
 echo
-redbg "【Seafile】同步盘-默认面板:http://$ip:54321 【$uname $pasw】"
+redbg "【Seafile】同步盘-默认面板:http://$ip:5777 【admin admin】"
 echo
 }
 
@@ -200,6 +200,9 @@ echo
 redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】"
 echo
 redbg "【临时邮箱】-默认面板:http://${ip}:54321 【admin admin】"
+echo
+echo
+redbg "【Seafile】同步盘-默认面板:http://$ip:5777 【admin admin】"
 echo
 }
 
