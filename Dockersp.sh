@@ -177,8 +177,8 @@ echo
 }
 
 install_12(){
-mkdir data/docker_data/jellyfin
-cd data/docker_data/jellyfin
+mkdir -p /data/docker_data/jellyfin
+cd /data
 docker run -d -p 8096:8096 -v data/docker_data/jellyfin/config:/config -v data/docker_data/jellyfin/media:/media jellyfin/jellyfin
 clear
 echo
