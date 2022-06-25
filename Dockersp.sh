@@ -176,6 +176,17 @@ redbg "【Seafile】同步盘-默认面板:http://$ip:5777 【admin admin】"
 echo
 }
 
+install_12(){
+mkdir data/docker_data/jellyfin
+cd data/docker_data/jellyfin
+docker run -d -p 8096:8096 -v data/docker_data/jellyfin/config:/config -v data/docker_data/jellyfin/media:/media jellyfin/jellyfin
+clear
+echo
+redbg "【Jellyfin】家庭影院-默认面板:http://$ip:8096 【admin admin】"
+echo
+}
+
+
 install_100(){
 clear
 echo
@@ -229,6 +240,7 @@ start_menu(){
     green "—————————————其他类型——————————————"
     green "9.【临时邮箱】"
     green "10.【X-ui】"
+    green "12.【Jellyfin】家庭影院"
     green "100.【输出所有容器默认配置】"
     green "0.【输出0退出菜单】"
     echo
@@ -267,6 +279,9 @@ start_menu(){
 	;;
 	10)
     install_10
+	;;   
+	12)
+    install_12
 	;;   
 	100)
     install_100
