@@ -177,13 +177,21 @@ echo
 }
 
 install_12(){
-#cd /root
-#mkdir -p data/docker_data/jellyfin
+if [ ! -d “/data/docker_data/jellyfin” ];then
+mkdir -p /data/docker_data/jellyfin
 docker run -d -p 8096:8096 -v data/docker_data/jellyfin/config:/config -v data/docker_data/jellyfin/media:/media jellyfin/jellyfin
 clear
 echo
 redbg "【Jellyfin】家庭影院-默认面板:http://$ip:8096 【admin admin】"
 echo
+else
+docker run -d -p 8096:8096 -v data/docker_data/jellyfin/config:/config -v data/docker_data/jellyfin/media:/media jellyfin/jellyfin
+clear
+echo
+redbg "【Jellyfin】家庭影院-默认面板:http://$ip:8096 【admin admin】"
+echo
+fi
+
 }
 
 
