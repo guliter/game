@@ -44,6 +44,7 @@ install_pack() {
 
 ip=`curl http://whatismyip.akamai.com`
 
+systemctl restart docker
 cd /root
 
 > docker-compose.yml
