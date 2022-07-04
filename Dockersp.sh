@@ -149,7 +149,7 @@ echo
 }
 
 install_10(){
-bash <(curl -Ls https://ghproxy.com/https://raw.githubusercontent.com/yuanter/shell/main/docker-x-ui.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/yuanter/shell/main/docker-x-ui.sh)
 clear
 echo
 redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】"
