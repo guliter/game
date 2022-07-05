@@ -192,6 +192,73 @@ echo
 }
 
 
+install_13(){
+docker run -p 1890:8090 -p 3000:3000 -v /root/lanraragi/content:/root/lanraragi/content  -v /root/lanraragi/database:/root/lanraragi/database  dezhao/lanraragi_cn
+clear
+echo
+redbg "【漫画】LANraragi-默认面板:http://$ip:1890"
+echo
+
+}
+
+install_14(){
+docker run --name="ccaa" -d -p 6080:6080 -p 6081:6081 -p 6800:6800 -p 51413:51413 \
+    -v /data/ccaaDown:/data/ccaaDown \
+    -e PASS="xiaoz.me" \
+    helloz/ccaa \
+    sh -c "dccaa pass && dccaa start"
+clear
+echo
+redbg "【Aria2离线下载-在线播放】-默认面板:http://$ip:1890 【#文件管理默认用户名为ccaa，密码为admin，登录后可在后台修改 PASS="xiaoz.me"】"
+echo
+
+}
+
+
+install_15(){
+#下载最新版本的Plik，目前是1.2.3版本
+wget https://github.com/root-gg/plik/releases/download/1.2.3/plik-1.2.3-linux-64bits.tar.gz
+#解压
+tar xzvf plik-1.2.3-linux-64bits.tar.gz
+#运行
+cd plik-1.2.3/server
+./plikd
+#8080
+clear
+echo
+redbg "【Plik】临时网盘-默认面板:http://$ip:8080"
+echo
+
+}
+
+install_16(){
+docker run -d --restart=always -v /root/data/docker_data/alist:/opt/alist/data -p 5244:5244 --name="alist" xhofe/alist:latest  #可以自己保存下来，比如创建一个config.txt的文件，把这条代码复制进去保存，下次换服务器搬家之类的就很容易。
+docker logs alist
+clear
+echo
+redbg "【AList 网盘】-默认面板:http://$ip:5244"
+echo
+
+}
+
+
+install_17(){
+docker run -d \
+   --restart always \
+   --name jirafeau \
+   -p 2180:80 \
+   -v $(pwd)/data:/data \
+   -v $(pwd)/cfg:/cfg \
+   jgeusebroek/jirafeau
+clear
+echo
+redbg "【Jirafeau】临时加密盘-默认面板:http://$ip:2180"
+echo
+
+}
+
+
+
 install_100(){
 clear
 echo
@@ -287,6 +354,24 @@ start_menu(){
 	;;   
 	12)
     install_12
+    	;;   
+	13)
+    install_13
+    	;;   
+	14)
+    install_14
+    	;;   
+	15)
+    
+    	;;   
+	16)
+   
+    	;;   
+	17)
+    
+    	;;   
+	18)
+    
 	;;   
 	100)
     install_100
