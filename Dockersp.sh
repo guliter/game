@@ -362,16 +362,16 @@ start_menu(){
     install_14
     	;;   
 	15)
-    
+    install_15
     	;;   
 	16)
-   
+   install_16
     	;;   
 	17)
-    
+    install_17
     	;;   
 	18)
-    
+    install_18
 	;;   
 	100)
     install_100
