@@ -230,19 +230,19 @@ start_menu(){
     echo
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便"
     echo
-    green "—————————————基础功能——————————————"
-    redbg "1.【Portainer】"
-    green "2.【重启容器】"
-    green "—————————————云盘目录类——————————————"
-    green "3.【分享盘】h5ai"
-    green "4.【分享盘】Zdir &&【文件管理】KODExplorer"
-    green "5.【分享盘】OneDrive"
-    green "11.【同步盘】Seafile"
-    green "—————————————博客类程序——————————————"
-    green "6.【GRAV】博客"
-    green "7.【Wordpress】博客"
-    green "8.【Onlyoffice】"    
-    green "—————————————其他类型——————————————"
+    green "——————————————————————————---->>基础功能<<----————————————————————————"
+    redbg "1.【Portainer】 		    ||          13.【漫画】LANraragi"
+    green "2.【NPM反代】             	  ||           14.【Aria2下载-在线播放】"
+    green "——————————————————————————---->>云盘目录类<<----———————————————————————"
+    green "3.【分享盘】h5ai	        	 ||           15.【Plik】临时网盘"
+    green "4.【分享盘】Zdir	                 ||           16.【AList 网盘】"
+    green "5.【分享盘】OneDrive               ||           17.【Jirafeau】临时加密盘"
+    green "11.【同步盘】Seafile               ||				"
+    green "——————————————————————————---->>博客类程序<<----————————————————————————"
+    green "6.【GRAV】博客		          ||"
+    green "7.【Wordpress】博客                ||"
+    green "8.【Onlyoffice】                   ||"    
+    green "——————————————————————————---->>其他类型<<----—————————————————————————"
     green "9.【临时邮箱】"
     green "10.【X-ui】"
     green "12.【Jellyfin】家庭影院"
@@ -256,7 +256,7 @@ start_menu(){
     install_1
 	;;
     2)
-    install_2
+    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Nginx_Proxy_Manager.sh)
 	;;      
     3)
     install_3
