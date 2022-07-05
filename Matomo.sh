@@ -51,7 +51,7 @@ EOF
 
 cd /root/data/docker_data/matomo
 > docker-compose.yml
-cat >> /root/docker-compose.yml<<EOF
+cat >> /root/data/docker_data/matomo/docker-compose.yml<<EOF
 version: "3"
 
 services:
