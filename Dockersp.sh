@@ -308,7 +308,7 @@ start_menu(){
     green "11.【同步盘】Seafile"
     green "——————————————————————————---->>博客类程序<<----————————————————————————"
     green "6.【GRAV】博客			18.【Wiki】随身笔记"
-    green "7.【Wordpress】博客			21.【Typecho】博客"
+    green "7.【Wordpress】博客		21.【Typecho】博客"
     green "8.【Onlyoffice】"    
     green "——————————————————————————---->>其他类型<<----—————————————————————————"
     green "9.【临时邮箱】			19.【Matomo 专业统计】"
