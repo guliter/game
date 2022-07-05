@@ -89,5 +89,5 @@ EOF
 redbg "【Matomo 网站统计】启动中......"
 docker-compose up -d
 echo
-redbg "【Matomo 网站统计】-默认面板:http://${ip}:6548 【admin umami】"
+redbg "【Matomo 网站统计】-默认面板:http://${ip}:6548"
 echo
