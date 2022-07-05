@@ -41,6 +41,6 @@ cd /root/data/docker_data/lsky-pro
 redbg "【Lsky Pro-图床】启动中......"
 docker-compose up -d
 echo
-redbg "【Lsky Pro-图床】-默认面板:http://${ip}:7791"
+redbg "【Lsky Pro-图床】-默认面板:http://${ip}:7791 数据库位置：lsky-pro-db"
 echo
 
