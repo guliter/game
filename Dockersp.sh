@@ -209,7 +209,7 @@ docker run --name="ccaa" -d -p 6080:6080 -p 6081:6081 -p 6800:6800 -p 51413:5141
     sh -c "dccaa pass && dccaa start"
 clear
 echo
-redbg "【Aria2离线下载-在线播放】-默认面板:http://$ip:1890 【#文件管理默认用户名为ccaa，密码为admin，登录后可在后台修改 PASS="xiaoz.me"】"
+redbg "【Aria2离线下载-在线播放】-默认面板:http://$ip:6080 【#文件管理默认用户名为ccaa，密码为admin，登录后可在后台修改 PASS="xiaoz.me"】"
 echo
 
 }
