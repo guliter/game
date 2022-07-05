@@ -236,7 +236,7 @@ start_menu(){
     green "——————————————————————————---->>云盘目录类<<----———————————————————————"
     green "3.【分享盘】h5ai		15.【Plik】临时网盘"
     green "4.【分享盘】Zdir		16.【AList 网盘】"
-    green "5.【分享盘】OneDrive	17.【Jirafeau】临时加密盘"
+    green "5.【分享盘】OneDrive		17.【Jirafeau】临时加密盘"
     green "11.【同步盘】Seafile"
     green "——————————————————————————---->>博客类程序<<----————————————————————————"
     green "6.【GRAV】博客"
