@@ -307,7 +307,7 @@ start_menu(){
     green "5.【分享盘】OneDrive		17.【Jirafeau】临时加密盘"
     green "11.【同步盘】Seafile"
     green "——————————————————————————---->>博客类程序<<----————————————————————————"
-    green "6.【GRAV】博客"			redbg"18.【Wiki】随身笔记"
+    green "6.【GRAV】博客"			redbg "18.【Wiki】随身笔记"
     green "7.【Wordpress】博客"
     green "8.【Onlyoffice】"    
     green "——————————————————————————---->>其他类型<<----—————————————————————————"
