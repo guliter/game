@@ -1,6 +1,6 @@
 # typecho-install
 ```
-wget https://raw.githubusercontent.com/guliter/game/Docker/typecho/main/typecho-install.sh && bash typecho-install.sh
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/typecho/typecho-install.sh)
 ```
 1. 执行完成后进入/root/data/docker_data/typecho目录
 2. 修改您想修改的地方，比如说数据库用户名，密码等
