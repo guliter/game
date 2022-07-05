@@ -376,6 +376,9 @@ start_menu(){
         ;;   
 	19)
     bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Matomo.sh)
+        ;;   
+	20)
+    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/umami.sh)
 	;;   
 	100)
     install_100
