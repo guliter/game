@@ -259,6 +259,7 @@ echo
 
 
 
+
 install_100(){
 clear
 echo
@@ -371,7 +372,10 @@ start_menu(){
     install_17
     	;;   
 	18)
-    install_18
+    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Wiki.sh)
+        ;;   
+	19)
+    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Matomo.sh)
 	;;   
 	100)
     install_100
