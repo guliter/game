@@ -340,7 +340,7 @@ start_menu(){
     green "10.【X-ui】			22.【Umami 轻量统计】"
     green "12.【Jellyfin】家庭影院	23.【YOURLS 短连接】"
     green "25.【Duplicati】备份神器	26.【云网盘】FileRun"
-    green "27.【lsky-pro】图床	28.【青龙面板】"
+    green "27.【lsky-pro】图床		28.【青龙面板】"
     green "0.【输出0退出菜单】		100.【输出1-12配置】"
     echo
     read -p "请输入数字:" num
