@@ -26,7 +26,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=duplicati
+name= duplicati
 
 ip=`curl http://whatismyip.akamai.com`
 
