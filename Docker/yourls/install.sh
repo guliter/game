@@ -41,6 +41,6 @@ cd /root/data/docker_data/yourls
 redbg "【YOURLS-短连接】启动中......"
 docker-compose up -d
 echo
-redbg "【YOURLS-短连接】-默认面板:http://${ip}:7791 数据库位置：lsky-pro-db"
+redbg "【YOURLS-短连接】-默认面板:http://${ip}:8200"
 echo
 
