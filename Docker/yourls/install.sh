@@ -34,7 +34,7 @@ mkdir -p /root/data/docker_data/yourls
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/yourls/docker-compose.yml -P /root/data/docker_data/yourls
 
 chmod 777 /root/data/docker_data/yourls/docker-compose.yml
-redbg "注意docker-compose.yml域名的配置！"
+redbg "注意-docker-compose.yml-域名的配置！域名/admin"
 echo -e "\033[36m cd /root/data/docker_data/yourls \033[0m"
 echo -e "\033[36m docker-compose up -d \033[0m"
 rm $0
