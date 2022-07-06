@@ -43,6 +43,7 @@ cd /root/data/docker_data/$name
 redbg "【syncthing-同步盘】启动中......"
 docker-compose up -d
 echo
-redbg "【syncthing-同步盘】-默认面板:http://${ip}:8384 需要配合syncthing各个平台的工具一起使用"
+redbg "【syncthing-同步盘】-默认面板:http://${ip}:8384"
+redbg "要配合syncthing各个平台的工具一起使用"
 echo
 
