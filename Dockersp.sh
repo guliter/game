@@ -322,7 +322,7 @@ start_menu(){
     green "9.【临时邮箱】			21.【Matomo 专业统计】"
     green "10.【X-ui】			22.【Umami 轻量统计】"
     green "12.【Jellyfin】家庭影院	23.【YOURLS 短连接】"
-    redbg "***********************************************************************"
+    green "25.【Duplicati】备份神器	26.【云网盘】FileRun"
     echo
     green "0.【输出0退出菜单】		100.【输出1-12配置】"
     echo
@@ -399,6 +399,12 @@ start_menu(){
 	;; 
 	24)
  	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/syncthing/install.sh)
+	 ;; 
+	25)
+ 	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/duplicati/install.sh)
+	 ;; 
+	26)
+ 	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/FileRun/install.sh)
 	;; 
 	100)
     install_100
