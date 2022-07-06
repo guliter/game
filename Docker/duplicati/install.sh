@@ -39,7 +39,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$(name)/docker-c
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
 
-cd /root/data/docker_data/$name
+cd /root/data/docker_data/$(name)
 redbg "【duplicati-数据备份】启动中......"
 docker-compose up -d
 echo
