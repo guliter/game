@@ -20,7 +20,7 @@ services:
  
   service.mercury:
     image: wangqiru/mercury-parser-api:latest
-    container_name: mercury
+    container_name: ttrss_mercury
     networks:
       - public_access
       - service_only
@@ -28,7 +28,7 @@ services:
  
   service.opencc:
     image: wangqiru/opencc-api-server:latest
-    container_name: opencc
+    container_name: ttrss_opencc
     environment:
       - NODE_ENV=production
     networks:
@@ -37,7 +37,7 @@ services:
  
   database.postgres:
     image: postgres:13-alpine
-    container_name: postgres
+    container_name: ttrss_postgres
     environment:
       - POSTGRES_PASSWORD=ipbufQW8F2 # 按需修改。与上面的密码对应
     volumes:
