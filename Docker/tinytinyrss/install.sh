@@ -44,5 +44,6 @@ redbg "【tinytinyrss-订阅服务】启动中......"
 docker-compose up -d
 echo
 redbg "【tinytinyrss-订阅服务】-默认面板:http://${ip}:3894"
+redbg "一定要解析好域名配置docker-compose.yml才能正常启动 【admin password】"
 echo
 
