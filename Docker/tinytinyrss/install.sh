@@ -38,10 +38,11 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
-chmod -R 777 /root/data/docker_data/$name/feed-icons
 cd /root/data/docker_data/$name
 redbg "【tinytinyrss-订阅服务】启动中......"
 docker-compose up -d
+chmod -R 777 /root/data/docker_data/$name/feed-icons
+docker-compose restart
 echo
 redbg "【tinytinyrss-订阅服务】-默认面板:解析好的域名"
 redbg "一定要解析好域名配置docker-compose.yml才能正常启动 【admin password】"
