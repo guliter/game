@@ -40,9 +40,9 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 #rm $0
 
 cd /root/data/docker_data/$name
-redbg "【duplicati-数据备份】启动中......"
+redbg "【syncthing-同步盘】启动中......"
 docker-compose up -d
 echo
-redbg "【duplicati-数据备份】-默认面板:http://${ip}:7632"
+redbg "【syncthing-同步盘】-默认面板:http://${ip}:8384"
 echo
 
