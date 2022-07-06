@@ -257,6 +257,14 @@ echo
 
 }
 
+install_20(){
+docker run -it -d --name halo -p 8244:8090 -v ~/.halo:/root/.halo --restart=unless-stopped halohub/halo:1.5.2
+clear
+echo
+redbg "【Halo】博客-默认面板:http://$ip:8244"
+echo
+
+}
 
 
 
@@ -308,12 +316,12 @@ start_menu(){
     green "11.【同步盘】Seafile"
     green "——————————————————————————---->>博客类程序<<----————————————————————————"
     green "6.【GRAV】博客			18.【Wiki】随身笔记"
-    green "7.【Wordpress】博客		21.【Typecho】博客"
-    green "8.【Onlyoffice】"    
+    green "7.【Wordpress】博客		19.【Typecho】博客"
+    green "8.【Onlyoffice】		20.【Halo】 博客"  
     green "——————————————————————————---->>其他类型<<----—————————————————————————"
-    green "9.【临时邮箱】			19.【Matomo 专业统计】"
-    green "10.【X-ui】			20.【Umami 轻量统计】"
-    green "12.【Jellyfin】家庭影院"
+    green "9.【临时邮箱】			21.【Matomo 专业统计】"
+    green "10.【X-ui】			22.【Umami 轻量统计】"
+    green "12.【Jellyfin】家庭影院		23.【Umami 轻量统计】"
     redbg "***********************************************************************"
     echo
     green "0.【输出0退出菜单】		100.【输出1-12配置】"
@@ -375,9 +383,11 @@ start_menu(){
     bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Wiki.sh)
         ;;   
 	19)
-    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Matomo.sh)
+	bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/typecho/typecho-install.sh)
+	bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Matomo.sh)
         ;;   
 	20)
+	install_20
     bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/umami.sh)
 	;;   
 	21)
