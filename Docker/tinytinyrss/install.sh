@@ -26,7 +26,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=syncthing
+name=tinytinyrss
 
 ip=`curl http://whatismyip.akamai.com`
 
@@ -40,9 +40,9 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 #rm $0
 
 cd /root/data/docker_data/$name
-redbg "【duplicati-数据备份】启动中......"
+redbg "【tinytinyrss-订阅服务】启动中......"
 docker-compose up -d
 echo
-redbg "【duplicati-数据备份】-默认面板:http://${ip}:7632"
+redbg "【tinytinyrss-订阅服务】-默认面板:http://${ip}:7632"
 echo
 
