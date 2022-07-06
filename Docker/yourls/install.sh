@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/yourls/docker-co
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
 
-cd /root/data/docker_data/lsky-pro
+cd /root/data/docker_data/yourls
 redbg "【YOURLS-短连接】启动中......"
 docker-compose up -d
 echo
