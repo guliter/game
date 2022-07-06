@@ -2,7 +2,7 @@ version: "3.5"
 services:
 
   mysql:
-    image: mysql:5.7              # 如果遇到不正确的数据库配置，或无法连接到数据库PDOException: SQLSTATE[HY000] [1045] 用户'yourls'@'yourls_service.yourls_default'的访问被拒绝（使用密码：是）   可以把5.7.22 改为 5.7
+    image: mysql:5.7.22              # 如果遇到不正确的数据库配置，或无法连接到数据库PDOException: SQLSTATE[HY000] [1045] 用户'yourls'@'yourls_service.yourls_default'的访问被拒绝（使用密码：是）   可以把5.7.22 改为 5.7
     environment:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
       - MYSQL_DATABASE=yourls
