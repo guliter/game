@@ -26,21 +26,23 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
+name=duplicati
+
 ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
-mkdir -p /root/data/docker_data/yourls
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/yourls/docker-compose.yml -P /root/data/docker_data/yourls
+mkdir -p /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
 #chmod 777 /root/data/docker_data/lsky-pro
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
 
-cd /root/data/docker_data/lsky-pro
-redbg "【YOURLS-短连接】启动中......"
+cd /root/data/docker_data/$name
+redbg "【duplicati-数据备份】启动中......"
 docker-compose up -d
 echo
-redbg "【YOURLS-短连接】-默认面板:http://${ip}:7791 数据库位置：lsky-pro-db"
+redbg "【duplicati-数据备份】-默认面板:http://${ip}:7791 数据库位置：lsky-pro-db"
 echo
 
