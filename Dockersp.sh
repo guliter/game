@@ -313,7 +313,7 @@ start_menu(){
     green "3.【分享盘】h5ai		15.【Plik】临时网盘"
     green "4.【分享盘】Zdir		16.【AList 网盘】"
     green "5.【分享盘】OneDrive		17.【Jirafeau】临时加密盘"
-    green "11.【同步盘】Seafile"
+    green "11.【同步盘】Seafile		24.【syncthing】同步盘"
     green "——————————————————————————---->>博客类程序<<----————————————————————————"
     green "6.【GRAV】博客			18.【Wiki】随身笔记"
     green "7.【Wordpress】博客		19.【Typecho】博客"
@@ -321,7 +321,7 @@ start_menu(){
     green "——————————————————————————---->>其他类型<<----—————————————————————————"
     green "9.【临时邮箱】			21.【Matomo 专业统计】"
     green "10.【X-ui】			22.【Umami 轻量统计】"
-    green "12.【Jellyfin】家庭影院	23.【Umami 轻量统计】"
+    green "12.【Jellyfin】家庭影院	23.【YOURLS 短连接】"
     redbg "***********************************************************************"
     echo
     green "0.【输出0退出菜单】		100.【输出1-12配置】"
@@ -377,22 +377,29 @@ start_menu(){
    install_16
     	;;   
 	17)
-    install_17
+   	 install_17
     	;;   
 	18)
-    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Wiki.sh)
+   	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Wiki.sh)
         ;;   
 	19)
 	bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/typecho/typecho-install.sh)
-	bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Matomo.sh)
         ;;   
 	20)
 	install_20
-    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/umami.sh)
 	;;   
 	21)
-   bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/typecho/typecho-install.sh)
-	;;   
+ 	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Matomo.sh)
+	;;
+	22)
+  	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/umami.sh)
+	;; 
+	23)
+	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/yourls/install.sh)
+	;; 
+	24)
+ 	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/syncthing/install.sh)
+	;; 
 	100)
     install_100
 	;; 
