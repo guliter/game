@@ -54,6 +54,7 @@ version: "3"
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
+    container_name: NMP
     restart: unless-stopped
     ports:
       # These ports are in format <host-port>:<container-port>
@@ -78,6 +79,7 @@ services:
 
   db:
     image: 'jc21/mariadb-aria:latest'
+    container_name: NMP_mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: 'npm'
