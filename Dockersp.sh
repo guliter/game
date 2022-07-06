@@ -267,6 +267,23 @@ echo
 }
 
 
+install_28(){
+docker run -dit \
+   -v $PWD/QL/config:/ql/config \
+   -v $PWD/QL/log:/ql/log \
+   -v $PWD/QL/db:/ql/db \
+   -v $PWD/QL/scripts:/ql/scripts \
+   -p 5700:5700 \
+   --name QL \
+   --hostname QL \
+   --restart always \
+   whyour/qinglong:latest
+clear
+echo
+redbg "【青龙面板】-默认面板:http://$ip:5700"
+echo
+}
+
 
 install_100(){
 clear
@@ -323,7 +340,7 @@ start_menu(){
     green "10.【X-ui】			22.【Umami 轻量统计】"
     green "12.【Jellyfin】家庭影院	23.【YOURLS 短连接】"
     green "25.【Duplicati】备份神器	26.【云网盘】FileRun"
-    echo
+    green "27.【lsky-pro】图床	28.【青龙面板】"
     green "0.【输出0退出菜单】		100.【输出1-12配置】"
     echo
     read -p "请输入数字:" num
@@ -405,7 +422,13 @@ start_menu(){
 	 ;; 
 	26)
  	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/FileRun/install.sh)
+	 ;; 
+	 27)
+ 	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/lsky-pro/lsky-pro-install.sh)
 	;; 
+	28)
+ 	 install_28
+	 ;; 
 	100)
     install_100
 	;; 
