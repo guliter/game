@@ -6,7 +6,7 @@ services:
     ports:
       - 3894:80 # 按需修改
     environment:
-      - SELF_URL_PATH=http://96.45.170.249/ # 按需修改
+      - SELF_URL_PATH=https://rss.gamestart.ml/ # 按需修改
       - DB_PASS=ipbufQW8F2 # 按需修改。与下面的密码对应
     volumes:
       - ./feed-icons:/var/www/feed-icons/
