@@ -38,7 +38,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
-chmod -R 777 /root/data/docker_data/$name
+chmod -R 777 /root/data/docker_data/$name/feed-icons
 cd /root/data/docker_data/$name
 redbg "【tinytinyrss-订阅服务】启动中......"
 docker-compose up -d
