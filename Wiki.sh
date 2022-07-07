@@ -30,7 +30,7 @@ function white(){
 
 
 ip=`curl http://whatismyip.akamai.com`
-
+cd /root
 > docker-compose.yml
 cat >> /root/docker-compose.yml<<EOF
 ---
