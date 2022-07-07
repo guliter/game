@@ -48,4 +48,4 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/json/stats
 #rm $0
 
 cd /root/data/docker_data/$name
-bash sss.sh
+bash sss.sh YOUR_TG_CHAT_ID YOUR_TG_BOT_TOKEN
