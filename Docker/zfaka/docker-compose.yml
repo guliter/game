@@ -1,27 +1,58 @@
-version: '3'
+version: '3.1'
 services:
-    lsky-pro:
-        container_name: lsky-pro
-        image: dko0/lsky-pro
+    php:
+        image: baiyuetribe/zfaka 
+        restart: always   
+        volumes:
+            - /root/data/docker_data/zfaka/code:/var/www/html     
+        networks:
+            - frontend
+            - backend
+        depends_on:
+            - mysql
+    nginx:
+        image: nginx:1.17.1-alpine
         restart: always
         volumes:
-            - /root/data/docker_data/lsky-pro/lsky-pro-data:/var/www/html  #映射到本地
+          - /root/data/docker_data/zfaka/code/default.conf:/etc/nginx/conf.d/default.conf
+          - /root/data/docker_data/zfaka/code:/var/www/html        
         ports:
-            - 7791:80
-        environment:
-            - MYSQL_HOST=mysql
-            - MYSQL_DATABASE=lsky-pro
-            - MYSQL_USER=lsky-pro
-            - MYSQL_PASSWORD=lsky-pro
-
+            - "7788:80"
+        networks:
+            - frontend
+        depends_on:
+            - php            
     mysql:
-        image: mysql:8.0
-        container_name: lsky-pro-db
-        restart: always
-        environment:
-          - MYSQL_DATABASE=lsky-pro
-          - MYSQL_USER=lsky-pro
-          - MYSQL_PASSWORD=lsky-pro
-          - MYSQL_ROOT_PASSWORD=lsky-pro
+        image: mysql:5.6
         volumes:
-          - /root/data/docker_data/lsky-pro/db:/var/lib/mysql
+            - /root/data/docker_data/zfaka/mysql:/var/lib/mysql
+        environment:
+            TZ: 'Asia/Shanghai'
+            MYSQL_DATABASE: faka
+            MYSQL_ROOT_PASSWORD: baiyue.one
+        command: ['mysqld', '--character-set-server=utf8']
+        networks:
+            - backend
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - 7789:80
+        depends_on:
+            - nginx
+        environment:
+            PMA_HOST: mysql
+            TZ: 'Asia/Shanghai'
+        networks:
+            - backend
+    kodexplorer:
+        image: baiyuetribe/kodexplorer
+        volumes:
+            - /root/data/docker_data/zfaka:/code   
+        ports:
+            - 999:80
+        depends_on:
+            - nginx
+                 
+networks:
+    frontend:
+    backend:
