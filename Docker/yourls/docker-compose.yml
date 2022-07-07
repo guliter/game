@@ -12,7 +12,7 @@ services:
       - ./mysql/db/:/var/lib/mysql
       - ./mysql/conf/:/etc/mysql/conf.d
     restart: always
-    container_name: mysql
+    container_name: yourls_mysql 
   
   yourls:
     image: yourls
