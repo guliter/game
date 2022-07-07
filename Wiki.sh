@@ -55,5 +55,5 @@ EOF
 redbg "【Wiki软件】启动中......"
 docker-compose up -d
 echo
-redbg "【Wiki软件】-默认面板:http://${ip}:6547 【admin umami】"
+redbg "【Wiki软件】-默认面板:http://${ip}:6547"
 echo
