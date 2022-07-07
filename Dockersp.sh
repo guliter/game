@@ -116,7 +116,7 @@ echo
 
 
 install_6(){
-docker run -d -p 9292:80 evns/grav
+docker run --name Grav -d -p 9292:80 evns/grav
 clear
 echo
 redbg "【GRAV】博客-默认面板:http://${ip}:9292"
@@ -124,8 +124,8 @@ echo
 }
 
 install_7(){
-docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=baiyue -d mysql:5.5   #安装数据库大小只有66MB
-docker run -p 9393:80 --name some-wordpress --link some-mysql:mysql -d wordpress  #运行wordpress
+docker run --name wordpress-mysql -e MYSQL_ROOT_PASSWORD=baiyue -d mysql:5.5   #安装数据库大小只有66MB
+docker run -p 9393:80 --name wordpress --link some-mysql:mysql -d wordpress  #运行wordpress
 clear
 echo
 redbg "【Wordpress】博客-默认面板:http://${ip}:9393"
