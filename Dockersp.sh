@@ -73,7 +73,7 @@ start_menu
 
 install_3(){
 mkdir -p /root/share
-docker run -it -d -p 2571:80 -v /root/share:/var/www clue/h5ai
+docker run --name= h5ai -it -d -p 2571:80 -v /root/share:/var/www clue/h5ai
 clear
 echo
 redbg "【目录分享】h5ai-默认面板:http://${ip}:2571"
@@ -102,12 +102,12 @@ echo
 
 install_5(){
 #创建临时容器：
-docker run -itd --name=tmp baiyuetribe/oneindex
+docker run  -itd --name=tmp baiyuetribe/oneindex
 #拷贝容器内文件到宿主机目录：
 docker cp tmp:/var/www/html /opt/oneindex
 docker rm -f tmp
 #正式启动服务：
-docker run -d -p 5147:80 -v /opt/oneindex:/var/www/html --restart=always baiyuetribe/oneindex
+docker run --name= OneDrive -d -p 5147:80 -v /opt/oneindex:/var/www/html --restart=always baiyuetribe/oneindex
 clear
 echo
 redbg "【私人网盘】OneDrive-默认面板:http://${ip}:5147"
