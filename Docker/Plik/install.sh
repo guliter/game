@@ -35,7 +35,7 @@ mkdir -p /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/Plik/plikd.cfg -P /root/data/docker_data/$name
 redbg "【Plik】启动中......"
 echo
-docker run --name pilk -d -p 7546:8080 -v /root/data/docker_data/$name/plikd.cfg:/home/plik/server/plikd.cfg -v /root/data/docker_data/$name/files:/home/plik/server/files rootgg/plik
+docker run --name Pilk -d -p 7546:8080 -v /root/data/docker_data/$name/plikd.cfg:/home/plik/server/plikd.cfg -v /root/data/docker_data/$name/files:/home/plik/server/files rootgg/plik
 echo
 redbg "【Plik】-默认面板:http://${ip}:7546"
 echo
