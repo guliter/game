@@ -183,7 +183,7 @@ echo
 }
 
 install_12(){
-docker run -d -p 8096:8096 -v /data/docker_data/jellyfin/config:/config -v /data/docker_data/jellyfin/media:/media jellyfin/jellyfin
+docker run --restart=always --name Jellyfin -d -p 8096:8096 -v /data/docker_data/jellyfin/config:/config -v /data/docker_data/jellyfin/media:/media jellyfin/jellyfin
 clear
 echo
 redbg "【Jellyfin】家庭影院-默认面板:http://$ip:8096 【admin admin】"
