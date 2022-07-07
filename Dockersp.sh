@@ -216,17 +216,7 @@ echo
 
 
 install_15(){
-#下载最新版本的Plik，目前是1.2.3版本
-wget https://github.com/root-gg/plik/releases/download/1.2.3/plik-1.2.3-linux-64bits.tar.gz
-#解压
-tar xzvf plik-1.2.3-linux-64bits.tar.gz
-#运行
-cd plik-1.2.3/server
-./plikd
-#8080
-clear
-echo
-redbg "【Plik】临时网盘-默认面板:http://$ip:8080"
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/Plik/install.sh)
 echo
 
 }
