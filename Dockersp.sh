@@ -142,7 +142,7 @@ echo
 }
 
 install_9(){
-docker run -d -p 10087:10087 -p 25:25 -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock denghongcai/forsaken-mail
+docker run --name forsaken-mail  -d -p 10087:10087 -p 25:25 -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock denghongcai/forsaken-mail
 clear
 echo
 redbg "【临时邮箱】-默认面板:http://${ip}:3000"
