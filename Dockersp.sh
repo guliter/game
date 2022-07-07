@@ -134,10 +134,18 @@ echo
 
 
 install_8(){
-docker run -itd -p 5422:80 --restart=always onlyoffice/communityserver
+ docker run -itd \
+--name onlyoffice \
+--restart always \
+-p 8090:80 \
+-v /data/docker/onlyoffice/log:/var/log/onlyoffice \
+-v /data/docker/onlyoffice/data:/var/www/onlyoffice/Data \
+-v /data/docker/onlyoffice/lib:/var/lib/onlyoffice \
+-v /data/docker/onlyoffice/db:/var/lib/postgresql \
+onlyoffice/documentserver
 clear
 echo
-redbg "【Onlyoffice】-默认面板:http://${ip}:5422"
+redbg "【Onlyoffice】-默认面板:http://${ip}:8090"
 echo
 }
 
