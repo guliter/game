@@ -155,7 +155,7 @@ systemctl disable firewalld.service >/dev/null 2>&1
 docker pull yuanter/x-ui:latest
 #docker run -d --name=x-ui  --log-opt max-size=10m --log-opt max-file=5 --network=host --restart=always yuanter/x-ui:latest
 #docker run --restart=always --name x-ui -d -p 5566:54321 -p 8000-8010:8000-8010/tcp -p 8000-8010:8000-8010/udp --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v $PWD/x-ui-data:/etc/x-ui yuanter/x-ui:latest
-docker run --restart=always --name x-ui -d  --network=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v $PWD/x-ui-data:/etc/x-ui yuanter/x-ui:latest
+docker run --restart=always --name x-ui -d  --network=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /root/data/docker_data/x-ui-data:/etc/x-ui yuanter/x-ui:latest
 clear
 echo
 redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】"
@@ -193,7 +193,7 @@ echo
 
 
 install_13(){
-docker run -d -p 1890:8090 -p 3000:3000 -v /root/lanraragi/content:/root/lanraragi/content  -v /root/lanraragi/database:/root/lanraragi/database  dezhao/lanraragi_cn
+docker run --restart=always --name lanraragi -d -p 1890:8090 -p 3000:3000 -v /root/lanraragi/content:/root/lanraragi/content  -v /root/lanraragi/database:/root/lanraragi/database  dezhao/lanraragi_cn
 clear
 echo
 redbg "【漫画】LANraragi-默认面板:http://$ip:1890"
