@@ -3,7 +3,7 @@ version: "2.1"
 services:
   syncthing:
     image: lscr.io/linuxserver/syncthing
-    container_name: syncthing
+    container_name: Syncthing
     hostname: syncthing #optional
     environment:
       - PUID=1000
