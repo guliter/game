@@ -196,7 +196,7 @@ install_13(){
 docker run --restart=always --name lanraragi -d -p 1890:8090 -p 3000:3000 -v /root/lanraragi/content:/root/lanraragi/content  -v /root/lanraragi/database:/root/lanraragi/database  dezhao/lanraragi_cn
 clear
 echo
-redbg "【漫画】LANraragi-默认面板:http://$ip:1890"
+redbg "【漫画】LANraragi-默认面板:http://$ip:3000"
 echo
 
 }
