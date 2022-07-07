@@ -26,23 +26,25 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=syncthing
+name=Plik
 
 ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
 mkdir -p /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/Plik/plikd.cfg -P /root/data/docker_data/$name
+redbg "【Plik】启动中......"
+docker run --name pilk -d -p 7546:8080 -v /root/data/docker_data/$name/plikd.cfg:/home/plik/server/plikd.cfg -v /root/data/docker_data/$name/files:/home/plik/server/files rootgg/plik
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
 #chmod 777 /root/data/docker_data/$name
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
 
-cd /root/data/docker_data/$name
-redbg "【duplicati-数据备份】启动中......"
-docker-compose up -d
+#cd /root/data/docker_data/$name
+#docker-compose up -d
 echo
-redbg "【duplicati-数据备份】-默认面板:http://${ip}:7632"
+redbg "【Plik】-默认面板:http://${ip}:7546"
 echo
 
