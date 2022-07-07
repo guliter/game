@@ -38,6 +38,7 @@ version: '3'
 services:
   umami:
     image: ghcr.io/mikecao/umami:postgresql-latest
+    container_name: umami
     ports:
       - "3000:3000"
     environment:
@@ -49,6 +50,7 @@ services:
     restart: always
   db:
     image: postgres:12-alpine
+    container_name: umami_db
     environment:
       POSTGRES_DB: umami
       POSTGRES_USER: umami # 数据库用户
