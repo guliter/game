@@ -12,7 +12,7 @@ services:
       - /root/data/docker_data/xyfaka/xyfaka:/var/www/html
       - /root/data/docker_data/xyfaka/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - /root/data/docker_data/xyfaka/apache2.conf:/etc/apache2/apache2.conf
-  db:
+  xyfaka_db:
     container_name: xyfaka_db #记得改
     image: mysql:5.7
     restart: always
