@@ -134,18 +134,7 @@ echo
 
 
 install_8(){
- docker run -itd \
---name onlyoffice \
---restart always \
--p 8090:80 \
--v /data/docker/onlyoffice/log:/var/log/onlyoffice \
--v /data/docker/onlyoffice/data:/var/www/onlyoffice/Data \
--v /data/docker/onlyoffice/lib:/var/lib/onlyoffice \
--v /data/docker/onlyoffice/db:/var/lib/postgresql \
-onlyoffice/documentserver
-clear
-echo
-redbg "【Onlyoffice】-默认面板:http://${ip}:8090"
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/tinytinyrss/install.sh)
 echo
 }
 
@@ -266,19 +255,10 @@ echo
 
 
 install_28(){
-docker run -dit \
-   -v $PWD/QL/config:/ql/config \
-   -v $PWD/QL/log:/ql/log \
-   -v $PWD/QL/db:/ql/db \
-   -v $PWD/QL/scripts:/ql/scripts \
-   -p 5700:5700 \
-   --name QL \
-   --hostname QL \
-   --restart always \
-   whyour/qinglong:latest
+docker run -d --name Bitwarden -v /root/data/docker-data/bitwarden/bw-data/:/data/ -p 8000:80 bitwardenrs/server:latest
 clear
 echo
-redbg "【青龙面板】-默认面板:http://$ip:5700"
+redbg "【Bitwarden】-默认面板:http://$ip:8000"
 echo
 }
 
@@ -321,24 +301,24 @@ start_menu(){
     echo
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便"
     echo
-    green "——————————————————————————---->>基础功能<<----————————————————————————"
-    redbg "1.【Portainer】		13.【漫画】LANraragi"
+    green "———————————————————————————————————---->>基础功能<<----—————————————————————————————————"
+    redbg "1.【Portainer】		13.【漫画】LANraragi		29.【easyimage】 图床"		
     green "2.【NPM反代】			14.【Aria2下载-在线播放】"
-    green "——————————————————————————---->>云盘目录类<<----———————————————————————"
+    green "———————————————————————————————————---->>云盘目录类<<----————————————————————————————————"
     green "3.【分享盘】h5ai		15.【分享盘】Plik"
     green "4.【分享盘】Zdir		16.【云网盘】AList "
     green "5.【分享盘】OneDrive		17.【分享盘】Jirafeau"
     green "11.【同步盘】Seafile		24.【同步盘】syncthing"
-    green "——————————————————————————---->>博客类程序<<----————————————————————————"
+    green "———————————————————————————————————---->>博客类程序<<----—————————————————————————————————"
     green "6.【GRAV】博客			18.【Wiki】随身笔记"
     green "7.【Wordpress】博客		19.【Typecho】博客"
-    green "8.【Onlyoffice】		20.【Halo】 博客"  
-    green "——————————————————————————---->>其他类型<<----—————————————————————————"
+    green "8.【RSS订阅器】		20.【Halo】 博客"  
+    green "———————————————————————————————————---->>其他类型<<----——————————————————————————————————"
     green "9.【临时邮箱】			21.【Matomo 专业统计】"
     green "10.【X-ui】			22.【Umami 轻量统计】"
     green "12.【Jellyfin】家庭影院	23.【YOURLS 短连接】"
     green "25.【Duplicati】备份神器	26.【云网盘】FileRun"
-    green "27.【lsky-pro】图床		28.【青龙面板】"
+    green "27.【lsky-pro】图床		28.【Bitwarden】密码管理"
     green "0.【输出0退出菜单】		100.【输出1-12配置】"
     echo
     read -p "请输入数字:" num
