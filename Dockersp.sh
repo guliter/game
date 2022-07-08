@@ -303,10 +303,10 @@ start_menu(){
     echo
     green "———————————————————————————————————---->>基础功能<<----—————————————————————————————————"
     redbg "1.【Portainer】		13.【漫画】LANraragi		29.【easyimage】 图床"		
-    green "2.【NPM反代】			14.【Aria2下载-在线播放】"
+    green "2.【NPM反代】			14.【Aria2下载-在线播放】		30.【ServerStatus】"		
     green "———————————————————————————————————---->>云盘目录类<<----————————————————————————————————"
-    green "3.【分享盘】h5ai		15.【分享盘】Plik"
-    green "4.【分享盘】Zdir		16.【云网盘】AList "
+    green "3.【分享盘】h5ai		15.【分享盘】Plik		31.【V2Board】"
+    green "4.【分享盘】Zdir		16.【云网盘】AList		32.【zfaka】 "
     green "5.【分享盘】OneDrive		17.【分享盘】Jirafeau"
     green "11.【同步盘】Seafile		24.【同步盘】syncthing"
     green "———————————————————————————————————---->>博客类程序<<----—————————————————————————————————"
@@ -405,6 +405,18 @@ start_menu(){
  	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/lsky-pro/lsky-pro-install.sh)
 	;; 
 	28)
+ 	 install_28
+	 ;; 
+	29)
+ 	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/easyimage/install.sh)
+	 ;; 
+	30)
+ 	 install_28
+	 ;; 
+	31)
+ 	 install_28
+	 ;; 
+	32)
  	 install_28
 	 ;; 
 	100)
