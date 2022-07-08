@@ -262,6 +262,31 @@ redbg "【Bitwarden】-默认面板:http://$ip:8000"
 echo
 }
 
+install_31(){
+docker run -d \
+--name=v2board \
+--privileged=true \
+--restart always \
+-v /usr/local/v2board:/usr/local/src \
+-p 8045:80 \
+gz1903/v2board:1.6.0
+clear
+echo
+redbg "【V2Board】-默认面板:http://$ip:8045"
+echo
+}
+
+install_32(){
+#bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/zfaka/install.sh)
+mkdir -p /opt/zfaka && cd /opt/zfaka        #创建本地源码存储路径
+wget https://raw.githubusercontent.com/Baiyuetribe/zfaka/epay-payjs/docker-compose.yml
+docker-compose up -d
+clear
+echo
+redbg "【zfaka】-默认面板:http://$ip:3002"
+echo
+}
+
 
 install_100(){
 clear
@@ -303,7 +328,7 @@ start_menu(){
     echo
     green "———————————————————————————————————---->>基础功能<<----—————————————————————————————————"
     redbg "1.【Portainer】		13.【漫画】LANraragi		29.【easyimage】 图床"		
-    green "2.【NPM反代】			14.【Aria2下载-在线播放】		30.【ServerStatus】"		
+    green "2.【NPM反代】			14.【Aria2下载-在线播放】	30.【ServerStatus】"		
     green "———————————————————————————————————---->>云盘目录类<<----————————————————————————————————"
     green "3.【分享盘】h5ai		15.【分享盘】Plik		31.【V2Board】"
     green "4.【分享盘】Zdir		16.【云网盘】AList		32.【zfaka】 "
@@ -411,13 +436,14 @@ start_menu(){
  	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/easyimage/install.sh)
 	 ;; 
 	30)
- 	 install_28
+ 	 bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/ServerStatus/install.sh)
+#bash sss.sh YOUR_TG_CHAT_ID YOUR_TG_BOT_TOKEN
 	 ;; 
 	31)
- 	 install_28
+ 	 install_31
 	 ;; 
 	32)
- 	 install_28
+ 	 install_32
 	 ;; 
 	100)
     install_100
