@@ -327,7 +327,7 @@ start_menu(){
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便"
     echo
     green "———————————————————————————————————---->>基础功能<<----—————————————————————————————————"
-    redbg "1.【Portainer】		13.【漫画】LANraragi		29.【easyimage】 图床"		
+    redbg "1.【Portainer】		13.【漫画】LANraragi		28.【Bitwarden】密码管理"		
     green "2.【NPM反代】			14.【Aria2下载-在线播放】	30.【ServerStatus】"		
     green "———————————————————————————————————---->>云盘目录类<<----————————————————————————————————"
     green "3.【分享盘】h5ai		15.【分享盘】Plik		31.【V2Board】"
@@ -343,7 +343,7 @@ start_menu(){
     green "10.【X-ui】			22.【Umami 轻量统计】"
     green "12.【Jellyfin】家庭影院	23.【YOURLS 短连接】"
     green "25.【Duplicati】备份神器	26.【云网盘】FileRun"
-    green "27.【lsky-pro】图床		28.【Bitwarden】密码管理"
+    green "27.【lsky-pro】图床		29.【easyimage】 图床"
     green "0.【输出0退出菜单】		100.【输出1-12配置】"
     echo
     read -p "请输入数字:" num
