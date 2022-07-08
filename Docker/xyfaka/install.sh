@@ -32,11 +32,16 @@ ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
 mkdir -p /root/data/docker_data/$name
-mkdir -p /root/data/docker_data/$name/xyfaka
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/000-default.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/apache2.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/xyfkaweb.rar -P /root/data/docker_data/$name/xyfaka
+
+
+
+yum -y install unzip zip
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/xyfaka.zip -P /root/data/docker_data/$name
+unzip /root/data/docker_data/xyfaka/xyfaka.zip -d /root/data/docker_data/xyfaka
+
 
 chmod 777 /root/data/docker_data/$name
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
