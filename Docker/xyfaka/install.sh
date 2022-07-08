@@ -32,9 +32,11 @@ ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
 mkdir -p /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/000-default.conf -P /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/apache2.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
-#chmod 777 /root/data/docker_data/$name
+chmod 777 /root/data/docker_data/$name
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
@@ -43,6 +45,6 @@ cd /root/data/docker_data/$name
 redbg "【xyfaka】启动中......"
 docker-compose up -d
 echo
-redbg "【xyfaka】-默认面板:http://${ip}:8938"
+redbg "【xyfaka】-默认面板:http://${ip}:5000"
 echo
 
