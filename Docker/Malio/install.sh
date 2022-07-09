@@ -43,28 +43,13 @@ unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$na
 
 
 #> /root/data/docker_data/$name/$name/config/.config.php
-cat >> /root/data/docker_data/$name/$name/config/.config.php<<EOF
-[common]
-application.directory = APP_PATH"/application/"
-application.dispatcher.catchException = 1
-application.cache_config = 1
-application.dispatcher.defaultController = "Index"
-application.dispatcher.defaultAction = "index"
-application.view.ext = "html"
-application.modules = "Index,Member,Product,407413685,Crontab,Install"
-[product : common]
-TYPE = "mysql"
-READ_HOST = "${ip}"
-READ_PORT = 6878
-READ_USER = "root"
-READ_PSWD = root
-WRITE_HOST = "${ip}"
-WRITE_PORT = 6878
-WRITE_USER = "root"
-WRITE_PSWD = root
-Default = "zfaka"
-pconnect = 0
-EOF
+#cat >> /root/data/docker_data/$name/$name/config/.config.php<<EOF
+
+#EOF
+
+rm -f /root/data/docker_data/$name/$name/config/.config.php
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/Malio/config.php -P /root/data/docker_data/$name/$name/config
+
 
 chmod -R 777 /root/data/docker_data
 #sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
@@ -79,10 +64,20 @@ sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-
 #rm $0
 
 cd /root/data/docker_data/$name
-redbg "【zfaka】启动中......"
-docker-compose up -d
 echo
-redbg "【zfaka】-默认面板:http://${ip}:5005"
+redbg "【Malio】启动中......"
+echo
+docker run -d \
+  --restart always \
+  --name $name \
+  --link mysql \
+  -p 6060:80 \
+  -v /root/data/docker_data/xyfaka/xyfaka:/var/www/html \
+  -v /root/data/docker_data/xyfaka/000-default.conf:/etc/apache2/sites-enabled/000-default.conf \
+  -v /root/data/docker_data/xyfaka/apache2.conf:/etc/apache2/apache2.conf \
+  ddsderek/foundations:Debian-apache2-php7.3
+echo
+redbg "【Malio】-默认面板:http://${ip}:6060"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
