@@ -43,7 +43,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/xyfaka.zi
 unzip /root/data/docker_data/xyfaka/xyfaka.zip -d /root/data/docker_data/xyfaka
 
 
-chmod -R 777 /root/data/docker_data/$name
+chmod -R 777 /root/data/docker_data
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
 #chmod -R 777 /root/data/docker_data/xyfaka/xyfaka/install
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
