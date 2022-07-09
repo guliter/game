@@ -31,6 +31,10 @@ name=syncthing
 ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
+
+mkdir mysql
+mkdir mysql/initdb
+mkdir mysql/datadir
 mkdir -p /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
