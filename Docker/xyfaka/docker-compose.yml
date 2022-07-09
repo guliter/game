@@ -12,14 +12,14 @@ services:
       - /root/data/docker_data/xyfaka/xyfaka:/var/www/html
       - /root/data/docker_data/xyfaka/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - /root/data/docker_data/xyfaka/apache2.conf:/etc/apache2/apache2.conf
-  xyfaka_db:
-    container_name: xyfaka_db #记得改
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: xyfaka #记得改
-      MYSQL_USER: xyfaka #记得改
-      MYSQL_PASSWORD: xyfaka #记得改
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
-    volumes:
-      - /root/data/docker_data/xyfaka/db:/var/lib/mysql
+#  xyfaka_db:
+#   container_name: xyfaka_db #记得改
+#    image: mysql:5.7
+#    restart: always
+#    environment:
+#      MYSQL_DATABASE: xyfaka #记得改
+#      MYSQL_USER: xyfaka #记得改
+#      MYSQL_PASSWORD: xyfaka #记得改
+#      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+#    volumes:
+#      - /root/data/docker_data/xyfaka/db:/var/lib/mysql
