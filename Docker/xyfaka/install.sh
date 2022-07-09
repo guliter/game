@@ -43,6 +43,22 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/xyfaka.zi
 unzip /root/data/docker_data/xyfaka/xyfaka.zip -d /root/data/docker_data/xyfaka
 
 
+> docker-compose.yml
+cat >> /root/data/docker_data/xyfaka/xyfaka/config.php<<EOF
+<?php
+/*数据库配置*/
+$dbconfig=array(
+	'host' => '${ip}', //数据库服务器
+	'port' => 6878, //数据库端口
+	'user' => 'root', //数据库用户名
+	'pwd' => 'root', //数据库密码
+	'dbname' => 'xyfaka', //数据库名
+	'dbqz' => 'shua' //数据表前缀
+);
+EOF
+
+sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
+
 chmod -R 777 /root/data/docker_data
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
 #chmod -R 777 /root/data/docker_data/xyfaka/xyfaka/install
