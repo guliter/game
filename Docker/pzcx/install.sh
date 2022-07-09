@@ -46,11 +46,11 @@ unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$na
 cat >> /root/data/docker_data/$name/$name/config.php<<EOF
 <?php
 /*数据库信息配置*/
-
-
-
-
-
+$host = 'localhost'; //数据库地址
+$port = 3306; //数据库端口
+$user = '4l'; //数据库用户名
+$pwd = '4l'; //数据库密码
+$dbname = '4l'; //数据库名
 ?>
 EOF
 
@@ -76,11 +76,11 @@ services:
 EOF
 
 chmod -R 777 /root/data/docker_data
-sed -i '3c $host = '''${ip}''';' /root/data/docker_data/$name/$name/config.php
-sed -i '4c $port = 6878;' /root/data/docker_data/$name/$name/config.php
-sed -i '5c $user = 'root';' /root/data/docker_data/$name/$name/config.php
-sed -i '6c $pwd = 'root';' /root/data/docker_data/$name/$name/config.php
-sed -i '7c $dbname = 'pzcx';' /root/data/docker_data/$name/$name/config.php
+#sed -i '3c $host = '''${ip}''';' /root/data/docker_data/$name/$name/config.php
+#sed -i '4c $port = 6878;' /root/data/docker_data/$name/$name/config.php
+#sed -i '5c $user = 'root';' /root/data/docker_data/$name/$name/config.php
+#sed -i '6c $pwd = 'root';' /root/data/docker_data/$name/$name/config.php
+#sed -i '7c $dbname = 'pzcx';' /root/data/docker_data/$name/$name/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
 sed -i '12c DocumentRoot /var/www/html' /root/data/docker_data/$name/000-default.conf
 
