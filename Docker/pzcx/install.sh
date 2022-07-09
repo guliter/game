@@ -26,6 +26,8 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
+
+stty erase '^H' && read -p "请输入站点端口：" port 
 name=pzcx
 
 ip=`curl http://whatismyip.akamai.com`
@@ -47,7 +49,7 @@ cat >> /root/data/docker_data/$name/$name/config.php<<EOF
 <?php
 /*数据库信息配置*/
 host = '${ip}'; //数据库地址
-port = 3306; //数据库端口
+port = 6878; //数据库端口
 user = 'root'; //数据库用户名
 pwd = 'root'; //数据库密码
 dbname = 'pzcx'; //数据库名
@@ -68,7 +70,7 @@ services:
 #    image: ddsderek/foundations:Debian-apache2-php7.3
     restart: always
     ports:
-      - '5010:80' #记得改
+      - '$port:80' #记得改
     volumes:
       - /root/data/docker_data/$name/$name:/var/www/html
       - /root/data/docker_data/$name/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
@@ -100,7 +102,7 @@ cd /root/data/docker_data/$name
 redbg "【pzcx】启动中......"
 docker-compose up -d
 echo
-redbg "【pzcx】-默认面板:http://${ip}:5010"
+redbg "【pzcx】-默认面板:http://${ip}:$port"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
