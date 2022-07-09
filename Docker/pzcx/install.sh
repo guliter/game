@@ -82,6 +82,11 @@ chmod -R 777 /root/data/docker_data
 #sed -i '6c $pwd = 'root';' /root/data/docker_data/$name/$name/config.php
 #sed -i '7c $dbname = 'pzcx';' /root/data/docker_data/$name/$name/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
+sed -i  's/host =/$&/' /root/data/docker_data/$name/$name/config.php
+sed -i  's/port =/$&/' /root/data/docker_data/$name/$name/config.php
+sed -i  's/user =/$&/' /root/data/docker_data/$name/$name/config.php
+sed -i  's/pwd =/$&/' /root/data/docker_data/$name/$name/config.php
+sed -i  's/dbname =/$&/' /root/data/docker_data/$name/$name/config.php
 sed -i '12c DocumentRoot /var/www/html' /root/data/docker_data/$name/000-default.conf
 
 
