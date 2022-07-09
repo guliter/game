@@ -74,4 +74,6 @@ docker-compose up -d
 echo
 redbg "【xyfaka】-默认面板:http://${ip}:5000"
 echo
+redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
+echo
 
