@@ -36,7 +36,10 @@ mkdir mysql
 mkdir mysql/initdb
 mkdir mysql/datadir
 mkdir -p /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
+
+docker run -itd --name mysql -p 6878:3306 -v /root/data/docker_data/db:/var/lib/mysql -v /root/data/docker_data/db/my.cnf:/etc/mysql/conf.d/my.cnf -e MYSQL_ROOT_PASSWORD=root -e HYSQL_DATABASE=xyfaka mysql:5.7
+docker run  --name phpmyadmin -d --link mysql -e PMA_HOST="mysql" -p 8181:80 phpmyadmin/phpmyadmin
 
 #/root/data/docker_data/db/my.cnf:/etc/mysql/conf.d/my.cnf
 
