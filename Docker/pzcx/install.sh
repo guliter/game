@@ -54,6 +54,27 @@ cat >> /root/data/docker_data/$name/$name/config.php<<EOF
 ?>
 EOF
 
+
+
+
+> /root/data/docker_data/$name/$name/docker-compose.yml
+cat >> /root/data/docker_data/$name/$name/docker-compose.yml<<EOF
+version: '3'
+
+services:
+  web:
+    container_name: $name #记得改
+    image: ddsderek/foundations:Debian-apache2-php7.1 #选择你需要的镜像
+#    image: ddsderek/foundations:Debian-apache2-php7.3
+    restart: always
+    ports:
+      - '5006:80' #记得改
+    volumes:
+      - /root/data/docker_data/$name/$name:/var/www/html
+      - /root/data/docker_data/$name/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - /root/data/docker_data/$name/apache2.conf:/etc/apache2/apache2.conf
+EOF
+
 chmod -R 777 /root/data/docker_data
 sed -i '3c $host = '${ip}';' /root/data/docker_data/$name/$name/config.php
 sed -i '4c $port = 6878;' /root/data/docker_data/$name/$name/config.php
@@ -74,7 +95,7 @@ cd /root/data/docker_data/$name
 redbg "【pzcx】启动中......"
 docker-compose up -d
 echo
-redbg "【pzcx】-默认面板:http://${ip}:5005"
+redbg "【pzcx】-默认面板:http://${ip}:5006"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
