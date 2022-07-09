@@ -46,11 +46,11 @@ unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$na
 cat >> /root/data/docker_data/$name/$name/config.php<<EOF
 <?php
 /*数据库信息配置*/
-$host = 'localhost'; //数据库地址
+$host = '${ip}'; //数据库地址
 $port = 3306; //数据库端口
-$user = '4l'; //数据库用户名
-$pwd = '4l'; //数据库密码
-$dbname = '4l'; //数据库名
+$user = 'root'; //数据库用户名
+$pwd = 'root'; //数据库密码
+$dbname = 'pzcx'; //数据库名
 ?>
 EOF
 
