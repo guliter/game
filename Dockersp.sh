@@ -56,7 +56,7 @@ docker-compose version > /dev/null ||  yum install docker-compose -y
 systemctl enable docker
 service docker restart
 docker volume create portainer_data
-docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /root/data/docker_data/portainer:/data portainer/portainer
 clear
 echo
 redbg "Portainer-默认面板:http://${ip}:9000"
