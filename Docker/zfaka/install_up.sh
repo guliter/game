@@ -33,6 +33,8 @@ ip=`curl http://whatismyip.akamai.com`
 #yum -y install unzip zip
 mkdir -p /root/data/docker_data/$name
 
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-default.conf -P /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
 yum -y install unzip zip
@@ -64,6 +66,7 @@ WRITE_PSWD = root
 Default = "zfaka"
 pconnect = 0
 EOF
+
 
 #sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
 
