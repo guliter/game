@@ -80,7 +80,7 @@ cd /root/data/docker_data/$name
 redbg "【zfaka】启动中......"
 docker-compose up -d
 echo
-redbg "【zfaka】-默认面板:http://${ip}:5000"
+redbg "【zfaka】-默认面板:http://${ip}:5005"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
