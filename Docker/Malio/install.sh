@@ -26,7 +26,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=zfaka
+name=Malio
 
 ip=`curl http://whatismyip.akamai.com`
 
@@ -35,15 +35,15 @@ mkdir -p /root/data/docker_data/$name
 
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-default.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.conf -P /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
 yum -y install unzip zip
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/$name.zip -P /root/data/docker_data/$name
+wget https://github.com/guliter/game/releases/download/Malio/Malio.zip -P /root/data/docker_data/$name/$name
 unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$name
 
 
-> /root/data/docker_data/$name/$name/conf/application.ini
-cat >> /root/data/docker_data/$name/$name/conf/application.ini<<EOF
+#> /root/data/docker_data/$name/$name/config/.config.php
+cat >> /root/data/docker_data/$name/$name/config/.config.php<<EOF
 [common]
 application.directory = APP_PATH"/application/"
 application.dispatcher.catchException = 1
