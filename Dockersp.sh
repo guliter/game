@@ -234,8 +234,8 @@ docker run -d \
    --restart always \
    --name jirafeau \
    -p 2180:80 \
-   -v $(pwd)/data:/data \
-   -v $(pwd)/cfg:/cfg \
+   -v /root/data/docker_data/jirafeau/data:/data \
+   -v /root/data/docker_data/jirafeau/cfg:/cfg \
    jgeusebroek/jirafeau
 clear
 echo
@@ -245,7 +245,7 @@ echo
 }
 
 install_20(){
-docker run -it -d --name halo -p 8244:8090 -v ~/.halo:/root/.halo --restart=unless-stopped halohub/halo:1.5.2
+docker run -it -d --name halo -p 8244:8090 -v /root/data/docker_data/halo:/root/.halo --restart=unless-stopped halohub/halo:1.5.2
 clear
 echo
 redbg "【Halo】博客-默认面板:http://$ip:8244"
