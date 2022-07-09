@@ -68,7 +68,7 @@ services:
 #    image: ddsderek/foundations:Debian-apache2-php7.3
     restart: always
     ports:
-      - '5006:80' #记得改
+      - '5010:80' #记得改
     volumes:
       - /root/data/docker_data/$name/$name:/var/www/html
       - /root/data/docker_data/$name/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
@@ -95,7 +95,7 @@ cd /root/data/docker_data/$name
 redbg "【pzcx】启动中......"
 docker-compose up -d
 echo
-redbg "【pzcx】-默认面板:http://${ip}:5006"
+redbg "【pzcx】-默认面板:http://${ip}:5010"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
