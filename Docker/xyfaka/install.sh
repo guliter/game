@@ -43,7 +43,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/xyfaka.zi
 unzip /root/data/docker_data/xyfaka/xyfaka.zip -d /root/data/docker_data/xyfaka
 
 
-> docker-compose.yml
+> /root/data/docker_data/xyfaka/xyfaka/config.php
 cat >> /root/data/docker_data/xyfaka/xyfaka/config.php<<EOF
 <?php
 /*数据库配置*/
