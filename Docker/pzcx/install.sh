@@ -76,11 +76,11 @@ services:
 EOF
 
 chmod -R 777 /root/data/docker_data
-sed -i '3c $host = '${ip}';' /root/data/docker_data/$name/$name/config.php
+sed -i '3c $host = ''${ip}'';' /root/data/docker_data/$name/$name/config.php
 sed -i '4c $port = 6878;' /root/data/docker_data/$name/$name/config.php
-sed -i '5c $user = 'root';' /root/data/docker_data/$name/$name/config.php
-sed -i '6c $pwd = 'root';' /root/data/docker_data/$name/$name/config.php
-sed -i '7c $dbname = 'pzcx';' /root/data/docker_data/$name/$name/config.php
+sed -i '5c $user = ''root'';' /root/data/docker_data/$name/$name/config.php
+sed -i '6c $pwd = ''root'';' /root/data/docker_data/$name/$name/config.php
+sed -i '7c $dbname = ''pzcx'';' /root/data/docker_data/$name/$name/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
 sed -i '12c DocumentRoot /var/www/html' /root/data/docker_data/$name/000-default.conf
 
