@@ -72,8 +72,8 @@ services:
       # Uncomment this if IPv6 is not enabled on your host
       # DISABLE_IPV6: 'true'
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - /root/data/docker_data/NPM:/data
+      - /root/data/docker_data/NPM/letsencrypt:/etc/letsencrypt
     depends_on:
       - db
 
@@ -87,7 +87,7 @@ services:
       MYSQL_USER: 'npm'
       MYSQL_PASSWORD: 'npm'
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - /root/data/docker_data/NPM/mysql:/var/lib/mysql
 EOF
 redbg "【Nginx Proxy Manager】启动中......"
 docker-compose up -d
