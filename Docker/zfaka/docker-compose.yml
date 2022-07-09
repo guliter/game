@@ -1,58 +1,23 @@
-version: '3.1'
+version: '3'
+
 services:
-    php:
-        image: baiyuetribe/zfaka:epay-payjs 
-        restart: always   
-        volumes:
-            - /opt/zfaka/code:/var/www/html     
-        networks:
-            - frontend
-            - backend
-        depends_on:
-            - mysql
-    nginx:
-        image: nginx:1.17.1-alpine
-        restart: always
-        volumes:
-          - /opt/zfaka/code/default.conf:/etc/nginx/conf.d/default.conf
-          - /opt/zfaka/code:/var/www/html        
-        ports:
-            - "3002:80"
-        networks:
-            - frontend
-        depends_on:
-            - php            
-    mysql:
-        image: mysql:5.6
-        volumes:
-            - /opt/zfaka/mysql:/var/lib/mysql
-        environment:
-            TZ: 'Asia/Shanghai'
-            MYSQL_DATABASE: faka
-            MYSQL_ROOT_PASSWORD: baiyue.one
-        command: ['mysqld', '--character-set-server=utf8']
-        networks:
-            - backend
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        ports:
-            - 8080:80
-        depends_on:
-            - nginx
-        environment:
-            PMA_HOST: mysql
-            TZ: 'Asia/Shanghai'
-        networks:
-            - backend
-    kodexplorer:
-        image: baiyuetribe/kodexplorer
-        volumes:
-            - /opt/zfaka:/code   
-        ports:
-            - 999:80
-        depends_on:
-            - nginx
-                 
-networks:
-    frontend:
-    backend:
+  web:
+    container_name: zfaka #记得改
+    image: ddsderek/foundations:Debian-apache2-php7.1 #选择你需要的镜像
+#    image: ddsderek/foundations:Debian-apache2-php7.3
+    restart: always
+    ports:
+      - '5005:80' #记得改
+    volumes:
+      - /root/data/docker_data/zfaka/zfaka:/var/www/html
+#  xyfaka_db:
+#   container_name: xyfaka_db #记得改
+#    image: mysql:5.7
+#    restart: always
+#    environment:
+#      MYSQL_DATABASE: xyfaka #记得改
+#      MYSQL_USER: xyfaka #记得改
+#      MYSQL_PASSWORD: xyfaka #记得改
+#      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+#    volumes:
+#      - /root/data/docker_data/xyfaka/db:/var/lib/mysql
