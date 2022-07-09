@@ -10,6 +10,8 @@ services:
       - '5005:80' #记得改
     volumes:
       - /root/data/docker_data/zfaka/zfaka:/var/www/html
+      - /root/data/docker_data/zfaka/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - /root/data/docker_data/zfaka/apache2.conf:/etc/apache2/apache2.conf
 #  xyfaka_db:
 #   container_name: xyfaka_db #记得改
 #    image: mysql:5.7
