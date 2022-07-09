@@ -57,8 +57,8 @@ EOF
 
 
 
-> /root/data/docker_data/$name/$name/docker-compose.yml
-cat >> /root/data/docker_data/$name/$name/docker-compose.yml<<EOF
+> /root/data/docker_data/$name/docker-compose.yml
+cat >> /root/data/docker_data/$name/docker-compose.yml<<EOF
 version: '3'
 
 services:
