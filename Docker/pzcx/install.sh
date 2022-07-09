@@ -26,7 +26,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=zfaka
+name=pzcx
 
 ip=`curl http://whatismyip.akamai.com`
 
@@ -42,34 +42,26 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/$name.zip 
 unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$name
 
 
-> /root/data/docker_data/$name/$name/conf/application.ini
-cat >> /root/data/docker_data/$name/$name/conf/application.ini<<EOF
-[common]
-application.directory = APP_PATH"/application/"
-application.dispatcher.catchException = 1
-application.cache_config = 1
-application.dispatcher.defaultController = "Index"
-application.dispatcher.defaultAction = "index"
-application.view.ext = "html"
-application.modules = "Index,Member,Product,407413685,Crontab,Install"
-[product : common]
-TYPE = "mysql"
-READ_HOST = "${ip}"
-READ_PORT = 6878
-READ_USER = "root"
-READ_PSWD = root
-WRITE_HOST = "${ip}"
-WRITE_PORT = 6878
-WRITE_USER = "root"
-WRITE_PSWD = root
-Default = "zfaka"
-pconnect = 0
+> /root/data/docker_data/$name/$name/config.php
+cat >> /root/data/docker_data/$name/$name/config.php<<EOF
+<?php
+/*数据库信息配置*/
+
+
+
+
+
+?>
 EOF
 
 chmod -R 777 /root/data/docker_data
-#sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
+sed -i '3c $host = '${ip}';' /root/data/docker_data/$name/$name/config.php
+sed -i '4c $port = 6878;' /root/data/docker_data/$name/$name/config.php
+sed -i '5c $user = 'root';' /root/data/docker_data/$name/$name/config.php
+sed -i '6c $pwd = 'root';' /root/data/docker_data/$name/$name/config.php
+sed -i '7c $dbname = 'pzcx';' /root/data/docker_data/$name/$name/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
-sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-default.conf
+sed -i '12c DocumentRoot /var/www/html' /root/data/docker_data/$name/000-default.conf
 
 
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
@@ -79,10 +71,10 @@ sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-
 #rm $0
 
 cd /root/data/docker_data/$name
-redbg "【zfaka】启动中......"
+redbg "【pzcx】启动中......"
 docker-compose up -d
 echo
-redbg "【zfaka】-默认面板:http://${ip}:5005"
+redbg "【pzcx】-默认面板:http://${ip}:5005"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
