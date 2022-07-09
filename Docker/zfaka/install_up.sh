@@ -67,12 +67,12 @@ Default = "zfaka"
 pconnect = 0
 EOF
 
-
-#sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
-
-#mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
-
 chmod -R 777 /root/data/docker_data
+#sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
+#mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
+sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-default.conf
+
+
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
 #chmod -R 777 /root/data/docker_data/xyfaka/xyfaka/install
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
