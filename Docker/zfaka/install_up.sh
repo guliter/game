@@ -26,40 +26,48 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=xyfaka
+name=zfaka
 
 ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
 mkdir -p /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/000-default.conf -P /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/apache2.conf -P /root/data/docker_data/$name
+
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
-
-
 yum -y install unzip zip
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/xyfaka.zip -P /root/data/docker_data/$name
-unzip /root/data/docker_data/xyfaka/xyfaka.zip -d /root/data/docker_data/xyfaka
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/$name.zip -P /root/data/docker_data/$name
+unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$name
 
 
-> /root/data/docker_data/xyfaka/xyfaka/config.php
-cat >> /root/data/docker_data/xyfaka/xyfaka/config.php<<EOF
-<?php
-/*数据库配置*/
-$dbconfig=array(
-	'host' => '${ip}', //数据库服务器
-	'port' => 6878, //数据库端口
-	'user' => 'root', //数据库用户名
-	'pwd' => 'root', //数据库密码
-	'dbname' => 'xyfaka', //数据库名
-	'dbqz' => 'shua' //数据表前缀
-);
+> /root/data/docker_data/$name/$name/conf/application.ini
+cat >> /root/data/docker_data/$name/$name/conf/application.ini<<EOF
+[common]
+application.directory = APP_PATH"/application/"
+application.dispatcher.catchException = 1
+application.cache_config = 1
+application.dispatcher.defaultController = "Index"
+application.dispatcher.defaultAction = "index"
+application.view.ext = "html"
+application.modules = "Index,Member,Product,407413685,Crontab,Install"
+
+[product : common]
+TYPE = "mysql"
+READ_HOST = "${ip}"
+READ_PORT = 6878
+READ_USER = "root"
+READ_PSWD = root
+WRITE_HOST = "${ip}"
+WRITE_PORT = 6878
+WRITE_USER = "root"
+WRITE_PSWD = root
+Default = "zfaka"
+pconnect = 0
 EOF
 
-sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
+#sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
 
-mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
+#mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
 
 chmod -R 777 /root/data/docker_data
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
@@ -69,10 +77,10 @@ chmod -R 777 /root/data/docker_data
 #rm $0
 
 cd /root/data/docker_data/$name
-redbg "【xyfaka】启动中......"
+redbg "【zfaka】启动中......"
 docker-compose up -d
 echo
-redbg "【xyfaka】-默认面板:http://${ip}:5000"
+redbg "【zfaka】-默认面板:http://${ip}:5000"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
