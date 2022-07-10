@@ -99,7 +99,7 @@ echo
 
 
 install_100(){
-yellow "docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
+yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker inspect -f {{.Config.Env}} tomcat001 获取所有环境变量信息
 	docker inspect -f ‘{{index .Config.Env 1}}’ tomcat001 获取1个环境变量信息 
 	docker inspect --format '{{.Name}} {{.State.Running}}' nginx1 运行状态
