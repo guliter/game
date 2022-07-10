@@ -30,7 +30,7 @@ function white(){
 install_ps(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 stty erase '^H' && read -p "输入要重启的容器" restart
-clear
+docker start $restart
 echo
 redbg "$restart-容器重启完毕"
 echo
