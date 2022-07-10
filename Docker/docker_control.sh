@@ -142,7 +142,9 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
     green "推荐教程：https://www.bilibili.com/video/BV1og4y1q7M4/?spm_id_from=autoNext"
     echo
     green "1.重启指定容器	3.删除所有镜像	5.查看指定容器进程	7.进入指定容器."		
-    green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用"		
+    green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用"
+    echo
+    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878"
     echo
     read -p "请输入数字:" num
     case "$num" in
