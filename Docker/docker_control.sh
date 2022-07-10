@@ -45,6 +45,7 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
 echo
 stty erase '^H' && read -p "输入要删除的容器:" rm
 echo
+green "$rm-容器删除中......"
 docker stop $rm && docker rm $rm
 clear
 redbg "$rm-容器已删除"
@@ -52,6 +53,7 @@ echo
 }
 
 install_3(){
+green "所有镜像删除中......"
 docker rmi -f $(docker images -q)
 echo
 clear
@@ -62,6 +64,7 @@ echo
 install_4(){
 #docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 #stty erase '^H' && read -p "输入要重启的容器" restart
+green "所有容器删除中......"
 docker stop $(docker ps -q) && docker rm $(docker ps -aq)
 echo
 clear
