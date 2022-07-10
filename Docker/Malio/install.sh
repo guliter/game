@@ -48,8 +48,8 @@ unzip /root/data/docker_data/$name/$name/$name.zip -d /root/data/docker_data/$na
 
 #EOF
 
-rm -f /root/data/docker_data/$name/$name/config/.config.php
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/Malio/config.php -P /root/data/docker_data/$name/$name/config
+#rm -f /root/data/docker_data/$name/$name/config/.config.php
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/Malio/config.php -P /root/data/docker_data/$name/$name/config
 
 
 chmod -R 777 /root/data/docker_data
