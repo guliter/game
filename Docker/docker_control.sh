@@ -30,9 +30,9 @@ function white(){
 install_ps(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 stty erase '^H' && read -p "输入要重启的容器" restart
-docker start $restart
+docker restart $restart
 echo
-redbg "$restart-容器重启完毕"
+redbg "$restart-容器已重启"
 echo
 }
 
@@ -41,7 +41,7 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
 stty erase '^H' && read -p "输入要删除的容器" rm
 docker stop $rm && docker rm $rm
 echo
-redbg "$rm-容器删除完毕"
+redbg "$rm-容器已删除"
 echo
 }
 
@@ -78,7 +78,7 @@ echo
 
 install_7(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" dd
+stty erase '^H' && read -p "输入要进入的容器" dd
 docker exec -it $dd /bin/bash
 
 }
@@ -96,12 +96,15 @@ yellow "docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker inspect -f {{.Config.Env}} tomcat001 获取所有环境变量信息
 	docker inspect -f ‘{{index .Config.Env 1}}’ tomcat001 获取1个环境变量信息 
 	docker inspect --format '{{.Name}} {{.State.Running}}' nginx1 运行状态
+	docker inspect -f {{.NetworkSettings.IPAddress}} tomcat001 获取ip  
 	docker top nginx1 查看进程
 	docker stats nginx1 内存占用
-	docker inspect -f {{.NetworkSettings.IPAddress}} tomcat001 获取ip  
-	docker inspect -f {{.NetworkSettings.IPAddress}} 
-	docker inspect -f {{.NetworkSettings.IPAddress}} 
-	docker inspect -f {{.NetworkSettings.IPAddress}} "
+	docker image prune -a  清理未使用的镜像
+	docker image prune 删除构建失败的镜像
+	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本
+	
+	
+
 }
 
 
