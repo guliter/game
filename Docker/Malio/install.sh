@@ -54,7 +54,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/Malio/config.php
 chmod -R 777 /root/data/docker_data
 #sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
-sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-default.conf
+sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
 
 
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
