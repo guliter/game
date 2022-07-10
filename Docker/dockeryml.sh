@@ -175,7 +175,7 @@ start_menu(){
     echo
     green "镜像推荐：https://hub.docker.com/r/ddsderek/foundations/tags"
     echo
-    green 		"1.【mysql】
+    green "		1.【mysql】
 	2.【phpmyadmin】
 	3.Debian-apache2-php7.3
 	4.Debian-apache2-php7.1
