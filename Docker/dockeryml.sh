@@ -179,7 +179,7 @@ start_menu(){
     green "7.【Kodexplorer】	"
     redbg "99.【Nginx Proxy Manager】"
     echo
-    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 Nginx Proxy Manager-端口81"
+    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81"
     echo
     read -p "请输入数字:" num
     case "$num" in
