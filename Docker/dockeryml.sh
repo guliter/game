@@ -189,5 +189,5 @@ start_menu(){
 	;;
     esac
 }
-
+clear
 start_menu
