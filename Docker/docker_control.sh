@@ -74,6 +74,7 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
 echo
 docker image prune -a
 echo
+redbg "镜像已删除"
 }
 
 install_6(){
