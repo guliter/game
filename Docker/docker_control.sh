@@ -32,6 +32,7 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
 echo
 read -p "输入要重启的容器:" restart
 echo
+green "$restart重启中......"
 docker restart $restart
 echo
 clear
