@@ -38,66 +38,73 @@ echo
 
 install_2(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" restart
-clear
+stty erase '^H' && read -p "输入要删除的容器" rm
+docker stop $rm && docker rm $rm
 echo
-redbg "$restart-容器重启完毕"
+redbg "$rm-容器删除完毕"
 echo
 }
 
 install_3(){
-docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" restart
-clear
+docker rmi -f $(docker images -q)
 echo
-redbg "$restart-容器重启完毕"
+redbg "所有镜像已删除"
 echo
 }
 
 install_4(){
-docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" restart
-clear
+#docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
+#stty erase '^H' && read -p "输入要重启的容器" restart
+docker stop $(docker ps -q) && docker rm $(docker ps -aq)
 echo
-redbg "$restart-容器重启完毕"
+redbg "所有容器已删除"
 echo
 }
 
 install_5(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" restart
+stty erase '^H' && read -p "输入要查看日志的容器" log
+docker log &log
 clear
-echo
-redbg "$restart-容器重启完毕"
 echo
 }
 
 install_6(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" restart
-clear
-echo
-redbg "$restart-容器重启完毕"
+stty erase '^H' && read -p "输入要查看的容器" inspect
+docker inspect $inspect
 echo
 }
 
 install_7(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" restart
-clear
-echo
-redbg "$restart-容器重启完毕"
-echo
+stty erase '^H' && read -p "输入要重启的容器" dd
+docker exec -it $dd /bin/bash
+
 }
 
 install_8(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-stty erase '^H' && read -p "输入要重启的容器" restart
-clear
-echo
-redbg "$restart-容器重启完毕"
+stty erase '^H' && read -p "输入要查看的容器" nbip
+docker stats $nbip 
 echo
 }
+
+
+install_100(){
+yellow "docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
+	docker inspect -f {{.Config.Env}} tomcat001 获取所有环境变量信息
+	docker inspect -f ‘{{index .Config.Env 1}}’ tomcat001 获取1个环境变量信息 
+	docker inspect --format '{{.Name}} {{.State.Running}}' nginx1 运行状态
+	docker top nginx1 查看进程
+	docker stats nginx1 内存占用
+	docker inspect -f {{.NetworkSettings.IPAddress}} tomcat001 获取ip  
+	docker inspect -f {{.NetworkSettings.IPAddress}} 
+	docker inspect -f {{.NetworkSettings.IPAddress}} 
+	docker inspect -f {{.NetworkSettings.IPAddress}} "
+}
+
+
 
 
 
@@ -110,21 +117,33 @@ start_menu(){
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便"
     echo
     green "1.重启指定容器	3.重启所有容器	5.查看指定容器日志	7.进入指定容器."		
-    green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.停止指定容器"		
+    green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用"		
     echo
     read -p "请输入数字:" num
     case "$num" in
-    1)
-    install_mysql
+        1)
+    install_ps
 	;; 
 	2)
-    install_phpmyadmin
+    install_2
         ;; 
 	3)
-    install_apache2_php73
+    install_3
 	;;
 	4)
-    install_apache2_php71
+    install_4
+    	;;
+	5)
+    install_5
+    	;;
+	6)
+    install_6
+    	;;
+	7)
+    install_7
+    	;;
+	8)
+    install_8
 	;; 
 	0)
 	exit 1
