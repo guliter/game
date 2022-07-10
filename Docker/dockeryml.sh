@@ -152,8 +152,11 @@ start_menu(){
     echo
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便"
     echo
+    green "镜像推荐：https://hub.docker.com/r/ddsderek/foundations/tags"
+    echo
     green "1.【mysql】		3.Debian-apache2-php7.3		5.Ubuntu20.04-nginx1.16.1-php7.4.20"		
     green "2.【phpmyadmin】	4.Debian-apache2-php7.1		6.Ubuntu20.04-nginx1.20.2-php8.0.13"
+    echo
     redbg "99.【Nginx Proxy Manager】"
     echo
     read -p "请输入数字:" num
