@@ -72,9 +72,9 @@ docker run -d \
   --name $name \
   --link mysql \
   -p 6060:80 \
-  -v /root/data/docker_data/xyfaka/xyfaka:/var/www/html \
-  -v /root/data/docker_data/xyfaka/000-default.conf:/etc/apache2/sites-enabled/000-default.conf \
-  -v /root/data/docker_data/xyfaka/apache2.conf:/etc/apache2/apache2.conf \
+  -v /root/data/docker_data/$name/$name:/var/www/html \
+  -v /root/data/docker_data/$name/000-default.conf:/etc/apache2/sites-enabled/000-default.conf \
+  -v /root/data/docker_data/$name/apache2.conf:/etc/apache2/apache2.conf \
   ddsderek/foundations:Debian-apache2-php7.3
 echo
 redbg "【Malio】-默认面板:http://${ip}:6060"
