@@ -189,7 +189,7 @@ start_menu(){
 	99)
     bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Nginx_Proxy_Manager.sh)
       	;;
-	99)
+	100)
     install_100
 	;; 
 	0)
