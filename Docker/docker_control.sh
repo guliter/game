@@ -33,6 +33,7 @@ echo
 read -p "输入要重启的容器" restart
 docker restart $restart
 echo
+clear
 redbg "$restart-容器已重启"
 echo
 }
@@ -42,6 +43,7 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
 stty erase '^H' && read -p "输入要删除的容器" rm
 docker stop $rm && docker rm $rm
 echo
+clear
 redbg "$rm-容器已删除"
 echo
 }
@@ -49,6 +51,7 @@ echo
 install_3(){
 docker rmi -f $(docker images -q)
 echo
+clear
 redbg "所有镜像已删除"
 echo
 }
@@ -58,6 +61,7 @@ install_4(){
 #stty erase '^H' && read -p "输入要重启的容器" restart
 docker stop $(docker ps -q) && docker rm $(docker ps -aq)
 echo
+clear
 redbg "所有容器已删除"
 echo
 }
@@ -66,7 +70,6 @@ install_5(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 stty erase '^H' && read -p "输入要查看日志的容器" log
 docker log &log
-clear
 echo
 }
 
@@ -81,7 +84,6 @@ install_7(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 stty erase '^H' && read -p "输入要进入的容器" dd
 docker exec -it $dd /bin/bash
-
 }
 
 install_8(){
