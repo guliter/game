@@ -296,6 +296,41 @@ redbg "【签到服务】-默认面板:http://$ip:12345"
 echo
 }
 
+install_35(){
+docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
+docker-compose up -d
+clear
+echo
+redbg "【签到服务】-默认面板:http://$ip:12345"
+echo
+}
+
+install_36(){
+docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
+docker-compose up -d
+clear
+echo
+redbg "【签到服务】-默认面板:http://$ip:12345"
+echo
+}
+
+install_37(){
+docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
+docker-compose up -d
+clear
+echo
+redbg "【签到服务】-默认面板:http://$ip:12345"
+echo
+}
+
+install_38(){
+docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
+docker-compose up -d
+clear
+echo
+redbg "【签到服务】-默认面板:http://$ip:12345"
+echo
+}
 install_100(){
 clear
 echo
@@ -339,20 +374,22 @@ start_menu(){
     green "
     2.【NPM反代】			14.【Aria2下载-在线播放】	30.【ServerStatus】		
     ———————————————————————————————————---->>云盘目录类<<----————————————————————————————————
-    3.【分享盘】h5ai		15.【分享盘】Plik		31.【V2Board】
-    4.【分享盘】Zdir		16.【云网盘】AList		32.【zfaka】 
-    5.【分享盘】OneDrive		17.【分享盘】Jirafeau		34.【签到服务】
-    11.【同步盘】Seafile		24.【同步盘】syncthing		35.【祥云发卡】		
+    3.【分享盘】h5ai		15.【分享盘】Plik	26.【云网盘】FileRun 	
+    4.【分享盘】Zdir		16.【云网盘】AList		 
+    5.【分享盘】OneDrive	17.【分享盘】Jirafeau	34.【签到服务】
+    11.【同步盘】Seafile	24.【同步盘】syncthing			
     ———————————————————————————————————---->>博客类程序<<----—————————————————————————————————
-    6.【GRAV】博客			18.【Wiki】随身笔记		33.【heimdall】导航
-    7.【Wordpress】博客		19.【Typecho】博客		36.【z发卡】
-    8.【RSS订阅器】		20.【Halo】 博客		37.骗子查询		38.Malio	
-    ———————————————————————————————————---->>其他类型<<----——————————————————————————————————
-    9.【临时邮箱】			21.【Matomo 专业统计】	40.【Fiora 聊天室】
-    10.【X-ui】			22.【Umami 轻量统计】		 41.【青龙面板】
-    12.【Jellyfin】家庭影院	23.【YOURLS 短连接】		39.Kodexplorer 
-    25.【Duplicati】备份神器	26.【云网盘】FileRun
-    27.【lsky-pro】图床		29.【easyimage】 图床
+    6.【GRAV】博客		18.【Wiki】随身笔记		33.【heimdall】导航
+    7.【Wordpress】博客	19.【Typecho】博客		21.【Matomo 专业统计】
+    8.【RSS订阅器】	       20.【Halo】 博客		22.【Umami 轻量统计】			
+    ———————————————————————————————————---->>发卡&&博客<<----——————————————————————————————————
+    	39.Kodexplorer 		38.Malio 37.骗子查询	36.【z发卡】35.【祥云发卡】32.【zfaka】
+    10.【X-ui】		    	31.【V2Board】   
+     ———————————————————————————————————---->>其他类型<<----——————————————————————————————————
+    12.【Jellyfin】家庭影院	23.【YOURLS 短连接】		
+    25.【Duplicati】备份神器		 41.【青龙面板】
+    27.【lsky-pro】图床	  29.【easyimage】 图床 9.【临时邮箱】40.【Fiora 聊天室】
+     ———————————————————————————————————---->>其他类型<<----——————————————————————————————————
     0.【输出0退出菜单】		100.【输出1-12配置】"
     echo
     read -p "请输入数字:" num
