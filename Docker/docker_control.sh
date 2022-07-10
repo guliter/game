@@ -147,6 +147,9 @@ start_menu(){
     	;;
 	8)
     install_8
+        ;;
+	100)
+    install_100
 	;; 
 	0)
 	exit 1
