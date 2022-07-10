@@ -31,6 +31,7 @@ install_ps(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
 read -p "输入要重启的容器" restart
+echo
 docker restart $restart
 echo
 clear
@@ -42,6 +43,7 @@ install_2(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
 stty erase '^H' && read -p "输入要删除的容器" rm
+echo
 docker stop $rm && docker rm $rm
 clear
 redbg "$rm-容器已删除"
@@ -70,6 +72,7 @@ install_5(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
 stty erase '^H' && read -p "输入要查看日志的容器" log
+echo
 docker log &log
 echo
 }
@@ -78,6 +81,7 @@ install_6(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
 stty erase '^H' && read -p "输入要查看的容器" inspect
+echo
 docker inspect $inspect
 echo
 }
@@ -86,6 +90,7 @@ install_7(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
 stty erase '^H' && read -p "输入要进入的容器" dd
+echo
 docker exec -it $dd /bin/bash
 }
 
@@ -93,6 +98,7 @@ install_8(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
 stty erase '^H' && read -p "输入要查看的容器" nbip
+echo
 docker stats $nbip 
 echo
 }
