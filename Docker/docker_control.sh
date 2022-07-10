@@ -114,8 +114,6 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker inspect -f ‘{{index .Config.Env 1}}’ tomcat001 获取1个环境变量信息 
 	docker inspect --format '{{.Name}} {{.State.Running}}' nginx1 运行状态
 	docker inspect -f {{.NetworkSettings.IPAddress}} tomcat001 获取ip  
-	docker top nginx1 查看进程
-	docker stats nginx1 内存占用
 	docker image prune -a  清理未使用的镜像
 	docker image prune 删除构建失败的镜像
 	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本"
