@@ -90,6 +90,36 @@ redbg "【数据库面板】-默认面板:http://${ip}:8181"
 echo
 }
 
+install_apache2_php71(){   
+stty erase '^H' && read -p "网站名称" name
+stty erase '^H' && read -p "网站端口" port     
+mkdir -p /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-default.conf -P /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.conf -P /root/data/docker_data/$name
+chmod -R 777 /root/data/docker_data
+sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
+cd /root/data/docker_data/$name
+echo
+redbg "【$name】启动中......"
+echo
+docker run -d \
+  --restart always \
+  --name $name \
+  --link mysql \
+  -p $port:80 \
+  -v /root/data/docker_data/$name/$name:/var/www/html \
+  -v /root/data/docker_data/$name/000-default.conf:/etc/apache2/sites-enabled/000-default.conf \
+  -v /root/data/docker_data/$name/apache2.conf:/etc/apache2/apache2.conf \
+  ddsderek/foundations:Debian-apache2-php7.1
+echo
+redbg "【$name-apache2-php71环境】-默认面板:http://${ip}:$port"
+echo
+redbg "上传网站至: /root/data/docker_data/$name/$name"
+echo
+redbg "【数据库面板】-默认面板:http://${ip}:8181"
+echo
+}
+
 
 #开始菜单
 start_menu(){
