@@ -174,9 +174,14 @@ start_menu(){
     echo
     green "镜像推荐：https://hub.docker.com/r/ddsderek/foundations/tags"
     echo
-    green "1.【mysql】		3.Debian-apache2-php7.3		5.Ubuntu20.04-nginx1.16.1-php7.4.20"		
-    green "2.【phpmyadmin】	4.Debian-apache2-php7.1		6.Ubuntu20.04-nginx1.20.2-php8.0.13"
-    green "7.【Kodexplorer】	"
+    green "1.【mysql】
+    2.【phpmyadmin】
+    3.Debian-apache2-php7.3
+    4.Debian-apache2-php7.1
+    5.Ubuntu20.04-nginx1.16.1-php7.4.20		
+    6.Ubuntu20.04-nginx1.20.2-php8.0.13
+    7.【Kodexplorer】"
+    echo
     redbg "99.【Nginx Proxy Manager】"
     echo
     yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81"
