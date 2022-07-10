@@ -158,6 +158,14 @@ green 	"Apache环境关键文件
 
 }
 
+install_7(){  
+docker run -d \
+  --restart always \
+  --name kodexplorer \
+  -p 5878:80 \
+  -v  /root/data/docker_data:/code \
+  baiyuetribe/kodexplorer
+}
 
 #开始菜单
 start_menu(){
@@ -185,6 +193,9 @@ start_menu(){
 	;;
 	4)
     install_apache2_php71
+    	;;
+	7)
+    install_7
   	;;
 	99)
     bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Nginx_Proxy_Manager.sh)
