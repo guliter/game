@@ -31,6 +31,32 @@ function white(){
 ip=`curl http://whatismyip.akamai.com`
 
 
+
+
+install_ps(){
+docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
+stty erase '^H' && read -p "输入要重启的容器" restart
+clear
+echo
+redbg "$restart-容器重启完毕"
+echo
+}
+
+install_phpmyadmin(){
+docker run -d \
+  --restart always \
+  --name phpmyadmin \
+  --link mysql \
+  -e PMA_HOST="mysql" \
+  -p 8181:80 \
+  phpmyadmin/phpmyadmin
+clear
+echo
+redbg "phpmyadmin-默认面板:http://${ip}:8181"
+echo
+}
+
+
 install_mysql(){
 docker run -itd \
   --restart always \
