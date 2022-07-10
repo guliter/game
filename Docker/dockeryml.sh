@@ -148,6 +148,7 @@ echo
 
 
 install_100(){   
+echo
 green 	"Apache环境关键文件
 	网站目录：/var/www/html
 	运行配置：/etc/apache2/sites-enabled/000-default.conf
