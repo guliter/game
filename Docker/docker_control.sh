@@ -28,7 +28,7 @@ function white(){
 
 
 install_ps(){
-redbg docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
+docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
 redbg  read -p "输入要重启的容器" restart
 docker restart $restart
