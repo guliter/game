@@ -72,9 +72,7 @@ echo
 install_5(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
-stty erase '^H' && read -p "输入要查看日志的容器:" log
-echo
-docker logs &log
+docker image prune -a
 echo
 }
 
@@ -127,6 +125,7 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 
 #开始菜单
 start_menu(){
+clear
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
     echo
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【100】提供更详细内容"
