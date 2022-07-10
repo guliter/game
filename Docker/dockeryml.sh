@@ -153,7 +153,8 @@ start_menu(){
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便"
     echo
     green "1.【mysql】		3.Debian-apache2-php7.3		5.Ubuntu20.04-nginx1.16.1-php7.4.20"		
-    green "2.【phpmyadmin】	4.Debian-apache2-php7.1		6.Ubuntu20.04-nginx1.20.2-php8.0.13"		
+    green "2.【phpmyadmin】	4.Debian-apache2-php7.1		6.Ubuntu20.04-nginx1.20.2-php8.0.13"
+    redbg "99.【Nginx Proxy Manager】"
     echo
     read -p "请输入数字:" num
     case "$num" in
@@ -168,6 +169,9 @@ start_menu(){
 	;;
 	4)
     install_apache2_php71
+  	;;
+	99)
+    bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Nginx_Proxy_Manager.sh)
 	;; 
 	0)
 	exit 1
