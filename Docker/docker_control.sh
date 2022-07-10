@@ -73,7 +73,7 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
 echo
 stty erase '^H' && read -p "输入要查看日志的容器" log
 echo
-docker log &log
+docker logs &log
 echo
 }
 
