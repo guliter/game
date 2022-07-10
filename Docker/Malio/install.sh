@@ -37,10 +37,10 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-defau
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.conf -P /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
-yum -y install unzip zip
-wget https://github.com/guliter/game/releases/download/Malio/Malio.zip -P /root/data/docker_data/$name/$name
-chmod -R 777 /root/data/docker_data
-unzip /root/data/docker_data/$name/$name/$name.zip -d /root/data/docker_data/$name/$name
+#yum -y install unzip zip
+#wget https://github.com/guliter/game/releases/download/Malio/Malio.zip -P /root/data/docker_data/$name/$name
+#chmod -R 777 /root/data/docker_data
+#unzip /root/data/docker_data/$name/$name/$name.zip -d /root/data/docker_data/$name/$name
 
 
 #> /root/data/docker_data/$name/$name/config/.config.php
@@ -79,6 +79,8 @@ docker run -d \
   ddsderek/foundations:Debian-apache2-php7.3
 echo
 redbg "【Malio】-默认面板:http://${ip}:6060"
+echo
+redbg "上传网站至: /root/data/docker_data/$name/$name"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
