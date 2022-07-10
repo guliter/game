@@ -101,7 +101,7 @@ yellow "docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker stats nginx1 内存占用
 	docker image prune -a  清理未使用的镜像
 	docker image prune 删除构建失败的镜像
-	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本
+	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本"
 	}
 
 
