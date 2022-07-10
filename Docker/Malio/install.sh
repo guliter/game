@@ -40,7 +40,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.c
 yum -y install unzip zip
 wget https://github.com/guliter/game/releases/download/Malio/Malio.zip -P /root/data/docker_data/$name/$name
 chmod -R 777 /root/data/docker_data
-unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$name
+unzip /root/data/docker_data/$name/$name/$name.zip -d /root/data/docker_data/$name/$name
 
 
 #> /root/data/docker_data/$name/$name/config/.config.php
