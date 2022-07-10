@@ -72,9 +72,10 @@ echo
 install_5(){
 docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 echo
-docker image prune -a
+stty erase '^H' && read -p "输入要查看的容器:" top
 echo
-redbg "镜像已删除"
+docker top $top
+echo
 }
 
 install_6(){
@@ -131,7 +132,7 @@ docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NA
     echo
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【100】提供更详细内容"
     echo
-    green "1.重启指定容器	3.删除所有镜像	5.查看指定容器日志	7.进入指定容器."		
+    green "1.重启指定容器	3.删除所有镜像	5.查看指定容器进程	7.进入指定容器."		
     green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用"		
     echo
     read -p "请输入数字:" num
