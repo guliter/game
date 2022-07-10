@@ -98,7 +98,7 @@ start_menu(){
     echo
     green "———————————————————————————————————---->>基础功能<<----—————————————————————————————————"
     redbg "1.【mysql】		3.Debian-apache2-php7.3		5.Ubuntu20.04-nginx1.16.1-php7.4.20"		
-    green "2.【phpmyadmin】			4.Debian-apache2-php7.1	6.Ubuntu20.04-nginx1.20.2-php8.0.13"		
+    green "2.【phpmyadmin】	4.Debian-apache2-php7.1		6.Ubuntu20.04-nginx1.20.2-php8.0.13"		
     echo
     read -p "请输入数字:" num
     case "$num" in
