@@ -162,7 +162,7 @@ green 	"Apache环境关键文件
 #开始菜单
 start_menu(){
     echo
-    yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便"
+    yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【100】详细配置"
     echo
     green "镜像推荐：https://hub.docker.com/r/ddsderek/foundations/tags"
     echo
@@ -188,6 +188,9 @@ start_menu(){
   	;;
 	99)
     bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Nginx_Proxy_Manager.sh)
+      	;;
+	99)
+    install_100
 	;; 
 	0)
 	exit 1
