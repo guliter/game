@@ -108,13 +108,23 @@ echo
 }
 
 install_9(){
-docker ps -a
+echo
+docker ps --format '{{.Image}}'
 echo
 stty erase '^H' && read -p "输入要制作标签镜像:" image
 echo
 stty erase '^H' && read -p "输入自己镜像的标签:" tga
 echo
 docker tag $image yan33158164/foundations:$tga
+echo
+}
+
+install_10(){
+docker images
+echo
+stty erase '^H' && read -p "输入推送镜像的标签:" tgas
+echo
+ docker push yan33158164/foundations:$tgas
 echo
 }
 
