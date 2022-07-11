@@ -146,7 +146,7 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
 	
 
     echo
-    yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【100】提供更详细内容"
+    yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【99】输出容器端口【100】提供更详细内容"
     echo
     green "推荐教程：https://www.bilibili.com/video/BV1og4y1q7M4/?spm_id_from=autoNext"
     echo
