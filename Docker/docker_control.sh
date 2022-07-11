@@ -120,6 +120,7 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	netstat -nlp |grep docker-proxy|awk '{print $4}'|sort Docker 查看已经占用的端口
 	docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES" 正在运行的Docker
 	netstat -nlp |grep docker-proxy|awk '{print $4}'|grep -v  "0.0.0.0:" | sed 's/::://' 正在启用的端口
+	docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' 显示镜像与端口
 	docker port"
 green " 推送镜像：
 	docker push llxxyy/nginx-io:v1
