@@ -185,7 +185,7 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
     install_100
         ;;
 	99)
-    docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' 
+    docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' | grep -v  "mysql" | grep -v "NAMES" | grep -v -n "NAMES"
 	;; 
 	0)
 	exit 1
