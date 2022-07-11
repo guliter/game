@@ -512,6 +512,27 @@ yellow "   11.【同步盘】Seafile	24.【同步盘】syncthing	25.【Duplicati
 	 ;; 
 	34)
  	 install_34
+	 	 ;; 
+	35)
+ 	 install_35
+	 	 ;; 
+	36)
+ 	 install_36
+	 	 ;; 
+	37)
+ 	 install_37
+	 	 ;; 
+	38)
+ 	 install_38
+	 	 ;; 
+	39)
+ 	 install_39
+	 	 ;; 
+	40)
+ 	 install_40
+	 	 ;; 
+	41)
+ 	 install_41
 	 ;; 
 	100)
     install_100
