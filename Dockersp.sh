@@ -376,7 +376,7 @@ green "   2.【NPM反代】		14.【Aria2下载-在线播放】	30.【ServerStatu
     3.【分享盘】h5ai		15.【分享盘】Plik	26.【云网盘】FileRun 	
     4.【分享盘】Zdir		16.【云网盘】AList	34.【签到服务】
     5.【分享盘】OneDrive	17.【分享盘】Jirafeau"	
-yellow "    11.【同步盘】Seafile	24.【同步盘】syncthing	25.【Duplicati】备份神器"			
+yellow "   11.【同步盘】Seafile	24.【同步盘】syncthing	25.【Duplicati】备份神器"			
  green "   ———————————————————————————————————---->>博客类程序<<----—————————————————————————————————
     33.【heimdall】导航		6.【GRAV】博客		18.【Wiki】随身笔记		
     7.【Wordpress】博客		19.【Typecho】博客	21.【Matomo 专业统计】
