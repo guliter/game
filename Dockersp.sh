@@ -297,68 +297,86 @@ echo
 }
 
 install_35(){
-docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
-docker-compose up -d
-clear
-echo
-redbg "【签到服务】-默认面板:http://$ip:12345"
-echo
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/install.sh)
 }
 
 install_36(){
-docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
-docker-compose up -d
-clear
-echo
-redbg "【签到服务】-默认面板:http://$ip:12345"
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/zfaka/install_up.sh)
 echo
 }
 
 install_37(){
-docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
-docker-compose up -d
-clear
-echo
-redbg "【签到服务】-默认面板:http://$ip:12345"
-echo
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/pzcx/install.sh)
 }
 
 install_38(){
-docker run -d --name qiandao -p 12345:80 -v /root/data/docker_data/qiandao:/usr/src/app/config   asdaragon/qiandao
-docker-compose up -d
-clear
-echo
-redbg "【签到服务】-默认面板:http://$ip:12345"
-echo
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/Malio/install.sh)
 }
+
+install_39(){
+docker run -d \
+  --restart always \
+  --name kodexplorer \
+  -p 5878:80 \
+  -v  /root/data/docker_data:/code \
+  baiyuetribe/kodexplorer
+echo
+redbg "【Kodexplorer】-默认面板:http://$ip:5878"
+echo  
+}
+
+install_40(){
+# 拉取 mongo
+docker pull mongo
+# 拉取 redis
+docker pull redis
+# 拉取 fiora
+docker pull suisuijiang/fiora
+# 创建虚拟网络
+docker network create fiora-network
+# 启动 mongodB
+docker run --name fioradb -d -p 27017:27017 --network fiora-network mongo
+# 启动 redis
+docker run --name fioraredis -d -p 6379:6379 --network fiora-network redis
+# 启动 fiora
+docker run --name fiora -d -p 9200:9200 --network fiora-network -e Database=mongodb://fioradb:27017/fiora -e RedisHost=fioraredis suisuijiang/fiora
+echo
+redbg "【【Fiora 聊天室】 -默认面板:http://$ip:9200"
+echo  
+}
+
+install_41(){
+docker run -dit \
+   -v $PWD/QL/config:/ql/config \
+   -v $PWD/QL/log:/ql/log \
+   -v $PWD/QL/db:/ql/db \
+   -v $PWD/QL/scripts:/ql/scripts \
+   -p 5700:5700 \
+   --name QL \
+   --hostname QL \
+   --restart always \
+   whyour/qinglong:latest
+echo
+redbg "【青龙面板】-默认面板:http://$ip:5700"
+echo     
+}
+
 install_100(){
 clear
 echo
-redbg "Portainer-默认面板:http://${ip}:9000"
-echo
-redbg "【目录分享】h5ai-默认面板:http://${ip}:2571"
-echo
-redbg "【目录分享】Zdir-默认面板:http://${ip}:2569 【zdir xiaoz.me】"
-echo
-redbg "【文件管理】KODExplorer-默认面板:http://${ip}:2570"
-echo
-redbg "【私人网盘】OneDrive-默认面板:http://${ip}:5147"
-echo
-redbg "【GRAV】博客-默认面板:http://${ip}:9292"
-echo
-redbg "【Wordpress】博客-默认面板:http://${ip}:9393"
-echo
-redbg "【Onlyoffice】-默认面板:http://${ip}:5422"
-echo
-redbg "【临时邮箱】-默认面板:http://${ip}:3000"
-echo
-redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】"
-echo
-redbg "【临时邮箱】-默认面板:http://${ip}:54321 【admin admin】"
-echo
-echo
-redbg "【Seafile】同步盘-默认面板:http://$ip:5777 【admin admin】"
-echo
+redbg "Portainer-默认面板:http://${ip}:9000
+【目录分享】h5ai-默认面板:http://${ip}:2571
+【目录分享】Zdir-默认面板:http://${ip}:2569 【zdir xiaoz.me】
+【文件管理】KODExplorer-默认面板:http://${ip}:2570
+【私人网盘】OneDrive-默认面板:http://${ip}:5147
+【GRAV】博客-默认面板:http://${ip}:9292
+【Wordpress】博客-默认面板:http://${ip}:9393
+【Onlyoffice】-默认面板:http://${ip}:5422
+【临时邮箱】-默认面板:http://${ip}:3000
+【X-ui】-默认面板:http://${ip}:54321 【admin admin】
+【临时邮箱】-默认面板:http://${ip}:54321 【admin admin】
+【Seafile】同步盘-默认面板:http://$ip:5777 【admin admin】"
+
 }
 
 
