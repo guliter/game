@@ -115,7 +115,6 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker inspect --format '{{.Name}} {{.State.Running}}' nginx1 运行状态
 	docker inspect -f {{.NetworkSettings.IPAddress}} tomcat001 获取ip  
 	docker image prune -a  清理未使用的镜像
-	docker image prune 删除构建失败的镜像
 	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本
 	docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' 显示镜像与端口
 	"
