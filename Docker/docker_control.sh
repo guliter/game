@@ -205,6 +205,9 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
 	9)
     install_9
         ;;
+	10)
+    install_10
+        ;;
 	100)
     install_100
         ;;
