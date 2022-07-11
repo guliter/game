@@ -189,9 +189,10 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
         ;;
 	99)
 	echo
-	green "mysql 端口：6878"
+green "mysql 端口：6878"
 	echo
-    docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' | grep -v  "mysql" | grep -v "NAMES" | grep -v -n "NAMES"
+docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' | grep -v  "mysql" | grep -v "NAMES" | grep -v -n "NAMES"
+    	echo
 	;; 
 	0)
 	exit 1
