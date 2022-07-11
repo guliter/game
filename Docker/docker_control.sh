@@ -127,12 +127,16 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker inspect -f {{.NetworkSettings.IPAddress}} tomcat001 获取ip  
 	docker image prune -a  清理未使用的镜像
 	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本
-	docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' 显示镜像与端口
-	"
+	docker ps -a --format 'table {{.Names}}\t{{.Ports}}' | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' 显示镜像与端口
+	docker tag 镜像id 你的账户名/镜像仓库名:tag名
+	docker push boonyadocker/tomcat-allow-remote:latest
+	 "
+	
 green " 推送镜像：
-	docker push llxxyy/nginx-io:v1
-	docker pull llxxyy/nginx-io:v1
-	docker login"
+	ocker login 登录
+	docker tag 镜像id 你的账户名/镜像仓库名:tag名 制作镜像
+	docker push boonyadocker/tomcat-allow-remote:latest 推送镜像到仓库
+	"
 	
 	
 	}
@@ -157,8 +161,8 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
     echo
     green "推荐教程：https://www.bilibili.com/video/BV1og4y1q7M4/?spm_id_from=autoNext"
     echo
-    green "1.重启指定容器	3.删除所有镜像	5.查看指定容器进程	7.进入指定容器"		
-    green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用"
+    green "1.重启指定容器	3.删除所有镜像	5.查看指定容器进程	7.进入指定容器	9.制作镜像标签"			
+    green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用	10.推送镜像到仓库"
     echo
     yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81 | Portainer-端口:9000"
     echo
