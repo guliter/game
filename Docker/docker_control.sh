@@ -117,11 +117,8 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker image prune -a  清理未使用的镜像
 	docker image prune 删除构建失败的镜像
 	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本
-	netstat -nlp |grep docker-proxy|awk '{print $4}'|sort Docker 查看已经占用的端口
-	docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES" 正在运行的Docker
-	netstat -nlp |grep docker-proxy|awk '{print $4}'|grep -v  "0.0.0.0:" | sed 's/::://' 正在启用的端口
 	docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' 显示镜像与端口
-	docker port"
+	"
 green " 推送镜像：
 	docker push llxxyy/nginx-io:v1
 	docker pull llxxyy/nginx-io:v1
