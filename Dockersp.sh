@@ -376,7 +376,9 @@ redbg "Portainer-默认面板:http://${ip}:9000
 【X-ui】-默认面板:http://${ip}:54321 【admin admin】
 【临时邮箱】-默认面板:http://${ip}:54321 【admin admin】
 【Seafile】同步盘-默认面板:http://$ip:5777 【admin admin】"
-
+	echo
+docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' | grep -v  "mysql" | grep -v "NAMES" | grep -v -n "NAMES"
+    	echo
 }
 
 
