@@ -107,6 +107,17 @@ docker stats $nbip
 echo
 }
 
+install_9(){
+docker ps -a
+echo
+stty erase '^H' && read -p "输入要制作标签镜像:" image
+echo
+stty erase '^H' && read -p "输入自己镜像的标签:" tga
+echo
+docker tag $image yan33158164/foundations:$tga
+echo
+}
+
 
 install_100(){
 yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
