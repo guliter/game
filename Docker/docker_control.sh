@@ -142,8 +142,6 @@ start_menu(){
 clear
 green "已经运行的容器:"
 echo
-	green "mysql 端口：6878"
-	echo
 docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' | grep -v  "mysql" | grep -v "NAMES" | grep -v -n "NAMES"
 	
 
