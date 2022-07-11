@@ -183,6 +183,9 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
         ;;
 	100)
     install_100
+        ;;
+	99)
+    docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}'
 	;; 
 	0)
 	exit 1
