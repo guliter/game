@@ -159,6 +159,15 @@ green 	"Apache环境关键文件
 
 }
 
+install_8(){   
+docker volume create portainer_data
+docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /root/data/docker_data/portainer:/data portainer/portainer
+clear
+echo
+redbg "Portainer-默认面板:http://${ip}:9000"
+echo
+	}
+
 install_7(){  
 docker run -d \
   --restart always \
@@ -177,11 +186,12 @@ start_menu(){
     echo
     green "	1.【mysql】
 	2.【phpmyadmin】
-	3.Debian-apache2-php7.3
-	4.Debian-apache2-php7.1
-	5.Ubuntu20.04-nginx1.16.1-php7.4.20		
-	6.Ubuntu20.04-nginx1.20.2-php8.0.13
-	7.【Kodexplorer】"
+	3.【Debian-apache2-php7.3】
+	4.【Debian-apache2-php7.1】
+	5.【Ubuntu20.04-nginx1.16.1-php7.4.20】		
+	6.【Ubuntu20.04-nginx1.20.2-php8.0.13】
+	7.【Kodexplorer】
+	8.【Portainer】"
     echo
     redbg "99.【Nginx Proxy Manager】"
     echo
