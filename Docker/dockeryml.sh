@@ -184,18 +184,18 @@ start_menu(){
     echo
     green "镜像推荐：https://hub.docker.com/r/ddsderek/foundations/tags"
     echo
-    green "	1.【mysql】
-	2.【phpmyadmin】
+    green "	1.【mysql - 6878】
+	2.【phpmyadmin - 8181】
 	3.【Debian-apache2-php7.3】
 	4.【Debian-apache2-php7.1】
 	5.【Ubuntu20.04-nginx1.16.1-php7.4.20】		
 	6.【Ubuntu20.04-nginx1.20.2-php8.0.13】
-	7.【Kodexplorer】
-	8.【Portainer】"
+	7.【Kodexplorer - 5878】
+	8.【Portainer - 9000】"
     echo
-    redbg "99.【Nginx Proxy Manager】"
+    redbg "99.【Nginx Proxy Manager】- 81"
     echo
-    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81"
+    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81 | Portainer-端口:9000"
     echo
     read -p "请输入数字:" num
     case "$num" in
