@@ -142,7 +142,7 @@ start_menu(){
 clear
 green "已经运行的容器:"
 echo
-docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
+yellow  docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}'
     echo
     yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【100】提供更详细内容"
     echo
