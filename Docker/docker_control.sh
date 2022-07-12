@@ -99,11 +99,7 @@ docker exec -it $dd /bin/bash
 }
 
 install_8(){
-docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
-echo
-stty erase '^H' && read -p "输入要查看的容器:" nbip
-echo
-docker stats $nbip 
+docker stats --no-stream
 echo
 }
 
