@@ -146,9 +146,13 @@ green " 推送镜像：
 	docker tag 镜像id 你的账户名/镜像仓库名:tag名 制作镜像
 	yan33158164/foundations:Debian-apache2-php7.1 推送镜像到仓库
 	"
-	
+green "	docker network create web-network 创建网络
+	docker run --name redis -d -p 6379:6379 --network web-network redis:6.2.7 创建web-network网络环境下
+	--link mysql	链接数据库
+	"	
 	
 	}
+
 
 
 
