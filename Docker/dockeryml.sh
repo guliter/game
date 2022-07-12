@@ -180,16 +180,11 @@ echo
 redbg "kodexplorer-默认面板:http://${ip}:5878"
 }
 
-install_7(){  
-docker run -d \
-  --restart always \
-  --name kodexplorer \
-  -p 5878:80 \
-  -v  /root/data/docker_data:/code \
-  baiyuetribe/kodexplorer
-  clear
-echo
-redbg "kodexplorer-默认面板:http://${ip}:5878"
+install_98(){  
+docker run -d --name freenom --restart always -v /root/data/docker_data/freenom:/conf -v /root/data/docker_data/freenom/logs:/app/logs yan33158164/foundations:freenom
+yellow "	配置文件:/root/data/docker_data/freenom
+	docker restart freenom	重启freenom服务
+	https://github.com/luolongfei/freenom 详情查看"
 }
 
 #开始菜单
@@ -208,7 +203,7 @@ start_menu(){
 	7.【Kodexplorer - 5878】
 	8.【Portainer - 9000】"
     echo
-    redbg "99.【Nginx Proxy Manager】- 81"
+    redbg "98.【Freenom 域名自动续期】	99.【Nginx Proxy Manager】- 81"
     echo
     yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81 | Portainer-端口:9000"
     echo
@@ -231,6 +226,9 @@ start_menu(){
   	;;
 	99)
     bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Nginx_Proxy_Manager.sh)
+      	;;
+	98)
+    install_98
       	;;
 	100)
     install_100
