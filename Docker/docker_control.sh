@@ -199,7 +199,7 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
     green "1.重启指定容器	3.删除所有镜像	5.查看指定容器进程	7.进入指定容器	9.制作镜像标签"			
     green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用	10.推送镜像到仓库"
     echo
-    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81 | Portainer-端口:9000"
+    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81 | Portainer-端口:9000 进入数据：mysql -uroot -proot"
     echo
     read -p "请输入数字:" num
     case "$num" in
