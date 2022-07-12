@@ -125,6 +125,22 @@ echo
 echo
 }
 
+install_11(){
+echo
+stty erase '^H' && read -p "Mysql-密码:" ps
+echo
+stty erase '^H' && read -p "创建的数据库:" sqlname
+echo
+yellow "复制下边参数：
+	docker exec -it mysql /bin/bash 
+	mysql -uroot -p$ps 
+	create database $sqlname character set utf8mb4; 
+	exit
+	exit"
+
+	
+	
+}
 
 install_100(){
 yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
@@ -150,7 +166,7 @@ green "	docker network create web-network 创建网络
 	docker run --name redis -d -p 6379:6379 --network web-network redis:6.2.7 创建web-network网络环境下
 	--link mysql	链接数据库
 	================================================================================================
-	创建数据库“
+	创建数据库:
 	docker exec -it mysql /bin/bash 
 	mysql -uroot -proot 
 	create database s222s character set utf8mb4; 
@@ -176,7 +192,7 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
 	
 
     echo
-    yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【99】输出容器端口【100】提供更详细内容"
+    yellow "Docker版绝对优势：部署多个程序互不干扰，独立运行；部署速度快，维护方便 输入【11】创建数据库【99】输出容器端口【100】提供更详细内容"
     echo
     green "推荐教程：https://www.bilibili.com/video/BV1og4y1q7M4/?spm_id_from=autoNext"
     echo
@@ -216,6 +232,9 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
         ;;
 	10)
     install_10
+         ;;
+	11)
+    install_11
         ;;
 	100)
     install_100
