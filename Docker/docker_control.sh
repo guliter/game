@@ -149,7 +149,13 @@ green " 推送镜像：
 green "	docker network create web-network 创建网络
 	docker run --name redis -d -p 6379:6379 --network web-network redis:6.2.7 创建web-network网络环境下
 	--link mysql	链接数据库
-	"	
+	================================================================================================
+	创建数据库“
+	docker exec -it mysql /bin/bash 
+	mysql -uroot -proot 
+	create database s222s character set utf8mb4; 
+	exit
+	exit"	
 	
 	}
 
