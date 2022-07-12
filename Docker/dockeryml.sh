@@ -183,7 +183,7 @@ redbg "kodexplorer-默认面板:http://${ip}:5878"
 install_98(){  
 docker run -d --name freenom --restart always -v /root/data/docker_data/freenom:/conf -v /root/data/docker_data/freenom/logs:/app/logs yan33158164/foundations:freenom
 yellow "	配置文件:/root/data/docker_data/freenom
-	重启服务:docker restart freenom	重启服务
+	重启服务:docker restart freenom
 	查看日志:docker logs freenom
 	详情查看:https://github.com/luolongfei/freenom 详情查看"
 }
