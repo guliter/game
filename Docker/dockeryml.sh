@@ -175,6 +175,21 @@ docker run -d \
   -p 5878:80 \
   -v  /root/data/docker_data:/code \
   baiyuetribe/kodexplorer
+  clear
+echo
+redbg "kodexplorer-默认面板:http://${ip}:5878"
+}
+
+install_7(){  
+docker run -d \
+  --restart always \
+  --name kodexplorer \
+  -p 5878:80 \
+  -v  /root/data/docker_data:/code \
+  baiyuetribe/kodexplorer
+  clear
+echo
+redbg "kodexplorer-默认面板:http://${ip}:5878"
 }
 
 #开始菜单
