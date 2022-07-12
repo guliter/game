@@ -121,6 +121,7 @@ echo
 
 install_10(){
 docker images
+
 echo
 stty erase '^H' && read -p "输入推送镜像的标签:" tgas
 echo
@@ -143,6 +144,8 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	 "
 	
 green " 推送镜像：
+	docker images 显示全部镜像
+	docker ps --format '{{.Image}}' 显示运行中的镜像
 	ocker login 登录
 	docker tag 镜像id 你的账户名/镜像仓库名:tag名 制作镜像
 	yan33158164/foundations:Debian-apache2-php7.1 推送镜像到仓库
