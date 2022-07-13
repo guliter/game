@@ -47,36 +47,23 @@ ip=`curl http://whatismyip.akamai.com`
 #systemctl restart docker
 cd /root
 
-> docker-compose.yml
 
-cat >> /root/docker-compose.yml<<EOF
-version: "3"
-services:
-  app:
-    image: 'jc21/nginx-proxy-manager:latest'
-    container_name: NPM
-    restart: unless-stopped
-    ports:
-      # These ports are in format <host-port>:<container-port>
-      - '80:80' # Public HTTP Port
-      - '443:443' # Public HTTPS Port
-      - '81:81' # Admin Web Port
-      # Add any other Stream port you want to expose
-      # - '21:21' # FTP
-    environment:
-      DB_MYSQL_HOST: "db"
-      DB_MYSQL_PORT: 3306
-      DB_MYSQL_USER: "npm"
-      DB_MYSQL_PASSWORD: "npm"
-      DB_MYSQL_NAME: "npm"
-      # Uncomment this if IPv6 is not enabled on your host
-      # DISABLE_IPV6: 'true'
-    volumes:
-      - /root/data/docker_data/NPM:/data
-      - /root/data/docker_data/NPM/letsencrypt:/etc/letsencrypt
-EOF
 redbg "【Nginx Proxy Manager】启动中......"
-docker-compose up -d
+docker run -d \
+  --restart always \
+  --name npm \
+  --link mysql \
+  -e PMA_HOST="mysql" \
+  -e DB_MYSQL_PORT="6867" \
+  -e DB_MYSQL_USER="root" \
+  -e DB_MYSQL_PASSWORD="root" \
+  -e DB_MYSQL_NAME="npm" \
+  -p 80:80 \
+  -p 443:443 \
+  -p 81:81 \
+  -v /root/data/docker_data/NPM:/data \
+  -v /root/data/docker_data/NPM/letsencrypt:/etc/letsencrypt \
+  yan33158164/foundations:nginx-proxy-manager
 echo
 redbg "【Nginx Proxy Manager】-默认面板:http://${ip}:81 【admin@example.com changeme】"
 echo
