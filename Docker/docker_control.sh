@@ -113,6 +113,7 @@ stty erase '^H' && read -p "输入自己镜像的标签:" tga
 echo
 docker tag $image yan33158164/foundations:$tga
 echo
+start_menu
 }
 
 install_10(){
