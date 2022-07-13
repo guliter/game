@@ -74,20 +74,6 @@ services:
     volumes:
       - /root/data/docker_data/NPM:/data
       - /root/data/docker_data/NPM/letsencrypt:/etc/letsencrypt
-    depends_on:
-      - db
-
-  db:
-    image: 'jc21/mariadb-aria:latest'
-    container_name: NPM_mysql
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
-      MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
-    volumes:
-      - /root/data/docker_data/NPM/mysql:/var/lib/mysql
 EOF
 redbg "【Nginx Proxy Manager】启动中......"
 docker-compose up -d
