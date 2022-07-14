@@ -60,7 +60,7 @@ docker run -d \
   -e DB_MYSQL_NAME="npm" \
   -p 80:80 \
   -p 443:443 \
-  -p 81:81 \
+  -p 8686:81 \
   -v /root/data/docker_data/NPM:/data \
   -v /root/data/docker_data/NPM/letsencrypt:/etc/letsencrypt \
   yan33158164/foundations:nginx-proxy-manager
