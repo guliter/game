@@ -111,7 +111,7 @@ EOF
 clear
 redbg "【tinytinyrss-订阅服务】启动中......"
 docker-compose up -d
-chmod -R 777 /root/data/docker_data/$name/feed-icons
+chmod -R 777 /root/data/docker_data/$name
 docker-compose restart
 echo
 redbg "【tinytinyrss-订阅服务】-面板:https://$web/【admin password】"
