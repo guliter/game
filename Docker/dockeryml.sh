@@ -207,7 +207,7 @@ start_menu(){
     echo
     redbg "98.【Freenom 域名自动续期】	99.【Nginx Proxy Manager】- 81"
     echo
-    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:81 | Portainer-端口:9000"
+    yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:8686 | Portainer-端口:9000"
     echo
     read -p "请输入数字:" num
     case "$num" in
