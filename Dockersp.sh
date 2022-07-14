@@ -155,7 +155,7 @@ docker pull yuanter/x-ui:latest
 docker run --restart=always --name x-ui -d  --network=host -p 7893:54321 --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /root/data/docker_data/x-ui:/etc/x-ui yuanter/x-ui:latest
 clear
 echo
-redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】"
+redbg "【X-ui】-默认面板:http://${ip}:7893 【admin admin】"
 echo
 }
 
