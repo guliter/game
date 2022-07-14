@@ -28,6 +28,9 @@ function white(){
 
 name=tinytinyrss
 
+
+stty erase '^H' && read -p "请输入已解析好域名:" web
+
 ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
@@ -52,7 +55,7 @@ services:
     ports:
       - 3894:80 # 按需修改
     environment:
-      - SELF_URL_PATH=https://rss.gamestart.ml/ # 按需修改
+      - SELF_URL_PATH=https://$web/ # 按需修改
       - DB_PASS=ipbufQW8F2 # 按需修改。与下面的密码对应
     volumes:
       - ./feed-icons:/var/www/feed-icons/
