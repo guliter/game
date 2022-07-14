@@ -39,7 +39,72 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
 cd /root/data/docker_data/$name
-docker-compose up -d
+
+
+> docker-compose.yml
+
+cat >> /root/docker-compose.yml<<EOF
+version: "3"
+services:
+  service.rss:
+    image: wangqiru/ttrss:latest
+    container_name: ttrss
+    ports:
+      - 3894:80 # 按需修改
+    environment:
+      - SELF_URL_PATH=https://rss.gamestart.ml/ # 按需修改
+      - DB_PASS=ipbufQW8F2 # 按需修改。与下面的密码对应
+    volumes:
+      - ./feed-icons:/var/www/feed-icons/
+    networks:
+      - public_access
+      - service_only
+      - database_only
+    stdin_open: true
+    tty: true
+    restart: always
+ 
+  service.mercury:
+    image: wangqiru/mercury-parser-api:latest
+    container_name: ttrss_mercury
+    networks:
+      - public_access
+      - service_only
+    restart: always
+ 
+  service.opencc:
+    image: wangqiru/opencc-api-server:latest
+    container_name: ttrss_opencc
+    environment:
+      - NODE_ENV=production
+    networks:
+      - service_only
+    restart: always
+ 
+  database.postgres:
+    image: postgres:13-alpine
+    container_name: ttrss_postgres
+    environment:
+      - POSTGRES_PASSWORD=ipbufQW8F2 # 按需修改。与上面的密码对应
+    volumes:
+      - ./db/:/var/lib/postgresql/data
+    networks:
+      - database_only
+    restart: always
+ 
+networks:
+  public_access: 
+  service_only: 
+    internal: true
+  database_only: 
+    internal: true
+EOF
+
+
+
+
+
+
 clear
 redbg "【tinytinyrss-订阅服务】启动中......"
 chmod -R 777 /root/data/docker_data/$name/feed-icons
