@@ -43,7 +43,7 @@ cd /root/data/docker_data/$name
 
 > docker-compose.yml
 
-cat >> /root/docker-compose.yml<<EOF
+cat >> /root/data/docker_data/tinytinyrss<<EOF
 version: "3"
 services:
   service.rss:
