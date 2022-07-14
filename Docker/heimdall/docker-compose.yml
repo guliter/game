@@ -9,7 +9,7 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /root/data/docker_data:/config
+      - /root/data/docker_data/heimdall:/config
     ports:
       - 5644:80
       - 5645:443
