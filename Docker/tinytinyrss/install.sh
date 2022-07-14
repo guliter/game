@@ -114,8 +114,8 @@ docker-compose up -d
 chmod -R 777 /root/data/docker_data/$name/feed-icons
 docker-compose restart
 echo
-redbg "【tinytinyrss-订阅服务】-默认面板:解析好的域名"
+redbg "【tinytinyrss-订阅服务】-面板:https://$web/【admin password】"
 echo
-redbg "一定要解析好域名配置docker-compose.yml才能正常启动 【admin password】"
-echo
+#redbg "一定要解析好域名配置docker-compose.yml才能正常启动 【admin password】"
+#echo
 
