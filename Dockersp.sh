@@ -261,7 +261,7 @@ echo
 
 
 install_28(){
-docker run -d --name Bitwarden -v /root/data/docker-data/bitwarden/bw-data/:/data/ -p 8485:80 bitwardenrs/server:latest
+docker run -d --restart=always --name Bitwarden -v /root/data/docker-data/bitwarden/bw-data/:/data/ -p 8485:80 bitwardenrs/server:latest
 clear
 echo
 redbg "【Bitwarden】-默认面板:http://$ip:8485"
