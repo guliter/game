@@ -88,6 +88,7 @@ echo "旧环境清理完毕！"
 echo ""
 echo "安装Socks5所依赖的组件,请稍等..."
 yum -y install gcc gcc-c++ automake make pam-devel openldap-devel cyrus-sasl-devel openssl-devel
+yum -y install gcc openldap-devel pam-devel openssl-devel
 yum update -y nss curl libcurl 
 
 #配置环境变量
