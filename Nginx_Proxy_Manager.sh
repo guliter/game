@@ -54,16 +54,16 @@ docker run -d \
   --name npm \
   --link mysql \
   -e PMA_HOST="mysql" \
-  -e DB_MYSQL_PORT="6867" \
+  -e DB_MYSQL_PORT="6878" \
   -e DB_MYSQL_USER="root" \
   -e DB_MYSQL_PASSWORD="root" \
   -e DB_MYSQL_NAME="npm" \
   -p 80:80 \
   -p 443:443 \
-  -p 81:81 \
+  -p 8686:81 \
   -v /root/data/docker_data/NPM:/data \
   -v /root/data/docker_data/NPM/letsencrypt:/etc/letsencrypt \
   yan33158164/foundations:nginx-proxy-manager
 echo
-redbg "【Nginx Proxy Manager】-默认面板:http://${ip}:81 【admin@example.com changeme】"
+redbg "【Nginx Proxy Manager】-默认面板:http://${ip}:8686 【admin@example.com changeme】"
 echo
