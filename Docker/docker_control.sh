@@ -153,6 +153,8 @@ yellow "	docker inspect -f {{.Config.Hostname}} tomcat001 获取到hostname
 	docker image tag image:v1 image 镜像设置标签,也叫镜像设置版本
 	docker ps -a --format 'table {{.Names}}\t{{.Ports}}' | sed 's/0.0.0.0://' | sed 's/ ::://' |awk -F"/tcp," '{print $1}' 显示镜像与端口
 	docker tag 镜像id 你的账户名/镜像仓库名:tag名
+	systemctl enable docker #设置docker开机自动启动
+ 	systemctl status docker #查看docker状态
 	
 	 "
 	
