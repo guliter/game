@@ -162,6 +162,7 @@ cat >> /root/data/docker_data/x-ui/port.log<<EOF
 54321
 EOF
 cat port.log | awk 'END{print}'
+echo
 }
 
 
