@@ -114,7 +114,7 @@ docker-compose up -d
 chmod -R 777 /root/data/docker_data/$name
 docker-compose restart
 echo
-redbg "【tinytinyrss-订阅服务】-面板:https://$web/【admin password】"
+redbg "【tinytinyrss-订阅服务】- 面板:https://$web/ 默认端口：3894【admin password】"
 echo
 #redbg "一定要解析好域名配置docker-compose.yml才能正常启动 【admin password】"
 #echo
