@@ -157,6 +157,11 @@ clear
 echo
 redbg "【X-ui】-默认面板:http://${ip}:54321 【admin admin】记得修改端口！"
 echo
+cd /root/data/docker_data/x-ui
+cat >> /root/data/docker_data/x-ui/port.log<<EOF
+54321
+EOF
+cat port.log | awk 'END{print}'
 }
 
 
