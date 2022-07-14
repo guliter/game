@@ -32,7 +32,7 @@ ip=`curl http://whatismyip.akamai.com`
 
 #yum -y install unzip zip
 mkdir -p /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
 
 #chmod 777 /root/data/docker_data/$name
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
@@ -107,6 +107,7 @@ EOF
 
 clear
 redbg "【tinytinyrss-订阅服务】启动中......"
+docker-compose up -d
 chmod -R 777 /root/data/docker_data/$name/feed-icons
 docker-compose restart
 echo
