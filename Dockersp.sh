@@ -324,7 +324,7 @@ docker run -d \
   --restart always \
   --name kodexplorer \
   -p 5878:80 \
-  -v  /root/data/docker_data:/code \
+  -v  /root/data:/code \
   baiyuetribe/kodexplorer
 echo
 redbg "【Kodexplorer】-默认面板:http://$ip:5878"
