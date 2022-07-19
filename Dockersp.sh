@@ -230,6 +230,7 @@ clear
 docker logs alist
 echo
 redbg "【AList 网盘】-默认面板:http://$ip:5244"
+redbg "【AList 网盘文档：】https://alist-doc.nn.ci/docs/intro"
 echo
 
 }
