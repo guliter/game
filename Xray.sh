@@ -33,7 +33,7 @@ printf "(默认端口: \e[33m5466\e[0m): "
 
 read ws_porttmp
 
-if [[ -n "$ws_port" ]]; then
+if [[ -n "$ws_porttmp" ]]; then
 
     ws_port=$ws_porttmp
 
