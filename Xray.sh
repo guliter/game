@@ -26,8 +26,8 @@ function white(){
 
 
 ws_port="5466"
-yellow "输入端口:"
-printf "(默认端口: \e[33m5466\e[0m): "
+
+yellow "输入端口:" printf "(默认端口: \e[33m5466\e[0m):"
 echo
 read ws_porttmp
 
