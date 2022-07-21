@@ -26,7 +26,7 @@ function white(){
 ws_port="54675"
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
-serverip=$(ifconfig -a |grep -w "inet"| grep -v "127.0.0.1" |awk '{print $2;}')
+serverip=$(ifconfig -a |grep -w "inet"| grep -v "172.17.0.1" |grep -v "127.0.0.1" |awk '{print $2;}')
 
 ips=(
 $serverip
@@ -116,6 +116,6 @@ greenbg "总共${#ips[@]}个IP"
 echo
 yellow "第【$((i+1))】个IP:${ips[i]}"
 echo
-echo  "vmess链接: $link" | tee -a /root/vmess.txt
-echo
 done
+#echo  "vmess链接: $link" | tee -a /root/vmess.txt
+#echo
