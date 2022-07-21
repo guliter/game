@@ -116,6 +116,7 @@ greenbg "总共${#ips[@]}个IP"
 echo
 yellow "第【$((i+1))】个IP:${ips[i]}"
 echo
+echo  "vmess链接: $link"
 done
 #echo  "vmess链接: $link" | tee -a /root/vmess.txt
 #echo
