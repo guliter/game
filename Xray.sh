@@ -23,7 +23,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-yum install -y qrencode
+
 
 ws_port="5466"
 yellow "输入端口:"
@@ -123,6 +123,7 @@ red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
 echo 
+#yum install -y qrencode
 > /root/vmess.txt
 for ((i = 0; i < ${#ips[@]}; i++)); do
    raw="{
@@ -146,6 +147,6 @@ echo
 yellow "第【$((i+1))】个IP:${ips[i]}"
 green  "vmess链接: $link" | tee -a /root/vmess.txt > /dev/null
 done
-echo $link | qrencode -t UTF8
+#echo $link | qrencode -t UTF8
 systemctl restart xray
 
