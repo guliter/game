@@ -112,7 +112,7 @@ for ((i = 0; i < ${#ips[@]}; i++)); do
     link=`echo -n ${raw} | base64 -w 0`
     link="vmess://${link}"
 echo
-greenbg "总共${#ips[@]}个IP"
+redbg "总共${#ips[@]}个IP"
 echo
 yellow "第【$((i+1))】个IP:${ips[i]}"
 echo
