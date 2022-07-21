@@ -94,7 +94,7 @@ red "UUID：$ws_id"
 red "默认端口：$ws_port"
 red "传输协议：WS"
 echo 
-
+> /root/vmess.txt
 for ((i = 0; i < ${#ips[@]}; i++)); do
    raw="{
   \"v\":\"2\",
