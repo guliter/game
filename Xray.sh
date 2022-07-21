@@ -120,3 +120,5 @@ yellow "第【$((i+1))】个IP:${ips[i]}"
 green  "vmess链接: $link" | tee -a /root/vmess.txt > /dev/null
 echo $link | qrencode -t UTF8  
 done
+
+Vmess_restart
