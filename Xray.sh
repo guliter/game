@@ -23,6 +23,8 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
+yum install qrencode
+
 ws_port="5466"
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
@@ -116,4 +118,5 @@ redbg "总共${#ips[@]}个IP"
 echo
 yellow "第【$((i+1))】个IP:${ips[i]}"
 green  "vmess链接: $link" | tee -a /root/vmess.txt > /dev/null
+echo $link | qrencode -t UTF8  
 done
