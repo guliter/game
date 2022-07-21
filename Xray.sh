@@ -26,6 +26,22 @@ function white(){
 yum install -y qrencode
 
 ws_port="5466"
+
+yellow "输入端口:"
+
+printf "(默认端口: \e[33m5466\e[0m): "
+
+read ws_porttmp
+
+if [[ -n "$ws_port" ]]; then
+
+    ws_port=$ws_porttmp
+
+fi
+
+
+
+
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
 serverip=$(ifconfig -a |grep -w "inet" |grep -v "255.255.0.0"|grep -v "127.0.0.1"| awk '{print $2;}')
