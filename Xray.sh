@@ -26,13 +26,10 @@ function white(){
 yum install -y qrencode
 
 ws_port="5466"
-
 yellow "输入端口:"
 echo
-
 printf "(默认端口: \e[33m5466\e[0m): "
 echo
-
 read ws_porttmp
 
 if [[ -n "$ws_porttmp" ]]; then
@@ -41,21 +38,14 @@ if [[ -n "$ws_porttmp" ]]; then
 
 fi
 
-
-
-
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
 psd="/proc/sys/kernel/random/uuid"
 green "推荐使用的UUID：$(cat $psd)"
 echo
-
-
 yellow "输入UUID:"
 echo
-
 printf "(默认UUID: \e[33me98b29e6-83bb-4128-a439-3d0fcb5738c2\e[0m): "
-
 read ws_idtmp
 
 if [[ -n "$ws_idtmp" ]]; then
