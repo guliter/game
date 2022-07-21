@@ -23,7 +23,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-ws_port="54675"
+ws_port="5466"
 ws_id="e98b29e6-83bb-4128-a439-3d0fcb5738c2"
 
 serverip=$(ifconfig -a |grep -w "inet"| grep -v "172.17.0.1" |grep -v "127.0.0.1" |awk '{print $2;}')
