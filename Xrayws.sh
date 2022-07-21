@@ -130,4 +130,3 @@ start_menu(){
 }
 
 start_menu
-Vmess_status
