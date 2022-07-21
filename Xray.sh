@@ -141,10 +141,12 @@ for ((i = 0; i < ${#ips[@]}; i++)); do
     link=`echo -n ${raw} | base64 -w 0`
     link="vmess://${link}"
 echo
-redbg "总共${#ips[@]}个IP"
+greenbg "总共${#ips[@]}个IP"
 echo
 yellow "第【$((i+1))】个IP:${ips[i]}"
-green  "vmess链接: $link" | tee -a /root/vmess.txt > /dev/null
+echo
+green  "vmess链接: $link" | tee -a /root/vmess.txt
+echo
 done
 #echo $link | qrencode -t UTF8
 systemctl restart xray
