@@ -24,3 +24,6 @@ sed -n '14,15p' /etc/soga/soga.conf 输出指定行内容显示
 以下是谷歌云SSH登录修改配置
 sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
 sed -i "s/PermitRootLogin no/PermitRootLogin yes/g" /etc/ssh/sshd_config 
+```
+docker ps -a
+```
