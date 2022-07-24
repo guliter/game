@@ -227,6 +227,7 @@ Install_aria2() {
     echo -e "${Info} 开始创建 下载目录..."
     mkdir -p ${download_path}
     echo -e "${Info} 所有步骤 安装完毕，开始启动..."
+    sed -i '301c on-download-complete=/root/.aria2c/upload.sh' /root/.aria2c/aria2.conf
     Start_aria2
 }
 Start_aria2() {
