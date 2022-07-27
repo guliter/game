@@ -61,6 +61,8 @@ sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
 
 mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
 
+rm -f /root/data/docker_data/xyfaka/xyfaka.zip
+
 chmod -R 777 /root/data/docker_data
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
 #chmod -R 777 /root/data/docker_data/xyfaka/xyfaka/install
