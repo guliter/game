@@ -82,7 +82,7 @@ green "
 创建数据库:
 docker exec -it mysql /bin/bash 
 mysql -uroot -proot 
-create database s222s character set utf8mb4; 
+create database xyfaka character set utf8mb4; 
 exit
 exit"
 echo
