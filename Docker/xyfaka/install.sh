@@ -80,6 +80,7 @@ redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
 green "
 创建数据库:
+
 docker exec -it mysql /bin/bash 
 mysql -uroot -proot 
 create database xyfaka character set utf8mb4; 
