@@ -19,7 +19,7 @@ install_dependencies(){
         yum_depends=(
             unzip gzip socat dos2unix git net-tools curl
             gcc openldap-devel pam-devel openssl-devel
-            gcc automake autoconf libtool make
+            gcc automake autoconf libtool make gcc-c++
         )
         for depend in ${yum_depends[@]}; do
             error_detect_depends "yum -y install ${depend}"
