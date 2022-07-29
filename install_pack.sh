@@ -17,7 +17,7 @@ error_detect_depends(){
         
 install_dependencies(){        
         yum_depends=(
-            unzip gzip socat dos2unix git net-tools curl
+            unzip gzip socat dos2unix git net-tools curl kernel-headers
             gcc openldap-devel pam-devel openssl-devel
             gcc automake autoconf libtool make gcc-c++
         )
