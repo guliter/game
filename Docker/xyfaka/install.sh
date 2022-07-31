@@ -30,15 +30,7 @@ name=xyfaka
 
 ip=`curl http://whatismyip.akamai.com`
 
-if [ ! -f "/root/data/docker_data/$name/docker-compose.yml" ];then
 
-redbg "已经安装过了！"
-
-else
-
-install
-
-fi
 
 install(){
 #yum -y install unzip zip
@@ -81,6 +73,19 @@ chmod -R 777 /root/data/docker_data
 #echo -e "\033[36m docker-compose up -d \033[0m"
 #rm $0
 }
+
+
+
+
+if [ ! -f "/root/data/docker_data/$name/docker-compose.yml" ];then
+
+install
+
+else
+
+redbg "已经安装过了！"
+
+fi
 
 cd /root/data/docker_data/$name
 redbg "【xyfaka】启动中......"
