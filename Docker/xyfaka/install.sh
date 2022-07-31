@@ -76,9 +76,8 @@ chmod -R 777 /root/data/docker_data
 
 
 mysql(){
-echo
+clear
 red "第一次创建请创建数据库并导入数据库"
-echo
 green "
 创建数据库:
 
