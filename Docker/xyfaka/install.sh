@@ -82,9 +82,9 @@ if [ ! -f "/root/data/docker_data/$name/docker-compose.yml" ];then
 install
 
 else
-
+clear
 redbg "已经安装过了！"
-
+echo
 fi
 
 cd /root/data/docker_data/$name
