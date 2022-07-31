@@ -27,11 +27,10 @@ function white(){
 }
 
 name=tinytinyrss
-
-
-stty erase '^H' && read -p "请输入已解析好域名:" web
-
 ip=`curl http://whatismyip.akamai.com`
+
+install(){
+stty erase '^H' && read -p "请输入已解析好域名:" web
 
 #yum -y install unzip zip
 mkdir -p /root/data/docker_data/$name
@@ -102,11 +101,18 @@ networks:
   database_only: 
     internal: true
 EOF
+}
 
 
+if [ ! -f "/root/data/docker_data/$name/docker-compose.yml" ];then
 
+install
 
-
+else
+echo
+redbg "已经安装过了！"
+echo
+fi
 
 clear
 redbg "【tinytinyrss-订阅服务】启动中......"
@@ -115,6 +121,8 @@ chmod -R 777 /root/data/docker_data/$name
 docker-compose restart
 echo
 redbg "【tinytinyrss-订阅服务】- 面板:https://$web/ 默认端口：3894【admin password】"
+echo
+yellow "【如果域名填写错误请删除目录下配置文件再次运行添加正确域名信息！】"
 echo
 #redbg "一定要解析好域名配置docker-compose.yml才能正常启动 【admin password】"
 #echo
