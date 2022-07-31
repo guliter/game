@@ -30,9 +30,19 @@ name=duplicati
 
 ip=`curl http://whatismyip.akamai.com`
 
-#yum -y install unzip zip
+
+
+if [ ! -f "/root/data/docker_data/$name/docker-compose.yml" ];then
+
+redbg "已经安装过了！"
+
+else
 mkdir -p /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
+fi
+
+#yum -y install unzip zip
+
 
 #chmod 777 /root/data/docker_data/lsky-pro
 #echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
