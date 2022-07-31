@@ -39,7 +39,9 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 
 else
 
+clear
 redbg "已经安装过了！"
+echo
 
 fi
 
