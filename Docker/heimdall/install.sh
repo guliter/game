@@ -33,12 +33,16 @@ ip=`curl http://whatismyip.akamai.com`
 
 if [ ! -f "/root/data/docker_data/$name/docker-compose.yml" ];then
 
-redbg "已经安装过了！"
-
-else
 mkdir -p /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-compose.yml -P /root/data/docker_data/$name
+
+else
+echo
+redbg "已经安装过了！"
+echo
 fi
+
+
 
 #yum -y install unzip zip
 
