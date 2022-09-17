@@ -195,7 +195,7 @@ install_5(){
 stty erase '^H' && read -p "网站名称" name
 stty erase '^H' && read -p "网站端口" port     
 mkdir -p /root/data/docker_data/$name
-#wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/000-default.conf -P /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-default.conf -P /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/apache2.conf -P /root/data/docker_data/$name
 chmod -R 777 /root/data/docker_data
 #sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
