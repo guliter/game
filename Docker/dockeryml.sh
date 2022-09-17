@@ -208,7 +208,7 @@ docker run -d \
   --name $name \
   --link mysql \
   -p $port:80 \
-  -v /root/data/docker_data/$name/$name:/var/www/html \
+  -v /root/data/docker_data/$name/$name:/app/web \
   #-v /root/data/docker_data/$name/000-default.conf:/etc/apache2/sites-enabled/000-default.conf \
   #-v /root/data/docker_data/$name/apache2.conf:/etc/apache2/apache2.conf \
   ddsderek/foundations:Ubuntu20.04-nginx1.16.1-php7.4.20
