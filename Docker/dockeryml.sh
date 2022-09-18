@@ -221,6 +221,39 @@ redbg "【数据库面板】-默认面板:http://${ip}:8181"
 echo
 }
 
+
+
+
+install_6(){  
+stty erase '^H' && read -p "网站名称" name
+stty erase '^H' && read -p "网站端口" port     
+mkdir -p /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf -P /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf.default -P /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/default_server.conf -P /root/data/docker_data/$name
+chmod -R 777 /root/data/docker_data
+#sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
+cd /root/data/docker_data/$name
+echo
+redbg "【$name】启动中......"
+echo
+docker run -d \
+  --restart always \
+  --name $name \
+  --link mysql \
+  -p $port:80 \
+  -v /root/data/docker_data/$name/$name:/app/web \
+  -v /root/data/docker_data/$name/default_server.conf:/etc/nginx/conf.d/default_server.conf \
+  ddsderek/foundations:Ubuntu18.04-nginx1.16.1-php7.2.21
+echo
+redbg "【$name-nginx1.16-php7.2环境】-默认面板:http://${ip}:$port"
+echo
+redbg "上传网站至: /root/data/docker_data/$name/$name"
+echo
+redbg "【数据库面板】-默认面板:http://${ip}:8181"
+echo
+}
+
 install_98(){  
 docker run -d --name freenom --restart always -v /root/data/docker_data/freenom:/conf -v /root/data/docker_data/freenom/logs:/app/logs yan33158164/foundations:freenom
 yellow "	配置文件:/root/data/docker_data/freenom
@@ -241,7 +274,7 @@ start_menu(){
 	3.【Debian-apache2-php7.3】
 	4.【Debian-apache2-php7.1】
 	5.【Ubuntu20.04-nginx1.16.1-php7.4.20】		
-	6.【Ubuntu20.04-nginx1.20.2-php8.0.13】
+	6.【Ubuntu18.04-nginx1.16.1-php7.2.21】
 	7.【Kodexplorer - 5878】
 	8.【Portainer - 9000】"
     echo
@@ -265,6 +298,9 @@ start_menu(){
     	;;
 	5)
     install_5
+    	;;
+	6)
+    install_6
     	;;
 	7)
     install_7
