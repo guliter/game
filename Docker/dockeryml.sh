@@ -195,8 +195,9 @@ install_5(){
 stty erase '^H' && read -p "网站名称" name
 stty erase '^H' && read -p "网站端口" port     
 mkdir -p /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf -P /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf.default -P /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf -P /root/data/docker_data/$name
+#wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf.default -P /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/default_server.conf -P /root/data/docker_data/$name
 chmod -R 777 /root/data/docker_data
 #sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
 cd /root/data/docker_data/$name
@@ -209,8 +210,7 @@ docker run -d \
   --link mysql \
   -p $port:80 \
   -v /root/data/docker_data/$name/$name:/app/web \
-  -v /root/data/docker_data/$name/nginx.conf:/usr/local/nginx/conf/nginx.conf \
-  -v /root/data/docker_data/$name/nginx.conf.default:/usr/local/nginx/conf/nginx.conf.defaul \
+  -v /root/data/docker_data/$name/default_server.conf:/etc/nginx/conf.d/default_server.conf \
   ddsderek/foundations:Ubuntu20.04-nginx1.16.1-php7.4.20
 echo
 redbg "【$name-nginx1.16-php7.4环境】-默认面板:http://${ip}:$port"
