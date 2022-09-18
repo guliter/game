@@ -54,7 +54,7 @@ echo
 
 install_3(){
 green "所有镜像删除中......"
-docker rmi -f $(docker images -q)
+docker stop $(docker ps -q) & docker rm $(docker ps -aq)
 echo
 clear
 redbg "所有镜像已删除"
