@@ -272,9 +272,9 @@ start_menu(){
     green "	1.【mysql - 6878】
 	2.【phpmyadmin - 8181】
 	3.【Debian-apache2-php7.3】
-	4.【Debian-apache2-php7.1】
+	4.【Debian-apache2-php7.1 xyfaka】
 	5.【Ubuntu20.04-nginx1.16.1-php7.4.20】		
-	6.【Ubuntu18.04-nginx1.16.1-php7.2.21】
+	6.【Ubuntu18.04-nginx1.16.1-php7.2.21 Vplay】
 	7.【Kodexplorer - 5878】
 	8.【Portainer - 9000】"
     echo
