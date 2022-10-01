@@ -236,7 +236,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-ngin
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/opcache.a -P /root/data/docker_data/$name/extension
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/ixed.7.2.lin -P /root/data/docker_data/$name/extension
 chmod -R 777 /root/data/docker_data
-#sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
+sed -i '918c extension=ixed.7.2.lin' /root/data/docker_data/$name/php.ini
 cd /root/data/docker_data/$name
 echo
 redbg "【$name】启动中......"
