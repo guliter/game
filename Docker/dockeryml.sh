@@ -234,7 +234,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-ngin
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/default_server.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/opcache.so -P /root/data/docker_data/$name/extension
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/opcache.a -P /root/data/docker_data/$name/extension
-#wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/ixed.7.2.lin -P /root/data/docker_data/$name/extension
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu18.04-nginx1.16.1-php7.2.21/ixed.7.2.lin -P /root/data/docker_data/$name/extension
 chmod -R 777 /root/data/docker_data
 #sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
 cd /root/data/docker_data/$name
