@@ -56,7 +56,7 @@ cd /root/data/docker_data/$name
 redbg "【fake】启动中......"
 docker-compose up -d
 echo
-redbg "【fake】-默认面板:http://${ip}:5008 数据库配置：config.php
+greenbg "【fake】-默认面板:http://${ip}:5008 数据库配置：config.php
         创建数据库:
         docker exec -it mysql /bin/bash 
         mysql -uroot -proot 
