@@ -44,7 +44,7 @@ rm /root/data/docker_data/$name/$name.zip
 
 
 > /root/data/docker_data/$name/$name/config.php
-cat >> /root/data/docker_data/$name/$name/config.phpi<<EOF
+cat >> /root/data/docker_data/$name/$name/config.php<<EOF
 [common]
 <?php
 /*数据库信息配置*/
