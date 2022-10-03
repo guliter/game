@@ -154,6 +154,13 @@ green 	"Apache环境关键文件
 	运行配置：/etc/apache2/sites-enabled/000-default.conf
 	静态配置：/etc/apache2/apache2.conf
 	PHP配置文件 /usr/local/etc/php/conf.d/
+	====================================================
+        创建数据库:
+        docker exec -it mysql /bin/bash 
+        mysql -uroot -proot 
+        create database s222s character set utf8mb4; 
+        exit
+        exit 
 	
 	
 	"
