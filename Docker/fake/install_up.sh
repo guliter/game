@@ -26,7 +26,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-name=zfaka
+name=fake
 
 ip=`curl http://whatismyip.akamai.com`
 
@@ -40,36 +40,26 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 yum -y install unzip zip
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/$name.zip -P /root/data/docker_data/$name
 unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$name
+rm /root/data/docker_data/$name/$name.zip
 
 
-> /root/data/docker_data/$name/$name/conf/application.ini
-cat >> /root/data/docker_data/$name/$name/conf/application.ini<<EOF
+> /root/data/docker_data/$name/$name/config.php
+cat >> /root/data/docker_data/$name/$name/config.phpi<<EOF
 [common]
-application.directory = APP_PATH"/application/"
-application.dispatcher.catchException = 1
-application.cache_config = 1
-application.dispatcher.defaultController = "Index"
-application.dispatcher.defaultAction = "index"
-application.view.ext = "html"
-application.modules = "Index,Member,Product,407413685,Crontab,Install"
-[product : common]
-TYPE = "mysql"
-READ_HOST = "${ip}"
-READ_PORT = 6878
-READ_USER = "root"
-READ_PSWD = root
-WRITE_HOST = "${ip}"
-WRITE_PORT = 6878
-WRITE_USER = "root"
-WRITE_PSWD = root
-Default = "zfaka"
-pconnect = 0
+<?php
+/*数据库信息配置*/
+$host = '${ip}'; //数据库地址
+$port = 6878; //数据库端口
+$user = '4l'; //数据库用户名
+$pwd = '4l'; //数据库密码
+$dbname = '4l'; //数据库名
+?>
 EOF
 
 chmod -R 777 /root/data/docker_data
 #sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
-sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-default.conf
+#sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-default.conf
 
 
 #chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
