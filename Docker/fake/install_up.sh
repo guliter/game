@@ -50,11 +50,6 @@ chmod -R 777 /root/data/docker_data
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
 #sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-default.conf
 
-docker exec -it mysql /bin/bash 
-mysql -uroot -pqa1314521. 
-create database fake character set utf8mb4; 
-exit
-exit
 
 
 cd /root/data/docker_data/$name
