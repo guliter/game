@@ -43,36 +43,25 @@ unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$na
 rm /root/data/docker_data/$name/$name.zip
 
 
-> /root/data/docker_data/$name/$name/config.php
-cat >> /root/data/docker_data/$name/$name/config.php<< \EOF
-[common]
-<?php
-/*数据库信息配置*/
-$host = '${ip}'; //数据库地址
-$port = 6878; //数据库端口
-$user = '4l'; //数据库用户名
-$pwd = '4l'; //数据库密码
-$dbname = '4l'; //数据库名
-?>
-EOF
+
 
 chmod -R 777 /root/data/docker_data
 #sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
 #sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/zfaka/000-default.conf
 
+docker exec -it mysql /bin/bash 
+mysql -uroot -pqa1314521. 
+create database fake character set utf8mb4; 
+exit
+exit
 
-#chmod 777 /root/data/docker_data/xyfaka/xyfaka/install
-#chmod -R 777 /root/data/docker_data/xyfaka/xyfaka/install
-#echo -e "\033[36m cd /root/data/docker_data/lsky-pro \033[0m"
-#echo -e "\033[36m docker-compose up -d \033[0m"
-#rm $0
 
 cd /root/data/docker_data/$name
-redbg "【zfaka】启动中......"
+redbg "【fake】启动中......"
 docker-compose up -d
 echo
-redbg "【zfaka】-默认面板:http://${ip}:5005"
+redbg "【fake】-默认面板:http://${ip}:5008 数据库配置：config.php"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181 【root root】"
 echo
