@@ -60,7 +60,7 @@ greenbg "【fake】-默认面板:http://${ip}:5008 数据库配置：config.php
         创建数据库:
         docker exec -it mysql /bin/bash 
         mysql -uroot -proot 
-        create database fake character set utf8mb4; 
+        create database $name character set utf8mb4; 
         exit
         exit "
 echo
