@@ -43,8 +43,8 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-ngin
 
 
 yum -y install unzip zip
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/wordpress-6.1-zh_CN.zip -P /root/data/docker_data/$name
-unzip /root/data/docker_data/$name/wordpress-6.1-zh_CN.zip -d /root/data/docker_data/$name/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/$name.zip -P /root/data/docker_data/$name
+unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$name
 
 
 
@@ -65,7 +65,7 @@ docker run -d \
 echo
 redbg "【$name-nginx1.16-php7.4环境】-默认面板:http://${ip}:7263"
 echo
-redbg "
+green "
 创建数据库【mysql】:
 docker exec -it mysql /bin/bash 
 mysql -uroot -proot 
