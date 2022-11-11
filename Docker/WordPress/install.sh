@@ -63,6 +63,7 @@ docker run -d \
   -v /root/data/docker_data/$name/$name:/app/web \
   -v /root/data/docker_data/$name/default_server.conf:/etc/nginx/conf.d/default_server.conf \
   yan33158164/foundations:Ubuntu20.04-nginx1.16.1-php7.4.20
+chown -R www /root/data/docker_data  
 echo
 redbg "【$name-nginx1.16-php7.4环境】-WordPress-6.1默认面板:http://${ip}:5249"
 echo
