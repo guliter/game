@@ -39,7 +39,7 @@ ip=`curl http://whatismyip.akamai.com`
 mkdir -p /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf -P /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf.default -P /root/data/docker_data/$name
-wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/default_server.conf -P /root/data/docker_data/$name
+wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/default_server.conf -P /root/data/docker_data/$name
 
 
 yum -y install unzip zip
