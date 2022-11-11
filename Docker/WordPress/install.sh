@@ -59,7 +59,7 @@ docker run -d \
   --restart always \
   --name $name \
   --link mysql \
-  -p 7263:80 \
+  -p 5249:80 \
   -v /root/data/docker_data/$name/$name:/app/web \
   -v /root/data/docker_data/$name/default_server.conf:/etc/nginx/conf.d/default_server.conf \
   yan33158164/foundations:Ubuntu20.04-nginx1.16.1-php7.4.20
