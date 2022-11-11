@@ -26,7 +26,7 @@ function white(){
     echo -e "\033[37m\033[01m $1 \033[0m"
 }
 
-
+name=WordPress
 
 ip=`curl http://whatismyip.akamai.com`
 
@@ -34,8 +34,8 @@ ip=`curl http://whatismyip.akamai.com`
 
 
 
-stty erase '^H' && read -p "网站名称" name
-stty erase '^H' && read -p "网站端口" port     
+#stty erase '^H' && read -p "网站名称:" name
+#stty erase '^H' && read -p "网站端口:" port     
 mkdir -p /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf -P /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf.default -P /root/data/docker_data/$name
@@ -58,14 +58,21 @@ docker run -d \
   --restart always \
   --name $name \
   --link mysql \
-  -p $port:80 \
+  -p 7263:80 \
   -v /root/data/docker_data/$name/$name:/app/web \
   -v /root/data/docker_data/$name/default_server.conf:/etc/nginx/conf.d/default_server.conf \
   ddsderek/foundations:Ubuntu20.04-nginx1.16.1-php7.4.20
 echo
-redbg "【$name-nginx1.16-php7.4环境】-默认面板:http://${ip}:$port"
+redbg "【$name-nginx1.16-php7.4环境】-默认面板:http://${ip}:7263"
 echo
-redbg "上传网站至: /root/data/docker_data/$name/$name"
+redbg "
+创建数据库【mysql】:
+docker exec -it mysql /bin/bash 
+mysql -uroot -proot 
+create database WordPress character set utf8mb4; 
+exit
+exit"
+echo
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181"
 echo
