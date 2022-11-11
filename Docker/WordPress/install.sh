@@ -51,7 +51,7 @@ unzip /root/data/docker_data/$name/$name.zip -d /root/data/docker_data/$name/$na
 chmod -R 777 /root/data/docker_data
 #sed -i '12c DocumentRoot /var/www/html/public' /root/data/docker_data/$name/000-default.conf
 cd /root/data/docker_data/$name
-WordPress.zip
+rm -rf WordPress.zip
 echo
 redbg "【$name】启动中......"
 echo
