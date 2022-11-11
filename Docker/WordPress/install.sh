@@ -63,7 +63,7 @@ docker run -d \
   -v /root/data/docker_data/$name/default_server.conf:/etc/nginx/conf.d/default_server.conf \
   ddsderek/foundations:Ubuntu20.04-nginx1.16.1-php7.4.20
 echo
-redbg "【$name-nginx1.16-php7.4环境】-默认面板:http://${ip}:7263"
+redbg "【$name-nginx1.16-php7.4环境】-WordPress-6.1默认面板:http://${ip}:7263"
 echo
 green "
 创建数据库【mysql】:
