@@ -286,7 +286,7 @@ start_menu(){
 	2.【phpmyadmin - 8181】
 	3.【Debian-apache2-php7.3】
 	4.【Debian-apache2-php7.1 xyfaka】
-	5.【Ubuntu20.04-nginx1.16.1-php7.4.20】		
+	5.【Ubuntu20.04-nginx1.16.1-php7.4.20 WordPress】		
 	6.【Ubuntu18-nginx-php7.2-SG11 Vplay】
 	7.【Kodexplorer - 5878】
 	8.【Portainer - 9000】"
