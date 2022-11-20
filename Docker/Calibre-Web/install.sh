@@ -48,16 +48,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 #这里填写内容
 #EOF
 
-#容器数据库创建
-docker exec -it calibre-web sh #进入容器内部
 
-cd /app/calibre/bin #进入bin文件夹
-
-calibredb restore_database --really-do-it --with-library /books #创建一个数据库
-
-chmod a+w /books/metadata.db #添加写的权限
-
-exit  # 退出容器
 
 
 #最后文件处理
@@ -78,6 +69,18 @@ chown -R www /root/data/docker_data
 cd /root/data/docker_data/$name
 redbg "【Calibre-Web】启动中......"
 docker-compose up -d
+
+#容器数据库创建
+docker exec -it calibre-web sh #进入容器内部
+
+cd /app/calibre/bin #进入bin文件夹
+
+calibredb restore_database --really-do-it --with-library /books #创建一个数据库
+
+chmod a+w /books/metadata.db #添加写的权限
+
+exit  # 退出容器
+
 echo
 redbg "【Calibre-Web】-默认面板:http://${ip}:8093"
 echo
