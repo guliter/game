@@ -79,5 +79,6 @@ docker exec -it calibre-web sh #进入容器内部
 cd /app/calibre/bin #进入bin文件夹
 calibredb restore_database --really-do-it --with-library /books #创建一个数据库
 chmod a+w /books/metadata.db #添加写的权限
-exit  # 退出容器"
+exit  # 退出容器
+web数据库路径填写/books即可正常操作！"
 echo
