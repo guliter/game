@@ -32,6 +32,7 @@ name=Calibre-Web
 ip=`curl http://whatismyip.akamai.com`
 mkdir -p /root/data/docker_data/$name
 
+install(){
 #配置文件的下载
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-default.conf -P /root/data/docker_data/$name
 ##wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.conf -P /root/data/docker_data/$name
@@ -52,6 +53,7 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 
 
 
+
 #最后文件处理
 #sed -i '3c $dbconfig=array(' /root/data/docker_data/xyfaka/xyfaka/config.php
 #mkdir -p /root/data/docker_data/xyfaka/xyfaka/install/install.lock
@@ -66,13 +68,11 @@ wget https://raw.githubusercontent.com/guliter/game/main/Docker/$name/docker-com
 #配置权限
 chmod -R 777 /root/data/docker_data
 chown -R www /root/data/docker_data
+}
 
-cd /root/data/docker_data/$name
-redbg "【Calibre-Web】启动中......"
-docker-compose up -d
-echo
-redbg "【Calibre-Web】-默认面板:http://${ip}:8093"
-echo
+mysql(){
+clear
+red "第一次创建请创建数据库并导入数据库"
 green "
 容器数据库创建:
 docker exec -it calibre-web sh #进入容器内部
@@ -81,4 +81,24 @@ calibredb restore_database --really-do-it --with-library /books #创建一个数
 chmod a+w /books/metadata.db #添加写的权限
 exit  # 退出容器
 web数据库路径填写/books即可正常操作！"
+echo
+}
+
+
+if [ ! -f "/root/data/docker_data/$name/docker-compose.yml" ];then
+
+install
+mysql
+
+else
+clear
+redbg "已经安装过了！"
+echo
+fi
+
+cd /root/data/docker_data/$name
+redbg "【Calibre-Web】启动中......"
+docker-compose up -d
+echo
+redbg "【Calibre-Web】-默认面板:http://${ip}:8093 admin admin123 web数据库路径填写/books即可正常操作！"
 echo
