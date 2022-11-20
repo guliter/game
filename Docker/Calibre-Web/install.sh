@@ -72,7 +72,7 @@ chown -R www /root/data/docker_data
 
 mysql(){
 clear
-red "第一次创建请创建数据库并导入数据库"
+red "第一次创建请创建数据库并导入数据库！"
 green "
 容器数据库创建:
 docker exec -it calibre-web sh #进入容器内部
@@ -92,7 +92,7 @@ mysql
 
 else
 clear
-redbg "已经安装过了！"
+redbg "已经安装过了！将以现有配置启动！若有必要请删除对应项目进行重置"
 echo
 fi
 
