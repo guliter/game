@@ -53,22 +53,24 @@ echo
 }
 
 install_3(){
-green "所有镜像删除中......"
-docker stop $(docker ps -q) & docker rm $(docker ps -aq)
+green "未使用镜像删除中......"
+#docker stop $(docker ps -q) & docker rm $(docker ps -aq)
+docker image prune -a -f
 echo
 clear
-redbg "所有镜像已删除"
+redbg "执行完成！"
 echo
 }
 
 install_4(){
 #docker ps -a --format "table {{.Names}}" | grep -v  "portainer" | grep -v -n "NAMES"
 #stty erase '^H' && read -p "输入要重启的容器" restart
-green "所有容器删除中......"
-docker stop $(docker ps -q) && docker rm $(docker ps -aq)
+green "未使用网络删除中......"
+#docker stop $(docker ps -q) && docker rm $(docker ps -aq)
+docker network prune -f
 echo
 clear
-redbg "所有容器已删除"
+redbg "执行完成"
 echo
 }
 
@@ -200,8 +202,8 @@ docker ps -a --format "table {{.Names}}\t{{.Ports}}" | sed 's/0.0.0.0://' | sed 
     echo
     green "推荐教程：https://www.bilibili.com/video/BV1og4y1q7M4/?spm_id_from=autoNext"
     echo
-    green "1.重启指定容器	3.删除所有镜像	5.查看指定容器进程	7.进入指定容器	9.制作镜像标签"			
-    green "2.删除指定容器	4.删除所有容器	6.查看指定容器信息	8.容器内存占用	10.推送镜像到仓库"
+    green "1.重启指定容器	3.删除未使用镜像	5.查看指定容器进程	7.进入指定容器	9.制作镜像标签"			
+    green "2.删除指定容器	4.删除未使用网络	6.查看指定容器信息	8.容器内存占用	10.推送镜像到仓库"
     echo
     yellow "mysql-端口:6878| phpmyadmin-端口:8181 | Kodexplorer-端口:5878 | Nginx Proxy Manager-端口:8686 | Portainer-端口:9000 进入数据：mysql -uroot -proot"
     echo
