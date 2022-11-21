@@ -308,7 +308,8 @@ echo
 }
 
 install_37(){
-bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/pzcx/install.sh)
+#bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/pzcx/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/guliter/game/main/Docker/fake/install_up.sh)
 }
 
 install_38(){
