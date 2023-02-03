@@ -261,7 +261,7 @@ docker run -d \
 echo
 redbg "【$name-nginx1.16-php7.2环境】-默认面板:http://${ip}:$port"
 echo
-redbg "上传网站至: /root/data/docker_data/$name/$name"
+redbg "上传网站至: /root/data/docker_data/$name/$name (记得修改根目录权限)"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181"
 echo
