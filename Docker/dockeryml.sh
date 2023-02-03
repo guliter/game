@@ -87,8 +87,8 @@ echo
 }
 
 install_apache2_php73(){   
-stty erase '^H' && read -p "网站名称" name
-stty erase '^H' && read -p "网站端口" port     
+stty erase '^H' && read -p "网站名称:（网站名称指的是创建的文件夹）" name
+stty erase '^H' && read -p "网站端口:" port     
 mkdir -p /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-default.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.conf -P /root/data/docker_data/$name
@@ -117,8 +117,8 @@ echo
 }
 
 install_apache2_php71(){   
-stty erase '^H' && read -p "网站名称" name
-stty erase '^H' && read -p "网站端口" port     
+stty erase '^H' && read -p "网站名称:（网站名称指的是创建的文件夹）" name
+stty erase '^H' && read -p "网站端口:" port
 mkdir -p /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/000-default.conf -P /root/data/docker_data/$name
 wget https://raw.githubusercontent.com/guliter/game/main/Docker/xyfaka/apache2.conf -P /root/data/docker_data/$name
@@ -199,8 +199,8 @@ yellow "	配置文件:/root/data/docker_data/freenom
 
 
 install_5(){  
-stty erase '^H' && read -p "网站名称" name
-stty erase '^H' && read -p "网站端口" port     
+stty erase '^H' && read -p "网站名称:（网站名称指的是创建的文件夹）" name
+stty erase '^H' && read -p "网站端口:" port
 mkdir -p /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf -P /root/data/docker_data/$name
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf.default -P /root/data/docker_data/$name
@@ -222,7 +222,7 @@ docker run -d \
 echo
 redbg "【$name-nginx1.16-php7.4环境】-默认面板:http://${ip}:$port"
 echo
-redbg "上传网站至: /root/data/docker_data/$name/$name"
+redbg "上传网站至: /root/data/docker_data/$name/$name (修改/root/data/docker_data/$name/default_server)"
 echo
 redbg "【数据库面板】-默认面板:http://${ip}:8181"
 echo
@@ -232,8 +232,8 @@ echo
 
 
 install_6(){  
-stty erase '^H' && read -p "网站名称" name
-stty erase '^H' && read -p "网站端口" port     
+stty erase '^H' && read -p "网站名称:（网站名称指的是创建的文件夹）" name
+stty erase '^H' && read -p "网站端口:" port
 mkdir -p /root/data/docker_data/$name
 mkdir -p /root/data/docker_data/$name/extension
 #wget https://raw.githubusercontent.com/guliter/game/main/Docker/Ubuntu20.04-nginx1.16.1-php7.4.20/nginx.conf -P /root/data/docker_data/$name
