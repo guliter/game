@@ -23,3 +23,12 @@ services:
 #      MYSQL_RANDOM_ROOT_PASSWORD: '1'
 #    volumes:
 #      - /root/data/docker_data/xyfaka/db:/var/lib/mysql
+version: "3"
+services:
+    lobe-chat:
+        ports:
+            - 8080:3210
+        environment:
+            - OPENAI_API_KEY=sk-L3EZKQX7fT9My50l9siUT3BlbkFJVqaB1zIrdO1rdAVyCCDXlu # 你的API Key
+            - ACCESS_CODE=gugugpt # 设置一个密码
+        image: lobehub/lobe-chat
